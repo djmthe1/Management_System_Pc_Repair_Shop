@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\ConsultasUsuariosForm.cs">
+    <Compile Include="Consultas\ConsultaUsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultasUsuariosForm.Designer.cs">
-      <DependentUpon>ConsultasUsuariosForm.cs</DependentUpon>
+    <Compile Include="Consultas\ConsultaUsuariosForm.Designer.cs">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Portada.cs">
       <SubType>Form</SubType>
@@ -81,6 +81,9 @@
     <Compile Include="Registros\UsuariosForm.Designer.cs">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\ConsultaUsuariosForm.resx">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Portada.resx">
       <DependentUpon>Portada.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +133,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{4bd776c6-d354-4dcc-a3df-0c5942b1282a}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

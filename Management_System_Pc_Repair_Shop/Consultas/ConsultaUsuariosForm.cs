@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Management_System_Pc_Repair_Shop.Consultas
 {
-    public partial class ConsultasUsuariosForm : Form
+    public partial class ConsultaUsuariosForm : Form
     {
-        public ConsultasUsuariosForm()
+        public ConsultaUsuariosForm()
         {
             InitializeComponent();
         }

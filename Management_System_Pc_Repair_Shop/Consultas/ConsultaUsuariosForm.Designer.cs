@@ -1,6 +1,6 @@
 ﻿namespace Management_System_Pc_Repair_Shop.Consultas
 {
-    partial class ConsultasUsuariosForm
+    partial class ConsultaUsuariosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ConsultasUsuariosForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "ConsultasUsuariosForm";
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "ConsultasUsuariosForm";
+            this.Text = "Consulta Usuarios";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
