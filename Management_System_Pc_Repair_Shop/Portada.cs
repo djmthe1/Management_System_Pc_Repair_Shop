@@ -16,5 +16,16 @@ namespace Management_System_Pc_Repair_Shop
         {
             InitializeComponent();
         }
+
+        private void Portada_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.UsuariosForm usuarios = new Registros.UsuariosForm();
+            usuarios.Show();
+        }
     }
 }

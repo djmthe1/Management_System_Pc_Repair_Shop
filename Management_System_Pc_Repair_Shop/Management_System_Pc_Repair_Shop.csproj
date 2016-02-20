@@ -134,7 +134,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,13 +157,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\ManagementDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\ManagementDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>ManagementDb.mdf</DependentUpon>
     </Content>
+    <Content Include="ImageIcon\1452953363_1.png" />
+    <Content Include="ImageIcon\1452953373_4.png" />
+    <Content Include="ImageIcon\1452953381_3.png" />
     <Content Include="ImageIcon\1455968598_1_graphic_card_electronic_device_motherboard_smps_hardware_chip.ico" />
+    <Content Include="ImageIcon\1456022263_add_user.ico" />
+    <Content Include="ImageIcon\1456022963_computer-search.ico" />
+    <Content Include="ImageIcon\1456022973_computer-search.png" />
+    <Content Include="ImageIcon\1456023083_search_user.png" />
     <Content Include="ImageIcon\computer-repair.ico" />
   </ItemGroup>
   <ItemGroup>
