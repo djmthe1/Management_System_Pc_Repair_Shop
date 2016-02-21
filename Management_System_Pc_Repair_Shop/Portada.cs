@@ -22,6 +22,23 @@ namespace Management_System_Pc_Repair_Shop
 
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion;
+            opcion = MessageBox.Show("Desea Cerrar Sesion?", "Management System Pc Repair Shop", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (opcion == DialogResult.OK)
+            {
+                Registros.LoginForm LoginF = new Registros.LoginForm();
+                LoginF.Show();
+                this.Close();
+            }
+        }
+
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Registros.UsuariosForm usuarios = new Registros.UsuariosForm();

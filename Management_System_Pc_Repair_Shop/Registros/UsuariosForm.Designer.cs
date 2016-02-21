@@ -34,15 +34,15 @@
             this.confirmarPassTextBox = new System.Windows.Forms.TextBox();
             this.passTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.usuarioIDTextBox = new System.Windows.Forms.TextBox();
+            this.usuarioIdTextBox = new System.Windows.Forms.TextBox();
             this.prioridadLabel = new System.Windows.Forms.Label();
             this.passLabel = new System.Windows.Forms.Label();
             this.nombreLabel = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
+            this.buscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.buscarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prioridadComboBox
@@ -94,13 +94,13 @@
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombreTextBox.TabIndex = 36;
             // 
-            // usuarioIDTextBox
+            // usuarioIdTextBox
             // 
-            this.usuarioIDTextBox.AllowDrop = true;
-            this.usuarioIDTextBox.Location = new System.Drawing.Point(134, 46);
-            this.usuarioIDTextBox.Name = "usuarioIDTextBox";
-            this.usuarioIDTextBox.Size = new System.Drawing.Size(35, 20);
-            this.usuarioIDTextBox.TabIndex = 35;
+            this.usuarioIdTextBox.AllowDrop = true;
+            this.usuarioIdTextBox.Location = new System.Drawing.Point(134, 46);
+            this.usuarioIdTextBox.Name = "usuarioIdTextBox";
+            this.usuarioIdTextBox.Size = new System.Drawing.Size(35, 20);
+            this.usuarioIdTextBox.TabIndex = 35;
             // 
             // prioridadLabel
             // 
@@ -141,6 +141,21 @@
             this.IDlabel.Size = new System.Drawing.Size(16, 13);
             this.IDlabel.TabIndex = 40;
             this.IDlabel.Text = "Id";
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buscarButton.Location = new System.Drawing.Point(175, 46);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(59, 20);
+            this.buscarButton.TabIndex = 49;
+            this.buscarButton.Text = "Buscar";
+            this.buscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // EliminarButton
             // 
@@ -190,21 +205,6 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // buscarButton
-            // 
-            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buscarButton.Location = new System.Drawing.Point(175, 46);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(59, 20);
-            this.buscarButton.TabIndex = 49;
-            this.buscarButton.Text = "Buscar";
-            this.buscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
-            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,13 +219,15 @@
             this.Controls.Add(this.confirmarPassTextBox);
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.nombreTextBox);
-            this.Controls.Add(this.usuarioIDTextBox);
+            this.Controls.Add(this.usuarioIdTextBox);
             this.Controls.Add(this.prioridadLabel);
             this.Controls.Add(this.passLabel);
             this.Controls.Add(this.nombreLabel);
             this.Controls.Add(this.IDlabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "UsuariosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Usuario";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
             this.ResumeLayout(false);
@@ -240,7 +242,7 @@
         private System.Windows.Forms.TextBox confirmarPassTextBox;
         private System.Windows.Forms.TextBox passTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.TextBox usuarioIDTextBox;
+        private System.Windows.Forms.TextBox usuarioIdTextBox;
         private System.Windows.Forms.Label prioridadLabel;
         private System.Windows.Forms.Label passLabel;
         private System.Windows.Forms.Label nombreLabel;

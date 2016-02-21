@@ -42,7 +42,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void Limpiar()
         {
-            usuarioIDTextBox.Clear();
+            usuarioIdTextBox.Clear();
             nombreTextBox.Clear();
             passTextBox.Clear();
             confirmarPassTextBox.Clear();
@@ -51,7 +51,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void ObtenerValores()
         {
             int usuId = 0;
-            int.TryParse(usuarioIDTextBox.Text, out usuId);
+            int.TryParse(usuarioIdTextBox.Text, out usuId);
             usuarios.UsuarioId = usuId;
             usuarios.Nombre = nombreTextBox.Text;
             usuarios.Password = passTextBox.Text;
@@ -60,7 +60,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void DevolverValores()
         {
-            usuarioIDTextBox.Text = usuarios.UsuarioId.ToString();
+            usuarioIdTextBox.Text = usuarios.UsuarioId.ToString();
             nombreTextBox.Text = usuarios.Nombre.ToString();
             passTextBox.Text = usuarios.Password.ToString();
             prioridadComboBox.Text = usuarios.Prioridad.ToString();
@@ -75,7 +75,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void buscarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (usuarioIDTextBox.Text.Length == 0)
+            if (usuarioIdTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -97,7 +97,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             ObtenerValores();
 
-            if (usuarioIDTextBox.Text == "")
+            if (usuarioIdTextBox.Text == "")
             {
                 if (nombreTextBox.Text != "" && passTextBox.Text != "" && confirmarPassTextBox.Text != "" && prioridadComboBox.Text != "")
                 {

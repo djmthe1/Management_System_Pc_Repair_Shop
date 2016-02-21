@@ -136,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +174,12 @@
     <Content Include="ImageIcon\1456022963_computer-search.ico" />
     <Content Include="ImageIcon\1456022973_computer-search.png" />
     <Content Include="ImageIcon\1456023083_search_user.png" />
+    <Content Include="ImageIcon\1456066185_Login.ico" />
+    <Content Include="ImageIcon\1456067949_preferences-contact-list.png" />
+    <Content Include="ImageIcon\1456067961_xfce-system-exit.png" />
+    <Content Include="ImageIcon\873402456.jpg" />
     <Content Include="ImageIcon\computer-repair.ico" />
+    <Content Include="ImageIcon\Image-1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

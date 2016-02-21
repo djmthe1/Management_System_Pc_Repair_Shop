@@ -34,7 +34,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values('{0}','{1}','{2}')", this.Nombre, this.Password, this.Prioridad));
+                conexion.Ejecutar(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}')", this.Nombre, this.Password, this.Prioridad));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -46,7 +46,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Update Usuarios set Nombre='{0}',Password='{1}',Prioridad='{2}' where UsuarioId={3}", this.Nombre, this.Password, this.Prioridad, this.UsuarioId));
+                conexion.Ejecutar(String.Format("Update Usuarios set Nombre='{0}', Password='{1}', Prioridad='{2}' where UsuarioId={3}", this.Nombre, this.Password, this.Prioridad, this.UsuarioId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -86,6 +86,22 @@ namespace BLL
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
             return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + ordenar));
+        }
+
+        public bool Verificar(string Nombre, string Password, string Prioridad)
+        {
+            bool retorno = false;
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = conexion.ObtenerDatos(String.Format("Select * From Usuarios where Nombre='{0}' and Password='{1}' and Prioridad='{2}'", Nombre, Password, Prioridad));
+                if (dt.Rows.Count > 0)
+                {
+                    retorno = true;
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            return retorno;
         }
     }
 }

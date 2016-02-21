@@ -17,6 +17,7 @@ namespace Management_System_Pc_Repair_Shop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Portada());
+            Application.Run(new Registros.LoginForm());
         }
     }
 }
