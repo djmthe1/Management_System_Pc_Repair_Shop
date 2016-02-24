@@ -28,19 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaPiezasForm));
+            this.labelConteo = new System.Windows.Forms.Label();
+            this.textBoxConteo = new System.Windows.Forms.TextBox();
+            this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
+            this.labelBuscar = new System.Windows.Forms.Label();
+            this.textBoxFiltro = new System.Windows.Forms.TextBox();
+            this.comboBoxCampos = new System.Windows.Forms.ComboBox();
+            this.buscarButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelConteo
+            // 
+            this.labelConteo.AutoSize = true;
+            this.labelConteo.Location = new System.Drawing.Point(4, 292);
+            this.labelConteo.Name = "labelConteo";
+            this.labelConteo.Size = new System.Drawing.Size(44, 13);
+            this.labelConteo.TabIndex = 19;
+            this.labelConteo.Text = "Conteo:";
+            // 
+            // textBoxConteo
+            // 
+            this.textBoxConteo.Location = new System.Drawing.Point(54, 289);
+            this.textBoxConteo.Name = "textBoxConteo";
+            this.textBoxConteo.ReadOnly = true;
+            this.textBoxConteo.Size = new System.Drawing.Size(39, 20);
+            this.textBoxConteo.TabIndex = 18;
+            // 
+            // dataGridViewConsulta
+            // 
+            this.dataGridViewConsulta.AllowUserToAddRows = false;
+            this.dataGridViewConsulta.AllowUserToDeleteRows = false;
+            this.dataGridViewConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConsulta.Location = new System.Drawing.Point(11, 55);
+            this.dataGridViewConsulta.Name = "dataGridViewConsulta";
+            this.dataGridViewConsulta.ReadOnly = true;
+            this.dataGridViewConsulta.Size = new System.Drawing.Size(490, 214);
+            this.dataGridViewConsulta.TabIndex = 17;
+            // 
+            // labelBuscar
+            // 
+            this.labelBuscar.AutoSize = true;
+            this.labelBuscar.Location = new System.Drawing.Point(11, 12);
+            this.labelBuscar.Name = "labelBuscar";
+            this.labelBuscar.Size = new System.Drawing.Size(62, 13);
+            this.labelBuscar.TabIndex = 16;
+            this.labelBuscar.Text = "Buscar Por:";
+            // 
+            // textBoxFiltro
+            // 
+            this.textBoxFiltro.Location = new System.Drawing.Point(145, 13);
+            this.textBoxFiltro.MaxLength = 50;
+            this.textBoxFiltro.Name = "textBoxFiltro";
+            this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
+            this.textBoxFiltro.TabIndex = 15;
+            // 
+            // comboBoxCampos
+            // 
+            this.comboBoxCampos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCampos.FormattingEnabled = true;
+            this.comboBoxCampos.Items.AddRange(new object[] {
+            "PiezaId",
+            "Descripcion"});
+            this.comboBoxCampos.Location = new System.Drawing.Point(79, 12);
+            this.comboBoxCampos.Name = "comboBoxCampos";
+            this.comboBoxCampos.Size = new System.Drawing.Size(60, 21);
+            this.comboBoxCampos.TabIndex = 14;
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(309, 7);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(32, 30);
+            this.buscarButton.TabIndex = 28;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // ConsultaPiezasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 265);
+            this.ClientSize = new System.Drawing.Size(514, 312);
+            this.Controls.Add(this.buscarButton);
+            this.Controls.Add(this.labelConteo);
+            this.Controls.Add(this.textBoxConteo);
+            this.Controls.Add(this.dataGridViewConsulta);
+            this.Controls.Add(this.labelBuscar);
+            this.Controls.Add(this.textBoxFiltro);
+            this.Controls.Add(this.comboBoxCampos);
             this.Name = "ConsultaPiezasForm";
             this.Text = "ConsultaPiezasForm";
+            this.Load += new System.EventHandler(this.ConsultaPiezasForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label labelConteo;
+        private System.Windows.Forms.TextBox textBoxConteo;
+        private System.Windows.Forms.DataGridView dataGridViewConsulta;
+        private System.Windows.Forms.Label labelBuscar;
+        private System.Windows.Forms.TextBox textBoxFiltro;
+        private System.Windows.Forms.ComboBox comboBoxCampos;
+        private System.Windows.Forms.Button buscarButton;
     }
 }

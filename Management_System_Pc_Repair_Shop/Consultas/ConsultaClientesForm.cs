@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,25 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 
 namespace Management_System_Pc_Repair_Shop.Consultas
 {
-    public partial class ConsultaPiezasForm : Form
+    public partial class ConsultaClientesForm : Form
     {
-        public ConsultaPiezasForm()
+        public ConsultaClientesForm()
         {
             InitializeComponent();
         }
 
-        private void ConsultaPiezasForm_Load(object sender, EventArgs e)
+        private void ConsultaClientesForm_Load(object sender, EventArgs e)
         {
 
         }
 
         private void buscarButton_Click(object sender, EventArgs e)
         {
-            Piezas piezas = new Piezas();
+            Clientes clientes = new Clientes();
             string filtro = "1=1";
 
             if (textBoxFiltro.Text.Length > 0)
@@ -33,7 +33,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
                 filtro = comboBoxCampos.Text + " like '%" + textBoxFiltro.Text + "%'";
             }
 
-            dataGridViewConsulta.DataSource = piezas.Listado("PiezaId, Descripcion", filtro, "");
+            dataGridViewConsulta.DataSource = clientes.Listado("MarcaId, Descripcion", filtro, "");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
     }
