@@ -151,6 +151,7 @@
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(this.idTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PiezasForm";
             this.Text = "Registro De Piezas";
             this.Load += new System.EventHandler(this.PiezasForm_Load);

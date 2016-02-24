@@ -24,11 +24,8 @@ Go
 Create Table Clientes(
 	ClienteId int Identity(1,1) Primary Key,
 	Nombre varchar(40),
-	Telefono varchar(15),
-	Celular varchar(15),
+	Apellido varchar(40),
 	Direccion varchar(30),
-	Cedula varchar(20),
-	Sexo varchar(10)
 )
 
 Go
@@ -48,7 +45,7 @@ create table Facturas(
 	FacturaNo int identity primary key,
 	Fecha date,
 	MontoAPagar int,
-	AutorizadoPor varchar(20)
+	DespachadoPor varchar(20)
 )
 
 Go

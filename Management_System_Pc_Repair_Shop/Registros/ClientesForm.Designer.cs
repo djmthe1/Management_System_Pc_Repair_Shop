@@ -196,6 +196,7 @@
             this.Controls.Add(this.clienteIdTextBox);
             this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(this.botonBuscarCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
             this.Load += new System.EventHandler(this.ClientesForm_Load);

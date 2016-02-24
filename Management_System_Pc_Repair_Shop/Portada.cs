@@ -49,5 +49,46 @@ namespace Management_System_Pc_Repair_Shop
             Registros.UsuariosForm usuarios = new Registros.UsuariosForm();
             usuarios.Show();
         }
+
+        private void piezasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.PiezasForm Rpiezas = new Registros.PiezasForm();
+            Rpiezas.Show();
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.MarcasForm Rmarcas = new Registros.MarcasForm();
+            Rmarcas.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Registros.ClientesForm Rclientes = new Registros.ClientesForm();
+            Rclientes.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaClientesForm Cclientes = new Consultas.ConsultaClientesForm();
+            Cclientes.Show();
+        }
+
+        private void marcasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaMarcasForm Cmarcas = new Consultas.ConsultaMarcasForm();
+            Cmarcas.Show();
+        }
+
+        private void piezasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaPiezasForm Cpiezas = new Consultas.ConsultaPiezasForm();
+            Cpiezas.Show();
+        }
+
+        private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

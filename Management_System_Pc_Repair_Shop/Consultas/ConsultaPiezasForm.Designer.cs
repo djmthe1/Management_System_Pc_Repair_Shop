@@ -121,8 +121,10 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.textBoxFiltro);
             this.Controls.Add(this.comboBoxCampos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaPiezasForm";
-            this.Text = "ConsultaPiezasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta Piezas";
             this.Load += new System.EventHandler(this.ConsultaPiezasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).EndInit();
             this.ResumeLayout(false);

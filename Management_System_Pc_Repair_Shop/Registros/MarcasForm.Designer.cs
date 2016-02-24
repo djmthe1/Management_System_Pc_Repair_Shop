@@ -151,6 +151,7 @@
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(this.idTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MarcasForm";
             this.Text = "Registro De Marcas";
             this.Load += new System.EventHandler(this.MarcasForm_Load);

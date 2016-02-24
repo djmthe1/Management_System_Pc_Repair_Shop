@@ -204,6 +204,9 @@
     <Content Include="ImageIcon\1456066185_Login.ico" />
     <Content Include="ImageIcon\1456067949_preferences-contact-list.png" />
     <Content Include="ImageIcon\1456067961_xfce-system-exit.png" />
+    <Content Include="ImageIcon\1456378116_computer_settings.ico" />
+    <Content Include="ImageIcon\1456378377_clients.ico" />
+    <Content Include="ImageIcon\1456378383_Download-Computer.ico" />
     <Content Include="ImageIcon\873402456.jpg" />
     <Content Include="ImageIcon\computer-repair.ico" />
     <Content Include="ImageIcon\Image-1.jpg" />

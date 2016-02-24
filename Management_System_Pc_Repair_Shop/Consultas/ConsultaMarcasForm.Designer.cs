@@ -29,28 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaMarcasForm));
-            this.buscarButton = new System.Windows.Forms.Button();
             this.labelConteo = new System.Windows.Forms.Label();
             this.textBoxConteo = new System.Windows.Forms.TextBox();
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.textBoxFiltro = new System.Windows.Forms.TextBox();
             this.comboBoxCampos = new System.Windows.Forms.ComboBox();
+            this.buscarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buscarButton
-            // 
-            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
-            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(314, 5);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(32, 30);
-            this.buscarButton.TabIndex = 35;
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // labelConteo
             // 
@@ -109,6 +96,19 @@
             this.comboBoxCampos.Size = new System.Drawing.Size(60, 21);
             this.comboBoxCampos.TabIndex = 29;
             // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(314, 5);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(32, 30);
+            this.buscarButton.TabIndex = 35;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
+            // 
             // ConsultaMarcasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,8 +121,10 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.textBoxFiltro);
             this.Controls.Add(this.comboBoxCampos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaMarcasForm";
-            this.Text = "ConsultaMarcasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta Marcas";
             this.Load += new System.EventHandler(this.ConsultaMarcasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).EndInit();
             this.ResumeLayout(false);
