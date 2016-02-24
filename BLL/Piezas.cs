@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class Piezas : ClaseMaestra
+    public class Piezas : ClaseMaestra
     {
         public int PiezaId { set; get; }
         public string Descripcion { set; get; }

@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class Facturas : ClaseMaestra
+    public class Facturas : ClaseMaestra
     {
         public override bool Buscar(int IdBuscado)
         {

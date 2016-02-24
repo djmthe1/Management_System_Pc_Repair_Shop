@@ -66,12 +66,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
             prioridadComboBox.Text = usuarios.Prioridad.ToString();
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-
         private void buscarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
@@ -91,6 +85,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
                     Limpiar();
                 }
             }
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -155,8 +154,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            try
-            {
                 ObtenerValores();
                 if (usuarios.Buscar(usuarios.UsuarioId))
                 {
@@ -175,11 +172,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
                     MensajeAdvertencia("Este Id no existe");
                     Limpiar();
                 }
-            }
-            catch (Exception)
-            {
-                MensajeError("Error al eliminar");
-            }
         }
     }
 }

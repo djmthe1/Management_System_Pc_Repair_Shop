@@ -8,8 +8,14 @@ using DAL;
 
 namespace BLL
 {
-    class Clientes : ClaseMaestra
+    public class Clientes : ClaseMaestra
     {
+        public int ClienteId { set; get; }
+        public string NombreCompleto { set; get; }
+        public string Direccion { set; get; }
+        public string Cedula { set; get; }
+        public ConexionDb conexion = new ConexionDb();
+
         public override bool Insertar()
         {
             throw new NotImplementedException();
@@ -32,7 +38,10 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            throw new NotImplementedException();
+            string ordenar = "";
+            if (!Orden.Equals(""))
+                ordenar = " orden by  " + Orden;
+            return conexion.ObtenerDatos(("Select " + Campos + " from Marcas where " + Condicion + ordenar));
         }
     }
 }

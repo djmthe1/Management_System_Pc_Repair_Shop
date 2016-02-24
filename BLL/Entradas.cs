@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class Entradas : ClaseMaestra
+    public class Entradas : ClaseMaestra
     {
         public override bool Buscar(int IdBuscado)
         {

@@ -28,11 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcasForm));
+            this.descripcionLabel = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.buscarButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // descripcionLabel
+            // 
+            this.descripcionLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.descripcionLabel.AutoSize = true;
+            this.descripcionLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionLabel.Location = new System.Drawing.Point(34, 62);
+            this.descripcionLabel.Name = "descripcionLabel";
+            this.descripcionLabel.Size = new System.Drawing.Size(72, 14);
+            this.descripcionLabel.TabIndex = 21;
+            this.descripcionLabel.Text = "Descripcion";
+            // 
+            // idLabel
+            // 
+            this.idLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.idLabel.AutoSize = true;
+            this.idLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLabel.Location = new System.Drawing.Point(89, 15);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(17, 14);
+            this.idLabel.TabIndex = 20;
+            this.idLabel.Text = "Id";
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.descripcionTextBox.Location = new System.Drawing.Point(114, 60);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(81, 20);
+            this.descripcionTextBox.TabIndex = 19;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.idTextBox.Location = new System.Drawing.Point(114, 9);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(45, 20);
+            this.idTextBox.TabIndex = 18;
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.EliminarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(240, 120);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(87, 41);
+            this.EliminarButton.TabIndex = 50;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(6, 120);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(88, 41);
+            this.NuevoButton.TabIndex = 48;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(123, 120);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(88, 41);
+            this.GuardarButton.TabIndex = 49;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(165, 9);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(32, 30);
+            this.buscarButton.TabIndex = 22;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
+            // 
+            // MarcasForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "MarcasForm";
+            this.ClientSize = new System.Drawing.Size(334, 173);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.GuardarButton);
+            this.Controls.Add(this.buscarButton);
+            this.Controls.Add(this.descripcionLabel);
+            this.Controls.Add(this.idLabel);
+            this.Controls.Add(this.descripcionTextBox);
+            this.Controls.Add(this.idTextBox);
+            this.Name = "MarcasForm";
+            this.Text = "Registro De Marcas";
+            this.Load += new System.EventHandler(this.MarcasForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buscarButton;
+        private System.Windows.Forms.Label descripcionLabel;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.TextBox descripcionTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button GuardarButton;
     }
 }

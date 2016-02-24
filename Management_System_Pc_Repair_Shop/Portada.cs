@@ -24,7 +24,12 @@ namespace Management_System_Pc_Repair_Shop
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult opcion;
+            opcion = MessageBox.Show("Desea Salir?", "Management System Pc Repair Shop", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (opcion == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)

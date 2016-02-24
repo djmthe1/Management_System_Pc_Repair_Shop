@@ -139,6 +139,12 @@
     <EmbeddedResource Include="Registros\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\MarcasForm.resx">
+      <DependentUpon>MarcasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\PiezasForm.resx">
+      <DependentUpon>PiezasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
