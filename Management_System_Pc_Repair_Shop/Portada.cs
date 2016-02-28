@@ -68,6 +68,12 @@ namespace Management_System_Pc_Repair_Shop
             Rclientes.Show();
         }
 
+        private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.EntradasForm REntradas = new Registros.EntradasForm();
+            REntradas.Show();
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Consultas.ConsultaClientesForm Cclientes = new Consultas.ConsultaClientesForm();
@@ -88,7 +94,9 @@ namespace Management_System_Pc_Repair_Shop
 
         private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            //Consultas.ConsultaEntradasForm Centradas = new Consultas.ConsultaEntradasForm();
+            //Centradas.Show();
         }
+
     }
 }

@@ -12,8 +12,7 @@ namespace BLL
         public int Id { set; get; }
         public int EntradaId { set; get; }
         public string Articulo { set; get; }
-
-        public ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb();
 
         public EntradasArticulos(int id, int entradaId, string Articulo)
         {

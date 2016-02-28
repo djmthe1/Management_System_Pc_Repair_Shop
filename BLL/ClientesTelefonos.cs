@@ -12,7 +12,7 @@ namespace BLL
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public string Telefono { get; set; }
-        public ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb();
 
         public ClientesTelefonos(int id, int clienteId, string telefono)
         {

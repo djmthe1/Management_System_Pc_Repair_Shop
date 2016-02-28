@@ -39,12 +39,21 @@ Create Table ClientesTelefonos(
 Go
 
 create table Entradas(
-	EntradaNo int identity primary key,
+	EntradaId int identity primary key,
 	Fecha date,
 	FechaEntrega date,
-	Descripcion varchar (100),
-	MontoAPagar int,
+	ClienteId int References Clientes (ClienteId),
+	Problemas varchar (100),
+	Notas varchar (100),
 	RecibidoPor varchar(20)
+)
+
+Go
+
+Create Table EntradasArticulos(
+	Id int Identity(1,1) Primary Key,
+	EntradaId int References Entradas (EntradaId),
+	Articulo varchar (100),
 )
 
 Go

@@ -13,7 +13,7 @@ namespace BLL
 
         public int MarcaId { set; get; }
         public string Descripcion { set; get; }
-        public ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb();
 
         public Marcas(int marcaId, string descripcion)
         {

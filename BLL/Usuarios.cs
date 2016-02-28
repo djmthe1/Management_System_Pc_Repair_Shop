@@ -15,7 +15,7 @@ namespace BLL
         public string Nombre { set; get; }
         public string Password { set; get; }
         public string Prioridad { set; get; }
-        public ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb();
 
         public Usuarios(int usuarioId, string nombre, string password, string prioridad)
         {

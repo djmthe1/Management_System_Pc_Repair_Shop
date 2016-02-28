@@ -16,7 +16,7 @@ namespace BLL
         public string Direccion { set; get; }
         ClientesTelefonos Telefono = new ClientesTelefonos();
         public List<ClientesTelefonos> telefonos { get; set; }
-        public ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb();
 
         public Clientes(int clienteId, string nombre, string apellido, string direccion)
         {
@@ -111,7 +111,7 @@ namespace BLL
                 this.Apellido = dt.Rows[0]["Apellido"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
 
-                dtTelefonos = conexion.ObtenerDatos(String.Format("select C.Nombre, T.Telefono as Telefono from Clientes C inner join ClientesTelefonos T on C.ClienteId = T.ClienteId where C.ClienteId = {0}", IdBuscado));
+                dtTelefonos = conexion.ObtenerDatos(String.Format("Select C.Nombre, T.Telefono as Telefono from Clientes C inner join ClientesTelefonos T on C.ClienteId = T.ClienteId where C.ClienteId = {0}", IdBuscado));
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
@@ -126,7 +126,7 @@ namespace BLL
             string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("Select " + Campos + " from Marcas where " + Condicion + ordenar));
+            return conexion.ObtenerDatos(("Select " + Campos + " from Clientes where " + Condicion + ordenar));
         }
     }
 }
