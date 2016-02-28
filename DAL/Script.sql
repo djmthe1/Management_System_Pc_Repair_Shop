@@ -30,6 +30,14 @@ Create Table Clientes(
 
 Go
 
+Create Table ClientesTelefonos(
+	Id int Identity(1,1) Primary Key,
+	ClienteId int References Clientes (ClienteId),
+	Telefono varchar (12),
+)
+
+Go
+
 create table Entradas(
 	EntradaNo int identity primary key,
 	Fecha date,

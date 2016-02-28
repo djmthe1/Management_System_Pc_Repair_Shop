@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Clientes.cs" />
+    <Compile Include="ClientesTelefonos.cs" />
     <Compile Include="Entradas.cs" />
+    <Compile Include="EntradasArticulos.cs" />
     <Compile Include="Facturas.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Piezas.cs" />

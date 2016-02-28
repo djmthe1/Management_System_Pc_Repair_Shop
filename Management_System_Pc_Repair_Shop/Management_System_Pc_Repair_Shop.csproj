@@ -99,6 +99,12 @@
     <Compile Include="Registros\ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\EntradasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\EntradasForm.Designer.cs">
+      <DependentUpon>EntradasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\FacturaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="Registros\ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\EntradasForm.resx">
+      <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
