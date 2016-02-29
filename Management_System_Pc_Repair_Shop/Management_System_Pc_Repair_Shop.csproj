@@ -73,6 +73,12 @@
     <Compile Include="Consultas\ConsultaClientesForm.Designer.cs">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaEntradasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaEntradasForm.Designer.cs">
+      <DependentUpon>ConsultaEntradasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaMarcasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="Consultas\ConsultaPiezasForm.Designer.cs">
       <DependentUpon>ConsultaPiezasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSalidasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaSalidasForm.Designer.cs">
+      <DependentUpon>ConsultaSalidasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ConsultaUsuariosForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +147,12 @@
     <Compile Include="Registros\PiezasForm.Designer.cs">
       <DependentUpon>PiezasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\SalidasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\SalidasForm.Designer.cs">
+      <DependentUpon>SalidasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\UsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +165,17 @@
     <EmbeddedResource Include="Consultas\ConsultaClientesForm.resx">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaEntradasForm.resx">
+      <DependentUpon>ConsultaEntradasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaMarcasForm.resx">
       <DependentUpon>ConsultaMarcasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaPiezasForm.resx">
       <DependentUpon>ConsultaPiezasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaSalidasForm.resx">
+      <DependentUpon>ConsultaSalidasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaUsuariosForm.resx">
       <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
@@ -175,6 +199,9 @@
     <EmbeddedResource Include="Registros\EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\FacturaForm.resx">
+      <DependentUpon>FacturaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\PiezasForm.resx">
       <DependentUpon>PiezasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\SalidasForm.resx">
+      <DependentUpon>SalidasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
@@ -227,6 +257,7 @@
     <Content Include="ImageIcon\1456378383_Download-Computer.ico" />
     <Content Include="ImageIcon\873402456.jpg" />
     <Content Include="ImageIcon\computer-repair.ico" />
+    <Content Include="ImageIcon\Icons8-Windows-8-Computer-Hardware-Enter.ico" />
     <Content Include="ImageIcon\Image-1.jpg" />
   </ItemGroup>
   <ItemGroup>

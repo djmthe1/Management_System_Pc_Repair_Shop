@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaUsuariosForm));
             this.SuspendLayout();
             // 
-            // ConsultasUsuariosForm
+            // ConsultaUsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Name = "ConsultasUsuariosForm";
+            this.ClientSize = new System.Drawing.Size(514, 312);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ConsultaUsuariosForm";
             this.Text = "Consulta Usuarios";
             this.ResumeLayout(false);
 

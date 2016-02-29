@@ -1,6 +1,6 @@
-﻿namespace Management_System_Pc_Repair_Shop.Consultas
+﻿namespace Management_System_Pc_Repair_Shop.Registros
 {
-    partial class ConsultaAtrasadosForm
+    partial class SalidasForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaAtrasadosForm));
             this.SuspendLayout();
             // 
-            // ConsultaAtrasadosForm
+            // SalidasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 312);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ConsultaAtrasadosForm";
-            this.Text = "Consulta Atrasados";
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "SalidasForm";
+            this.Text = "Registro De Salidas";
             this.ResumeLayout(false);
 
         }

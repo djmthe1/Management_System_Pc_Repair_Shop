@@ -228,7 +228,7 @@
             this.MaximizeBox = false;
             this.Name = "UsuariosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Usuario";
+            this.Text = "Registro De Usuario";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
