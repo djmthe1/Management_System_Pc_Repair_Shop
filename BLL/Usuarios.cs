@@ -34,8 +34,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}')", this.Nombre, this.Password, this.Prioridad));
-                retorno = true;
+                this.UsuarioId = (int)conexion.ObtenerValor(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Password, this.Prioridad));
+                retorno = this.UsuarioId > 0;
             }
             catch (Exception ex) { throw ex; }
             return retorno;
