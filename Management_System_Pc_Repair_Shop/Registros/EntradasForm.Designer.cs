@@ -38,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(582, 369);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EntradasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro De Entradas";
             this.ResumeLayout(false);
 

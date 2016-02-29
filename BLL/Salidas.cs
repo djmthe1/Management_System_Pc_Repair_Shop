@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class Salidas : ClaseMaestra
+    public class Salidas : ClaseMaestra
     {
         public int SalidaId { set; get; }
         public string Fecha { set; get; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,25 @@ namespace Management_System_Pc_Repair_Shop.Consultas
         public ConsultaEntradasForm()
         {
             InitializeComponent();
+        }
+
+        private void ConsultaEntradasForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buscarButton_Click(object sender, EventArgs e)
+        {
+            Entradas entradas = new Entradas();
+            string filtro = "1=1";
+
+            if (textBoxFiltro.Text.Length > 0)
+            {
+                filtro = comboBoxCampos.Text + " like '%" + textBoxFiltro.Text + "%'";
+            }
+
+            dataGridViewConsulta.DataSource = entradas.Listado("EntradaId, EntradaId, Fecha, FechaEntrega, ClienteId, problemas, Nota, RecibidoPor", filtro, "");
+            textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
     }
 }

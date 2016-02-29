@@ -36,9 +36,9 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usuarioLabel = new System.Windows.Forms.Label();
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.mensajeLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
-            this.mensajeLabel = new System.Windows.Forms.Label();
             this.loginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.prioridadLabel.AutoSize = true;
             this.prioridadLabel.BackColor = System.Drawing.Color.Transparent;
             this.prioridadLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prioridadLabel.Location = new System.Drawing.Point(16, 34);
+            this.prioridadLabel.Location = new System.Drawing.Point(25, 41);
             this.prioridadLabel.Name = "prioridadLabel";
             this.prioridadLabel.Size = new System.Drawing.Size(98, 14);
             this.prioridadLabel.TabIndex = 14;
@@ -60,14 +60,14 @@
             this.prioridadComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.prioridadComboBox.Location = new System.Drawing.Point(120, 31);
+            this.prioridadComboBox.Location = new System.Drawing.Point(129, 38);
             this.prioridadComboBox.Name = "prioridadComboBox";
             this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
             this.prioridadComboBox.TabIndex = 13;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(120, 100);
+            this.passwordTextBox.Location = new System.Drawing.Point(129, 107);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 12;
@@ -75,7 +75,7 @@
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(120, 66);
+            this.usuarioTextBox.Location = new System.Drawing.Point(129, 73);
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
             this.usuarioTextBox.TabIndex = 11;
@@ -85,7 +85,7 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
             this.passwordLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(34, 102);
+            this.passwordLabel.Location = new System.Drawing.Point(43, 109);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(80, 14);
             this.passwordLabel.TabIndex = 10;
@@ -96,7 +96,7 @@
             this.usuarioLabel.AutoSize = true;
             this.usuarioLabel.BackColor = System.Drawing.Color.Transparent;
             this.usuarioLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioLabel.Location = new System.Drawing.Point(60, 68);
+            this.usuarioLabel.Location = new System.Drawing.Point(69, 75);
             this.usuarioLabel.Name = "usuarioLabel";
             this.usuarioLabel.Size = new System.Drawing.Size(54, 14);
             this.usuarioLabel.TabIndex = 9;
@@ -111,10 +111,22 @@
             this.loginPanel.Controls.Add(this.passwordLabel);
             this.loginPanel.Controls.Add(this.passwordTextBox);
             this.loginPanel.Controls.Add(this.usuarioTextBox);
-            this.loginPanel.Location = new System.Drawing.Point(211, 112);
+            this.loginPanel.Location = new System.Drawing.Point(208, 107);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(237, 132);
+            this.loginPanel.Size = new System.Drawing.Size(256, 143);
             this.loginPanel.TabIndex = 15;
+            // 
+            // mensajeLabel
+            // 
+            this.mensajeLabel.AutoSize = true;
+            this.mensajeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.mensajeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mensajeLabel.Location = new System.Drawing.Point(12, 12);
+            this.mensajeLabel.Name = "mensajeLabel";
+            this.mensajeLabel.Size = new System.Drawing.Size(233, 16);
+            this.mensajeLabel.TabIndex = 48;
+            this.mensajeLabel.Text = "Nombre de usuario y contraseña";
+            this.mensajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginButton
             // 
@@ -147,18 +159,6 @@
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
-            // 
-            // mensajeLabel
-            // 
-            this.mensajeLabel.AutoSize = true;
-            this.mensajeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.mensajeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mensajeLabel.Location = new System.Drawing.Point(3, 5);
-            this.mensajeLabel.Name = "mensajeLabel";
-            this.mensajeLabel.Size = new System.Drawing.Size(233, 16);
-            this.mensajeLabel.TabIndex = 48;
-            this.mensajeLabel.Text = "Nombre de usuario y contraseña";
-            this.mensajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 

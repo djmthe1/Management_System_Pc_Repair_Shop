@@ -70,8 +70,14 @@ namespace Management_System_Pc_Repair_Shop
 
         private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Registros.EntradasForm REntradas = new Registros.EntradasForm();
-            REntradas.Show();
+            Registros.EntradasForm Rentradas = new Registros.EntradasForm();
+            Rentradas.Show();
+        }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.SalidasForm Rsalidas = new Registros.SalidasForm();
+            Rsalidas.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,9 +100,50 @@ namespace Management_System_Pc_Repair_Shop
 
         private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //Consultas.ConsultaEntradasForm Centradas = new Consultas.ConsultaEntradasForm();
-            //Centradas.Show();
+            Consultas.ConsultaEntradasForm Centradas = new Consultas.ConsultaEntradasForm();
+            Centradas.Show();
         }
 
+        private void salidasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaSalidasForm Csalidas = new Consultas.ConsultaSalidasForm();
+            Csalidas.Show();
+        }
+
+        private void atrasosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaAtrasadosForm Catrasos = new Consultas.ConsultaAtrasadosForm();
+            Catrasos.Show();
+        }
+
+        private void entradasToolStripButton_Click(object sender, EventArgs e)
+        {
+            Registros.EntradasForm REntradas = new Registros.EntradasForm();
+            REntradas.Show();
+        }
+
+        private void salidasToolStripButton_Click(object sender, EventArgs e)
+        {
+            Registros.SalidasForm Rsalidas = new Registros.SalidasForm();
+            Rsalidas.Show();
+        }
+
+        private void clientesToolStripButton_Click(object sender, EventArgs e)
+        {
+            Registros.ClientesForm Rclientes = new Registros.ClientesForm();
+            Rclientes.Show();
+        }
+
+        private void piezasToolStripButton_Click(object sender, EventArgs e)
+        {
+            Registros.PiezasForm Rpiezas = new Registros.PiezasForm();
+            Rpiezas.Show();
+        }
+
+        private void marcasToolStripButton_Click(object sender, EventArgs e)
+        {
+            Registros.MarcasForm Rmarcas = new Registros.MarcasForm();
+            Rmarcas.Show();
+        }
     }
 }

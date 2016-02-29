@@ -38,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(514, 312);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaAtrasadosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Atrasados";
             this.ResumeLayout(false);
 

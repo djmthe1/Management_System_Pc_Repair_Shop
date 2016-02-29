@@ -247,7 +247,6 @@
     <Content Include="ImageIcon\1455968598_1_graphic_card_electronic_device_motherboard_smps_hardware_chip.ico" />
     <Content Include="ImageIcon\1456022263_add_user.ico" />
     <Content Include="ImageIcon\1456022963_computer-search.ico" />
-    <Content Include="ImageIcon\1456022973_computer-search.png" />
     <Content Include="ImageIcon\1456023083_search_user.png" />
     <Content Include="ImageIcon\1456066185_Login.ico" />
     <Content Include="ImageIcon\1456067949_preferences-contact-list.png" />
@@ -258,6 +257,8 @@
     <Content Include="ImageIcon\873402456.jpg" />
     <Content Include="ImageIcon\computer-repair.ico" />
     <Content Include="ImageIcon\Icons8-Windows-8-Computer-Hardware-Enter.ico" />
+    <Content Include="ImageIcon\Icons8-Windows-8-Ecommerce-Bill.ico" />
+    <Content Include="ImageIcon\Icons8-Windows-8-Industry-Feed-Out.ico" />
     <Content Include="ImageIcon\Image-1.jpg" />
   </ItemGroup>
   <ItemGroup>
