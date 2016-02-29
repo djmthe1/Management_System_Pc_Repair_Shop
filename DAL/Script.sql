@@ -58,6 +58,15 @@ Create Table EntradasArticulos(
 
 Go
 
+create table Salidas(
+	SalidaId int identity primary key,
+	Fecha date,
+	EntradaId int References Entradas (EntradaId),
+	RetiradoPor varchar(20)
+)
+
+Go
+
 create table Facturas(
 	FacturaNo int identity primary key,
 	Fecha date,
