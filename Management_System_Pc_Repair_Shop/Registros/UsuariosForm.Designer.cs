@@ -39,10 +39,10 @@
             this.passLabel = new System.Windows.Forms.Label();
             this.nombreLabel = new System.Windows.Forms.Label();
             this.IDlabel = new System.Windows.Forms.Label();
-            this.buscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.buscarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prioridadComboBox
@@ -142,21 +142,6 @@
             this.IDlabel.TabIndex = 40;
             this.IDlabel.Text = "Id";
             // 
-            // buscarButton
-            // 
-            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buscarButton.Location = new System.Drawing.Point(175, 46);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(59, 20);
-            this.buscarButton.TabIndex = 49;
-            this.buscarButton.Text = "Buscar";
-            this.buscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
-            // 
             // EliminarButton
             // 
             this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -204,6 +189,19 @@
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(175, 40);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(32, 30);
+            this.buscarButton.TabIndex = 48;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // UsuariosForm
             // 

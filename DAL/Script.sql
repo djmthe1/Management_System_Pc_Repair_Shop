@@ -32,7 +32,7 @@ Go
 
 Create Table ClientesTelefonos(
 	Id int Identity(1,1) Primary Key,
-	ClienteId int References Clientes (ClienteId),
+	ClienteId int Foreign Key References Clientes (ClienteId),
 	Telefono varchar (12),
 )
 
@@ -52,7 +52,7 @@ Go
 
 Create Table EntradasArticulos(
 	Id int Identity(1,1) Primary Key,
-	EntradaId int References Entradas (EntradaId),
+	EntradaId int Foreign Key References Entradas (EntradaId),
 	Articulo varchar (100),
 )
 
@@ -62,6 +62,7 @@ create table Salidas(
 	SalidaId int identity primary key,
 	Fecha date,
 	EntradaId int References Entradas (EntradaId),
+	Entregado bit,
 	RetiradoPor varchar(20)
 )
 

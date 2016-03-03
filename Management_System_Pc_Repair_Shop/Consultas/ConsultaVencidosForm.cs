@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 
 namespace Management_System_Pc_Repair_Shop.Consultas
 {
-    public partial class ConsultaAtrasadosForm : Form
+    public partial class ConsultaVencidosForm : Form
     {
-        public ConsultaAtrasadosForm()
+        public ConsultaVencidosForm()
         {
             InitializeComponent();
         }
 
-        private void ConsultaAtrasadosForm_Load(object sender, EventArgs e)
+        private void ConsultaVencidosForm_Load(object sender, EventArgs e)
         {
-            Entradas entradas = new Entradas();
-            dataGridViewConsulta.DataSource = entradas.VerificarAtrasos();
+            Salidas salidas = new Salidas();
+            dataGridViewConsulta.DataSource = salidas.VerificarVencidos();
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
     }

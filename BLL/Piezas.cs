@@ -29,8 +29,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                this.PiezaId = (int)conexion.ObtenerValor(String.Format("Insert Into Piezas (Descripcion) Values('{0}') Select @@Identity", this.Descripcion));
-                retorno = this.PiezaId > 0;
+                conexion.Ejecutar(String.Format("Insert Into Piezas (Descripcion) Values ('{0}')", this.Descripcion));
+                retorno = true;
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -41,7 +41,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Update Piezas set Descripcion='{0}' where PiezaId={2}", this.Descripcion, this.PiezaId));
+                conexion.Ejecutar(String.Format("Update Piezas set Descripcion='{0}' where PiezaId={1}", this.Descripcion, this.PiezaId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }

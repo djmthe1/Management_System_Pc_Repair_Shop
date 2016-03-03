@@ -116,6 +116,12 @@ namespace Management_System_Pc_Repair_Shop
             Catrasos.Show();
         }
 
+        private void vencidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaVencidosForm Cvencidos = new Consultas.ConsultaVencidosForm();
+            Cvencidos.Show();
+        }
+
         private void entradasToolStripButton_Click(object sender, EventArgs e)
         {
             Registros.EntradasForm REntradas = new Registros.EntradasForm();

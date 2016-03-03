@@ -66,6 +66,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             prioridadComboBox.Text = usuarios.Prioridad.ToString();
         }
 
+
         private void buscarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();

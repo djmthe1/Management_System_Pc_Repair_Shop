@@ -16,6 +16,7 @@ namespace BLL
         public string Password { set; get; }
         public string Prioridad { set; get; }
         ConexionDb conexion = new ConexionDb();
+        DataTable dt = new DataTable();
 
         public Usuarios(int usuarioId, string nombre, string password, string prioridad)
         {
@@ -34,7 +35,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                this.UsuarioId = (int)conexion.ObtenerValor(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Password, this.Prioridad));
+                this.UsuarioId = int.Parse(conexion.ObtenerValor(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Password, this.Prioridad)).ToString());
                 retorno = this.UsuarioId > 0;
             }
             catch (Exception ex) { throw ex; }
@@ -67,8 +68,6 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            DataTable dt = new DataTable();
-
             dt = conexion.ObtenerDatos("Select * from Usuarios Where UsuarioId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
@@ -93,7 +92,6 @@ namespace BLL
             bool retorno = false;
             try
             {
-                DataTable dt = new DataTable();
                 dt = conexion.ObtenerDatos(String.Format("Select * From Usuarios where Nombre='{0}' and Password='{1}' and Prioridad='{2}'", Nombre, Password, Prioridad));
                 if (dt.Rows.Count > 0)
                 {

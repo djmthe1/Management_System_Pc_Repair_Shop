@@ -20,6 +20,7 @@ namespace BLL
         EntradasArticulos Articulo = new EntradasArticulos();
         public List<EntradasArticulos> articulos { get; set; }
         ConexionDb conexion = new ConexionDb();
+        DataTable dt = new DataTable();
 
         public Entradas(int entradaId, string fecha, string fechaEntrega, int clienteId, string problemas, string nota, string recibidoPor)
         {
@@ -105,7 +106,6 @@ namespace BLL
         
         public override bool Buscar(int IdBuscado)
         {
-            DataTable dt = new DataTable();
             DataTable dtArticulos = new DataTable();
 
             dt = conexion.ObtenerDatos("Select * From Entradas Where EntradaId=" + IdBuscado);
@@ -135,6 +135,22 @@ namespace BLL
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
             return conexion.ObtenerDatos(("Select " + Campos + " from Entradas where " + Condicion + ordenar));
+        }
+
+        public bool VerificarAtrasos()
+        {
+            bool retorno = false;
+            string hoy = DateTime.Now.ToShortDateString();
+            try
+            {
+                dt = conexion.ObtenerDatos("Select * From Entradas Where Fecha >= " + hoy);
+                if (dt.Rows.Count > 0)
+                {
+                    retorno = true;
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            return retorno;
         }
     }
 }
