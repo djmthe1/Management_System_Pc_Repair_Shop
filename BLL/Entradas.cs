@@ -137,13 +137,13 @@ namespace BLL
             return conexion.ObtenerDatos(("Select " + Campos + " from Entradas where " + Condicion + ordenar));
         }
 
-        public bool VerificarAtrasos()
+        public bool VerificarAtrasos(string Campos)
         {
             bool retorno = false;
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("Select * From Entradas Where Fecha >= " + hoy);
+                dt = conexion.ObtenerDatos("Select * From Entradas Where Fecha >= " + hoy + Campos);
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;

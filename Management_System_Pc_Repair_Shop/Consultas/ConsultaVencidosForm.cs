@@ -21,7 +21,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
         private void ConsultaVencidosForm_Load(object sender, EventArgs e)
         {
             Salidas salidas = new Salidas();
-            dataGridViewConsulta.DataSource = salidas.VerificarVencidos();
+            dataGridViewConsulta.DataSource = salidas.VerificarVencidos("SalidaId, Fecha, EntradaId, Entregado, RetiradoPor");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
     }

@@ -32,10 +32,6 @@
             this.labelConteo = new System.Windows.Forms.Label();
             this.textBoxConteo = new System.Windows.Forms.TextBox();
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
-            this.SalidaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EntradaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DespachoPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,36 +56,10 @@
             // 
             this.dataGridViewConsulta.AllowUserToOrderColumns = true;
             this.dataGridViewConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SalidaId,
-            this.Fecha,
-            this.EntradaId,
-            this.DespachoPor});
             this.dataGridViewConsulta.Location = new System.Drawing.Point(18, 9);
             this.dataGridViewConsulta.Name = "dataGridViewConsulta";
             this.dataGridViewConsulta.Size = new System.Drawing.Size(486, 255);
             this.dataGridViewConsulta.TabIndex = 35;
-            // 
-            // SalidaId
-            // 
-            this.SalidaId.HeaderText = "SalidaId";
-            this.SalidaId.Name = "SalidaId";
-            this.SalidaId.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // EntradaId
-            // 
-            this.EntradaId.HeaderText = "EntradaId";
-            this.EntradaId.Name = "EntradaId";
-            // 
-            // DespachoPor
-            // 
-            this.DespachoPor.HeaderText = "DespachoPor";
-            this.DespachoPor.Name = "DespachoPor";
             // 
             // ConsultaAtrasadosForm
             // 
@@ -115,9 +85,5 @@
         private System.Windows.Forms.Label labelConteo;
         private System.Windows.Forms.TextBox textBoxConteo;
         private System.Windows.Forms.DataGridView dataGridViewConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SalidaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EntradaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DespachoPor;
     }
 }

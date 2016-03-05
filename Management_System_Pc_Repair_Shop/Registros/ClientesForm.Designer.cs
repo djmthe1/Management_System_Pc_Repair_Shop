@@ -41,11 +41,16 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.botonInsertarTelefono = new System.Windows.Forms.Button();
+            this.botonEliminarTelefono = new System.Windows.Forms.Button();
+            this.telefonosListBox = new System.Windows.Forms.ListBox();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.TelefonoTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(144, 79);
+            this.nombreTextBox.Location = new System.Drawing.Point(122, 79);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombreTextBox.TabIndex = 32;
@@ -56,7 +61,7 @@
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(87, 80);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(65, 80);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
             this.nombreClienteLabel.Size = new System.Drawing.Size(51, 15);
             this.nombreClienteLabel.TabIndex = 28;
@@ -68,7 +73,7 @@
             this.apellidoLabel.BackColor = System.Drawing.Color.Transparent;
             this.apellidoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoLabel.ForeColor = System.Drawing.Color.Black;
-            this.apellidoLabel.Location = new System.Drawing.Point(87, 105);
+            this.apellidoLabel.Location = new System.Drawing.Point(65, 105);
             this.apellidoLabel.Name = "apellidoLabel";
             this.apellidoLabel.Size = new System.Drawing.Size(51, 15);
             this.apellidoLabel.TabIndex = 29;
@@ -80,7 +85,7 @@
             this.clienteIdLabel.BackColor = System.Drawing.Color.Transparent;
             this.clienteIdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteIdLabel.ForeColor = System.Drawing.Color.Black;
-            this.clienteIdLabel.Location = new System.Drawing.Point(85, 55);
+            this.clienteIdLabel.Location = new System.Drawing.Point(63, 55);
             this.clienteIdLabel.Name = "clienteIdLabel";
             this.clienteIdLabel.Size = new System.Drawing.Size(53, 15);
             this.clienteIdLabel.TabIndex = 30;
@@ -88,14 +93,14 @@
             // 
             // clienteIdTextBox
             // 
-            this.clienteIdTextBox.Location = new System.Drawing.Point(144, 50);
+            this.clienteIdTextBox.Location = new System.Drawing.Point(122, 50);
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(64, 20);
             this.clienteIdTextBox.TabIndex = 31;
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(144, 105);
+            this.apellidoTextBox.Location = new System.Drawing.Point(122, 105);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
             this.apellidoTextBox.TabIndex = 33;
@@ -105,7 +110,7 @@
             this.botonBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarCliente.BackgroundImage")));
             this.botonBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botonBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonBuscarCliente.Location = new System.Drawing.Point(213, 45);
+            this.botonBuscarCliente.Location = new System.Drawing.Point(191, 45);
             this.botonBuscarCliente.Name = "botonBuscarCliente";
             this.botonBuscarCliente.Size = new System.Drawing.Size(31, 29);
             this.botonBuscarCliente.TabIndex = 34;
@@ -118,7 +123,7 @@
             this.direccionLabel.BackColor = System.Drawing.Color.Transparent;
             this.direccionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccionLabel.ForeColor = System.Drawing.Color.Black;
-            this.direccionLabel.Location = new System.Drawing.Point(80, 132);
+            this.direccionLabel.Location = new System.Drawing.Point(58, 133);
             this.direccionLabel.Name = "direccionLabel";
             this.direccionLabel.Size = new System.Drawing.Size(58, 15);
             this.direccionLabel.TabIndex = 35;
@@ -126,7 +131,7 @@
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(144, 131);
+            this.direccionTextBox.Location = new System.Drawing.Point(122, 131);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
             this.direccionTextBox.TabIndex = 36;
@@ -179,11 +184,65 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
+            // botonInsertarTelefono
+            // 
+            this.botonInsertarTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertarTelefono.BackgroundImage")));
+            this.botonInsertarTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonInsertarTelefono.Location = new System.Drawing.Point(228, 183);
+            this.botonInsertarTelefono.Name = "botonInsertarTelefono";
+            this.botonInsertarTelefono.Size = new System.Drawing.Size(30, 28);
+            this.botonInsertarTelefono.TabIndex = 58;
+            this.botonInsertarTelefono.UseVisualStyleBackColor = true;
+            this.botonInsertarTelefono.Click += new System.EventHandler(this.botonInsertarTelefono_Click);
+            // 
+            // botonEliminarTelefono
+            // 
+            this.botonEliminarTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonEliminarTelefono.BackgroundImage")));
+            this.botonEliminarTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonEliminarTelefono.Location = new System.Drawing.Point(228, 224);
+            this.botonEliminarTelefono.Name = "botonEliminarTelefono";
+            this.botonEliminarTelefono.Size = new System.Drawing.Size(30, 28);
+            this.botonEliminarTelefono.TabIndex = 57;
+            this.botonEliminarTelefono.UseVisualStyleBackColor = true;
+            this.botonEliminarTelefono.Click += new System.EventHandler(this.botonEliminarTelefono_Click);
+            // 
+            // telefonosListBox
+            // 
+            this.telefonosListBox.FormattingEnabled = true;
+            this.telefonosListBox.Location = new System.Drawing.Point(122, 183);
+            this.telefonosListBox.Name = "telefonosListBox";
+            this.telefonosListBox.Size = new System.Drawing.Size(100, 69);
+            this.telefonosListBox.TabIndex = 56;
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.telefonoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefonoLabel.ForeColor = System.Drawing.Color.Black;
+            this.telefonoLabel.Location = new System.Drawing.Point(62, 159);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(54, 15);
+            this.telefonoLabel.TabIndex = 54;
+            this.telefonoLabel.Text = "Telefono";
+            // 
+            // TelefonoTextBox
+            // 
+            this.TelefonoTextBox.Location = new System.Drawing.Point(122, 157);
+            this.TelefonoTextBox.Name = "TelefonoTextBox";
+            this.TelefonoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TelefonoTextBox.TabIndex = 55;
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 325);
+            this.Controls.Add(this.botonInsertarTelefono);
+            this.Controls.Add(this.botonEliminarTelefono);
+            this.Controls.Add(this.telefonosListBox);
+            this.Controls.Add(this.telefonoLabel);
+            this.Controls.Add(this.TelefonoTextBox);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
@@ -220,5 +279,10 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button botonInsertarTelefono;
+        private System.Windows.Forms.Button botonEliminarTelefono;
+        private System.Windows.Forms.ListBox telefonosListBox;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.TextBox TelefonoTextBox;
     }
 }

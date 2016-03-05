@@ -37,6 +37,11 @@ namespace BLL
 
         }
 
+        public void LimpiarTelefono()
+        {
+            this.telefonos.Clear();
+        }
+
         public override bool Insertar()
         {
             int retorno = 0;
@@ -54,7 +59,7 @@ namespace BLL
                 {
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId,Telefono) Values ({0},'{1}')", numeros.ClienteId, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (Telefono) Values ({0})",  numeros.Telefono));
                     }
                 }
             }
@@ -76,7 +81,7 @@ namespace BLL
                     conexion.Ejecutar(string.Format("Delete From ClientesTelefonos Where ClienteId= {0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId,Telefono) Values ({0},'{1}')", numeros.ClienteId, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (Telefono) Values ({0})", numeros.Telefono));
                     }
                 }
             }

@@ -1,6 +1,6 @@
-﻿namespace Management_System_Pc_Repair_Shop.Registros
+﻿namespace Management_System_Pc_Repair_Shop.Reportes
 {
-    partial class EntradasForm
+    partial class VisorReportesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntradasForm));
+            this.visorReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // EntradasForm
+            // visorReportViewer
+            // 
+            this.visorReportViewer.Location = new System.Drawing.Point(12, 12);
+            this.visorReportViewer.Name = "visorReportViewer";
+            this.visorReportViewer.Size = new System.Drawing.Size(704, 408);
+            this.visorReportViewer.TabIndex = 0;
+            // 
+            // VisorReportesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 366);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EntradasForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro De Entradas";
+            this.ClientSize = new System.Drawing.Size(728, 432);
+            this.Controls.Add(this.visorReportViewer);
+            this.Name = "VisorReportesForm";
+            this.Text = "Reporte";
+            this.Load += new System.EventHandler(this.VisorReportesForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer visorReportViewer;
     }
 }

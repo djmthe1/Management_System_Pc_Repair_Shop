@@ -48,8 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,6 +118,11 @@
     <Compile Include="Consultas\ConsultaVencidosForm.Designer.cs">
       <DependentUpon>ConsultaVencidosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagementDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Portada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +178,24 @@
     </Compile>
     <Compile Include="Registros\UsuariosForm.Designer.cs">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PiezasCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PiezasCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\PresentarReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\PresentarReportesForm.Designer.cs">
+      <DependentUpon>PresentarReportesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VisorReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VisorReportesForm.Designer.cs">
+      <DependentUpon>VisorReportesForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\ConsultaAtrasadosForm.resx">
       <DependentUpon>ConsultaAtrasadosForm.cs</DependentUpon>
@@ -226,6 +258,29 @@
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PiezasCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PiezasCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PresentarReportesForm.resx">
+      <DependentUpon>PresentarReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportPiezas.rdlc" />
+    <EmbeddedResource Include="Reportes\VisorReportesForm.resx">
+      <DependentUpon>VisorReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ManagementDbDataSet.xsc">
+      <DependentUpon>ManagementDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagementDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagementDbDataSet.xss">
+      <DependentUpon>ManagementDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,10 +292,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\ManagementDb.mdf">

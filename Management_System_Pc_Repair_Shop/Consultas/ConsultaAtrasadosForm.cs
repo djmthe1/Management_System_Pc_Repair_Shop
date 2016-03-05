@@ -21,7 +21,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
         private void ConsultaAtrasadosForm_Load(object sender, EventArgs e)
         {
             Entradas entradas = new Entradas();
-            dataGridViewConsulta.DataSource = entradas.VerificarAtrasos();
+            dataGridViewConsulta.DataSource = entradas.VerificarAtrasos("EntradaId, EntradaId, Fecha, FechaEntrega, ClienteId, problemas, Nota, RecibidoPor");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
     }

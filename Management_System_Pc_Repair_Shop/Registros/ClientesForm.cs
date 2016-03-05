@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Clientes clientes = new Clientes();
+        int id = 0;
 
         private void ClientesForm_Load(object sender, EventArgs e)
         {
@@ -46,11 +47,13 @@ namespace Management_System_Pc_Repair_Shop.Registros
             nombreTextBox.Clear();
             apellidoTextBox.Clear();
             direccionTextBox.Clear();
+            telefonosListBox.Items.Clear();
+            clientes.LimpiarTelefono();
         }
 
         private void ObtenerValores()
         {
-            int id = 0;
+            
             int.TryParse(clienteIdTextBox.Text, out id);
             clientes.ClienteId = id;
             clientes.Nombre = nombreTextBox.Text;
@@ -87,6 +90,25 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
         }
 
+        private void botonInsertarTelefono_Click(object sender, EventArgs e)
+        {
+            telefonosListBox.Items.Add(TelefonoTextBox.Text);
+            TelefonoTextBox.Clear();
+        }
+
+        private void botonEliminarTelefono_Click(object sender, EventArgs e)
+        {
+            if (telefonosListBox.SelectedIndex > 0)
+            {
+                if (MessageBox.Show("Eliminar el Telefono: ", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    telefonosListBox.Items.RemoveAt(telefonosListBox.SelectedIndex);
+            }
+            else
+            {
+                MensajeAdvertencia("Seleccione un Telefono");
+            }
+        }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -95,6 +117,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
+            for (int i = 0; i < telefonosListBox.Items.Count; i++)
+            {
+                clientes.InsertarTelefono(1, id, telefonosListBox.Items[i].ToString());
+            }
             if (clienteIdTextBox.Text == "")
             {
                 if (nombreTextBox.Text != "" && apellidoTextBox.Text != "" && direccionTextBox.Text != "")

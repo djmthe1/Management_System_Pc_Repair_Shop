@@ -90,13 +90,13 @@ namespace BLL
             return conexion.ObtenerDatos(("Select " + Campos + " From Salidas where " + Condicion + ordenar));
         }
 
-        public bool VerificarVencidos()
+        public bool VerificarVencidos(string Campos)
         {
             bool retorno = false;
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("Select * From Salidas Where Fecha >= " + hoy);
+                dt = conexion.ObtenerDatos("Select * From Salidas Where Fecha >= " + hoy + Campos);
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;
