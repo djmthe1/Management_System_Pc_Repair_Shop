@@ -1,6 +1,6 @@
 ﻿namespace Management_System_Pc_Repair_Shop.Consultas
 {
-    partial class ConsultaEntradasForm
+    partial class ConsultaClientesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaEntradasForm));
-            this.buscarButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaClientesForm));
             this.labelConteo = new System.Windows.Forms.Label();
             this.textBoxConteo = new System.Windows.Forms.TextBox();
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
             this.labelBuscar = new System.Windows.Forms.Label();
             this.textBoxFiltro = new System.Windows.Forms.TextBox();
             this.comboBoxCampos = new System.Windows.Forms.ComboBox();
+            this.buscarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buscarButton
-            // 
-            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
-            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(345, 5);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(32, 30);
-            this.buscarButton.TabIndex = 49;
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // labelConteo
             // 
@@ -58,7 +45,7 @@
             this.labelConteo.Location = new System.Drawing.Point(9, 290);
             this.labelConteo.Name = "labelConteo";
             this.labelConteo.Size = new System.Drawing.Size(44, 13);
-            this.labelConteo.TabIndex = 48;
+            this.labelConteo.TabIndex = 41;
             this.labelConteo.Text = "Conteo:";
             // 
             // textBoxConteo
@@ -67,7 +54,7 @@
             this.textBoxConteo.Name = "textBoxConteo";
             this.textBoxConteo.ReadOnly = true;
             this.textBoxConteo.Size = new System.Drawing.Size(39, 20);
-            this.textBoxConteo.TabIndex = 47;
+            this.textBoxConteo.TabIndex = 40;
             // 
             // dataGridViewConsulta
             // 
@@ -78,7 +65,7 @@
             this.dataGridViewConsulta.Name = "dataGridViewConsulta";
             this.dataGridViewConsulta.ReadOnly = true;
             this.dataGridViewConsulta.Size = new System.Drawing.Size(490, 214);
-            this.dataGridViewConsulta.TabIndex = 46;
+            this.dataGridViewConsulta.TabIndex = 39;
             // 
             // labelBuscar
             // 
@@ -86,35 +73,43 @@
             this.labelBuscar.Location = new System.Drawing.Point(16, 10);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(62, 13);
-            this.labelBuscar.TabIndex = 45;
+            this.labelBuscar.TabIndex = 38;
             this.labelBuscar.Text = "Buscar Por:";
             // 
             // textBoxFiltro
             // 
-            this.textBoxFiltro.Location = new System.Drawing.Point(181, 11);
+            this.textBoxFiltro.Location = new System.Drawing.Point(150, 11);
             this.textBoxFiltro.MaxLength = 50;
             this.textBoxFiltro.Name = "textBoxFiltro";
             this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
-            this.textBoxFiltro.TabIndex = 44;
+            this.textBoxFiltro.TabIndex = 37;
             // 
             // comboBoxCampos
             // 
             this.comboBoxCampos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCampos.FormattingEnabled = true;
             this.comboBoxCampos.Items.AddRange(new object[] {
-            "EntradaId",
-            "EntradaId",
-            "Fecha",
-            "FechaEntrega",
-            "ClienteId",
-            "Nota",
-            "RecibidoPor"});
+            "MarcaId",
+            "Descripcion"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
-            this.comboBoxCampos.Size = new System.Drawing.Size(91, 21);
-            this.comboBoxCampos.TabIndex = 43;
+            this.comboBoxCampos.Size = new System.Drawing.Size(60, 21);
+            this.comboBoxCampos.TabIndex = 36;
             // 
-            // ConsultaEntradasForm
+            // buscarButton
+            // 
+            this.buscarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(314, 5);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(32, 30);
+            this.buscarButton.TabIndex = 42;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
+            // 
+            // ConsultaClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,10 +122,10 @@
             this.Controls.Add(this.textBoxFiltro);
             this.Controls.Add(this.comboBoxCampos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ConsultaEntradasForm";
+            this.Name = "ConsultaClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta Entradas";
-            this.Load += new System.EventHandler(this.ConsultaEntradasForm_Load);
+            this.Text = "Consulta Clientes";
+            this.Load += new System.EventHandler(this.ConsultaClientesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,8 +35,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                this.UsuarioId = int.Parse(conexion.ObtenerValor(String.Format("Insert Into Usuarios (Nombre, Password, Prioridad) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Password, this.Prioridad)).ToString());
-                retorno = this.UsuarioId > 0;
+                conexion.Ejecutar(String.Format("INSERT INTO Usuarios (Nombre, Password, Prioridad) VALUES ('{0}','{1}','{2}')", this.Nombre, this.Password, this.Prioridad)).ToString();
+                retorno = true;
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -47,7 +47,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Update Usuarios set Nombre='{0}', Password='{1}', Prioridad='{2}' where UsuarioId={3}", this.Nombre, this.Password, this.Prioridad, this.UsuarioId));
+                conexion.Ejecutar(String.Format("UPDATE Usuarios SET Nombre='{0}', Password='{1}', Prioridad='{2}' WHERE UsuarioId={3}", this.Nombre, this.Password, this.Prioridad, this.UsuarioId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -59,7 +59,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Delete From Usuarios where UsuarioId={0}", this.UsuarioId));
+                conexion.Ejecutar(String.Format("DELETE FROM Usuarios WHERE UsuarioId={0}", this.UsuarioId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -68,7 +68,7 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            dt = conexion.ObtenerDatos("Select * from Usuarios Where UsuarioId=" + IdBuscado);
+            dt = conexion.ObtenerDatos("SELECT * FROM Usuarios WHERE UsuarioId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
@@ -84,7 +84,7 @@ namespace BLL
             string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + ordenar));
+            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Usuarios WHERE " + Condicion + ordenar));
         }
 
         public bool Verificar(string Nombre, string Password, string Prioridad)
@@ -92,7 +92,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                dt = conexion.ObtenerDatos(String.Format("Select * From Usuarios where Nombre='{0}' and Password='{1}' and Prioridad='{2}'", Nombre, Password, Prioridad));
+                dt = conexion.ObtenerDatos(String.Format("SELECT * FROM Usuarios WHERE Nombre='{0}' AND Password='{1}' AND Prioridad='{2}'", Nombre, Password, Prioridad));
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;

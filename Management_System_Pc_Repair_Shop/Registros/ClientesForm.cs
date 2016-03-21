@@ -53,7 +53,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void ObtenerValores()
         {
-            
             int.TryParse(clienteIdTextBox.Text, out id);
             clientes.ClienteId = id;
             clientes.Nombre = nombreTextBox.Text;

@@ -108,7 +108,7 @@ namespace BLL
             DataTable dt = new DataTable();
             DataTable dtTelefonos = new DataTable();
 
-            dt = conexion.ObtenerDatos("Select * From Clientes Where ClienteId=" + IdBuscado);
+            dt = conexion.ObtenerDatos("SELECT * FROM Clientes WHERE ClienteId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
@@ -116,7 +116,7 @@ namespace BLL
                 this.Apellido = dt.Rows[0]["Apellido"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
 
-                dtTelefonos = conexion.ObtenerDatos(String.Format("Select C.Nombre, T.Telefono as Telefono from Clientes C inner join ClientesTelefonos T on C.ClienteId = T.ClienteId where C.ClienteId = {0}", IdBuscado));
+                dtTelefonos = conexion.ObtenerDatos(String.Format("SELECT * FROM ClientesTelefonos WHERE ClienteId =" + IdBuscado));
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {

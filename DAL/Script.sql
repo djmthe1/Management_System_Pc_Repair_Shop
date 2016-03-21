@@ -43,9 +43,9 @@ create table Entradas(
 	Fecha date,
 	FechaEntrega date,
 	ClienteId int References Clientes (ClienteId),
-	Problemas varchar (100),
 	Notas varchar (100),
-	RecibidoPor varchar(20)
+	RecibidoPor varchar(20),
+	Salio bit
 )
 
 Go
@@ -54,6 +54,7 @@ Create Table EntradasArticulos(
 	Id int Identity(1,1) Primary Key,
 	EntradaId int Foreign Key References Entradas (EntradaId),
 	Articulo varchar (100),
+	Problema varchar (200)
 )
 
 Go
@@ -62,6 +63,7 @@ create table Salidas(
 	SalidaId int identity primary key,
 	Fecha date,
 	EntradaId int References Entradas (EntradaId),
+	Observacion varchar (200),
 	Entregado bit,
 	RetiradoPor varchar(20)
 )
@@ -71,6 +73,7 @@ Go
 create table Facturas(
 	FacturaNo int identity primary key,
 	Fecha date,
+	SalidaId int References Salidas (SalidaId),
 	MontoAPagar int,
 	DespachadoPor varchar(20)
 )

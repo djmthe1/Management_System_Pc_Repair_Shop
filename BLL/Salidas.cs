@@ -13,16 +13,18 @@ namespace BLL
         public int SalidaId { set; get; }
         public string Fecha { set; get; }
         public int EntradaId { set; get; }
+        public string Observacion { set; get; }
         public bool Entregado { set; get; }
         public string RetiradoPor { set; get; }
         ConexionDb conexion = new ConexionDb();
         DataTable dt = new DataTable();
 
-        public Salidas(int salidaId, string fecha, int entradaId, bool entregado, string retiradoPor)
+        public Salidas(int salidaId, string fecha, int entradaId, string obsevacion, bool entregado, string retiradoPor)
         {
             this.SalidaId = salidaId;
             this.Fecha = fecha;
             this.EntradaId = entradaId;
+            this.Observacion = obsevacion;
             this.Entregado = entregado;
             this.RetiradoPor = retiradoPor;
         }
@@ -37,8 +39,11 @@ namespace BLL
             bool retorno = false;
             try
             {
-                this.SalidaId = (int)conexion.ObtenerValor(String.Format("Insert Into Salidas (Fecha, EntradaId, Entregado, RetiradoPor) Values('{0}',{1},'{2}','{3}') Select @@Identity", this.Fecha, this.EntradaId, this.RetiradoPor));
-                retorno = this.SalidaId > 0;
+                retorno = conexion.Ejecutar(String.Format("INSERT INTO Salidas (Fecha, EntradaId, Observacion, RetiradoPor) VALUES('{0}',{1},'{2}','{3}','{4}')", this.Fecha, this.EntradaId, this.Observacion, this.RetiradoPor));
+                if (retorno)
+                {
+                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Salio='True', WHERE EntradaId={0}", this.EntradaId));
+                }
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -49,7 +54,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Update Salidas set Fecha='{0}', EntradaId={1}, Entregado='{2}', RetiradoPor='{3}' where SalidaId={4}", this.Fecha, this.EntradaId, this.Entregado, this.RetiradoPor, this.SalidaId));
+                conexion.Ejecutar(String.Format("UPDATE Salidas SET Fecha='{0}', EntradaId={1}, Observacion='{2}', RetiradoPor='{3}' WHERE SalidaId={4}", this.Fecha, this.EntradaId, this.Observacion, this.RetiradoPor, this.SalidaId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -61,7 +66,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Delete From Salidas where SalidaId={0}", this.SalidaId));
+                conexion.Ejecutar(String.Format("DELETE FROM Salidas WHERE SalidaId={0}", this.SalidaId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -70,13 +75,13 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            dt = conexion.ObtenerDatos("Select * From Salidas Where SalidaId=" + IdBuscado);
+            dt = conexion.ObtenerDatos("SELECT * FROM Salidas WHERE SalidaId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 this.SalidaId = (int)dt.Rows[0]["SalidaId"];
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.EntradaId = (int)dt.Rows[0]["EntradaId"];
-                this.Entregado = (bool)dt.Rows[0]["Entregado"];
+                this.Observacion = dt.Rows[0]["Observacion"].ToString();
                 this.RetiradoPor = dt.Rows[0]["RetiradoPor"].ToString();
             }
             return dt.Rows.Count > 0;
@@ -87,7 +92,7 @@ namespace BLL
             string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("Select " + Campos + " From Salidas where " + Condicion + ordenar));
+            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Salidas WHERE " + Condicion + ordenar));
         }
 
         public bool VerificarVencidos(string Campos)
@@ -96,7 +101,7 @@ namespace BLL
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("Select * From Salidas Where Fecha >= " + hoy + Campos);
+                dt = conexion.ObtenerDatos("SELECT * FROM Salidas WHERE Fecha >= " + hoy + Campos);
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;

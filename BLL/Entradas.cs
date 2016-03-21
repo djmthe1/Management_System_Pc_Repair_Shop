@@ -14,21 +14,20 @@ namespace BLL
         public string Fecha { set; get; }
         public string FechaEntrega { set; get; }
         public int ClienteId { set; get; }
-        public string Problemas { set; get; }
         public string Notas { set; get; }
         public string RecibidoPor { set; get; }
+        public bool Salio { set; get; }
         EntradasArticulos Articulo = new EntradasArticulos();
         public List<EntradasArticulos> articulos { get; set; }
         ConexionDb conexion = new ConexionDb();
         DataTable dt = new DataTable();
 
-        public Entradas(int entradaId, string fecha, string fechaEntrega, int clienteId, string problemas, string nota, string recibidoPor)
+        public Entradas(int entradaId, string fecha, string fechaEntrega, int clienteId, string nota, string recibidoPor)
         {
             this.EntradaId = entradaId;
             this.Fecha = fecha;
             this.FechaEntrega = fechaEntrega;
             this.ClienteId = clienteId;
-            this.Problemas = problemas;
             this.Notas = nota;
             this.RecibidoPor = recibidoPor;
         }
@@ -38,10 +37,9 @@ namespace BLL
             articulos = new List<EntradasArticulos>();
         }
 
-        public void InsertarArticulo(int Id, int EntradaId, string Articulo)
+        public void InsertarArticulo(int Id, int EntradaId, string Articulo, string Problema)
         {
-            this.articulos.Add(new EntradasArticulos(Id, EntradaId, Articulo));
-
+            this.articulos.Add(new EntradasArticulos(Id, EntradaId, Articulo, Problema));
         }
 
         public override bool Insertar()
@@ -51,7 +49,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla personas
-                identity = conexion.ObtenerValor(string.Format("Insert Into Entradas (Fecha, FechaEntrega, ClienteId, Problemas, Notas, RecibidoPor) Values ('{0}','{2}',{1},'{3}','{4}','{5}') Select @@Identity", this.Fecha, this.FechaEntrega, this.ClienteId, this.Problemas, this.Notas, this.RecibidoPor));
+                identity = conexion.ObtenerValor(string.Format("Insert Into Entradas (Fecha, FechaEntrega, ClienteId, Notas, RecibidoPor) Values ('{0}','{2}',{1},'{3}','{4}') Select @@Identity", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -61,7 +59,7 @@ namespace BLL
                 {
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId,Articulo) Values ({0},'{1}')", descripcion.EntradaId, descripcion.Articulo));
+                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
                     }
                 }
             }
@@ -77,13 +75,13 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Update Entradas Set Fecha='{0}', FechaEntrega='{1}', ClienteId={2}, Problemas='{3}', Notas='{4}', RecibidoPor='{5}' where EntradaId={6}", this.Fecha, this.FechaEntrega, this.ClienteId, this.Problemas, this.Notas, this.RecibidoPor, this.EntradaId));
+                retorno = conexion.Ejecutar(String.Format("Update Entradas Set Fecha='{0}', FechaEntrega='{1}', ClienteId={2}, Notas='{3}', RecibidoPor='{4}' where EntradaId={5}", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor, this.EntradaId));
                 if (retorno)
                 {
                     conexion.Ejecutar(string.Format("Delete From EntradasArticulos Where EntradaId= {0}", this.EntradaId));
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId,Articulo) Values ({0},'{1}')", descripcion.EntradaId, descripcion.Articulo));
+                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
                     }
                 }
             }
@@ -115,7 +113,6 @@ namespace BLL
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
                 this.FechaEntrega = dt.Rows[0]["FechaEntrega"].ToString();
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
-                this.Problemas = dt.Rows[0]["Problemas"].ToString();
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
 
@@ -123,7 +120,7 @@ namespace BLL
 
                 foreach (DataRow row in dtArticulos.Rows)
                 {
-                    InsertarArticulo(1, EntradaId, row["Articulo"].ToString());
+                    InsertarArticulo(1, EntradaId, row["Articulo"].ToString(), row["Problema"].ToString());
                 }
             }
             return dt.Rows.Count > 0;
@@ -143,7 +140,7 @@ namespace BLL
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("Select * From Entradas Where Fecha >= " + hoy + Campos);
+                dt = conexion.ObtenerDatos("SELECT * FROM Entradas WHERE Fecha >= getDate()");
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;
