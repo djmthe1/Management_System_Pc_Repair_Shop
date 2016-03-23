@@ -22,7 +22,7 @@ namespace Management_System_Pc_Repair_Shop
 
         }
 
-        Reportes.PresentarReportesForm PresentarR = new Reportes.PresentarReportesForm();
+        Reportes.VisorReportesForm PresentarR = new Reportes.VisorReportesForm();
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -156,9 +156,7 @@ namespace Management_System_Pc_Repair_Shop
 
         private void piezasToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Reportes.PiezasCrystalReport PiezasR = new Reportes.PiezasCrystalReport();
-            PresentarR.crystalReportViewer.ReportSource = PiezasR;
-            PresentarR.ShowDialog();
+            
         }
     }
 }

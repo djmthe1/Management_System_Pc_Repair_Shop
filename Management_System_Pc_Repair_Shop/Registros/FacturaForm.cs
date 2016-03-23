@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace Management_System_Pc_Repair_Shop.Registros
 {
@@ -15,6 +16,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
         public FacturaForm()
         {
             InitializeComponent();
+        }
+
+        private void FacturaForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

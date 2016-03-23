@@ -36,6 +36,7 @@
             this.labelBuscar = new System.Windows.Forms.Label();
             this.textBoxFiltro = new System.Windows.Forms.TextBox();
             this.comboBoxCampos = new System.Windows.Forms.ComboBox();
+            this.imprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,28 @@
             this.comboBoxCampos.Size = new System.Drawing.Size(91, 21);
             this.comboBoxCampos.TabIndex = 43;
             // 
+            // imprimirButton
+            // 
+            this.imprimirButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imprimirButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirButton.Image")));
+            this.imprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.imprimirButton.Location = new System.Drawing.Point(418, 276);
+            this.imprimirButton.Name = "imprimirButton";
+            this.imprimirButton.Size = new System.Drawing.Size(88, 27);
+            this.imprimirButton.TabIndex = 60;
+            this.imprimirButton.Text = "Imprimir";
+            this.imprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.imprimirButton.UseVisualStyleBackColor = true;
+            this.imprimirButton.Click += new System.EventHandler(this.imprimirButton_Click);
+            // 
             // ConsultaEntradasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 312);
+            this.Controls.Add(this.imprimirButton);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.labelConteo);
             this.Controls.Add(this.textBoxConteo);
@@ -146,5 +164,6 @@
         private System.Windows.Forms.Label labelBuscar;
         private System.Windows.Forms.TextBox textBoxFiltro;
         private System.Windows.Forms.ComboBox comboBoxCampos;
+        private System.Windows.Forms.Button imprimirButton;
     }
 }

@@ -48,7 +48,7 @@ namespace BLL
             object identity;
             try
             {
-                //obtengo el identity insertado en la tabla personas
+                //obtengo el identity insertado en la tabla
                 identity = conexion.ObtenerValor(string.Format("Insert Into Clientes (Nombre, Apellido, Direccion) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Apellido, this.Direccion));
 
                 //intento convertirlo a entero

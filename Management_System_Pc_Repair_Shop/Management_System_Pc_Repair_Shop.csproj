@@ -179,18 +179,6 @@
     <Compile Include="Registros\UsuariosForm.Designer.cs">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\PiezasCrystalReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PiezasCrystalReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\PresentarReportesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\PresentarReportesForm.Designer.cs">
-      <DependentUpon>PresentarReportesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\VisorReportesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,13 +246,6 @@
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PiezasCrystalReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PiezasCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PresentarReportesForm.resx">
-      <DependentUpon>PresentarReportesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportPiezas.rdlc" />
     <EmbeddedResource Include="Reportes\VisorReportesForm.resx">
       <DependentUpon>VisorReportesForm.cs</DependentUpon>
@@ -322,6 +303,7 @@
     <Content Include="ImageIcon\1456378383_Download-Computer.ico" />
     <Content Include="ImageIcon\873402456.jpg" />
     <Content Include="ImageIcon\computer-repair.ico" />
+    <Content Include="ImageIcon\custom-reports-icon.png" />
     <Content Include="ImageIcon\Icons8-Windows-8-Computer-Hardware-Enter.ico" />
     <Content Include="ImageIcon\Icons8-Windows-8-Ecommerce-Bill.ico" />
     <Content Include="ImageIcon\Icons8-Windows-8-Industry-Feed-Out.ico" />

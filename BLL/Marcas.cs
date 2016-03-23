@@ -29,8 +29,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                this.MarcaId = (int)conexion.ObtenerValor(String.Format("Insert Into Marcas (Descripcion) Values('{0}') Select @@Identity", this.Descripcion));
-                retorno = this.MarcaId > 0;
+                conexion.Ejecutar(String.Format("Insert Into Marcas (Descripcion) Values ('{0}') ", this.Descripcion));
+                retorno = true;
             }
             catch (Exception ex) { throw ex; }
             return retorno;

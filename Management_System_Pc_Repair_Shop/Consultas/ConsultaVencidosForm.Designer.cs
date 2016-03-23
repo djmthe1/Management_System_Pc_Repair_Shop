@@ -32,6 +32,7 @@
             this.labelConteo = new System.Windows.Forms.Label();
             this.textBoxConteo = new System.Windows.Forms.TextBox();
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
+            this.imprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +62,27 @@
             this.dataGridViewConsulta.Size = new System.Drawing.Size(486, 255);
             this.dataGridViewConsulta.TabIndex = 32;
             // 
+            // imprimirButton
+            // 
+            this.imprimirButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imprimirButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirButton.Image")));
+            this.imprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.imprimirButton.Location = new System.Drawing.Point(414, 276);
+            this.imprimirButton.Name = "imprimirButton";
+            this.imprimirButton.Size = new System.Drawing.Size(88, 27);
+            this.imprimirButton.TabIndex = 60;
+            this.imprimirButton.Text = "Imprimir";
+            this.imprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.imprimirButton.UseVisualStyleBackColor = true;
+            // 
             // ConsultaVencidosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 312);
+            this.Controls.Add(this.imprimirButton);
             this.Controls.Add(this.labelConteo);
             this.Controls.Add(this.textBoxConteo);
             this.Controls.Add(this.dataGridViewConsulta);
@@ -84,5 +101,6 @@
         private System.Windows.Forms.Label labelConteo;
         private System.Windows.Forms.TextBox textBoxConteo;
         private System.Windows.Forms.DataGridView dataGridViewConsulta;
+        private System.Windows.Forms.Button imprimirButton;
     }
 }

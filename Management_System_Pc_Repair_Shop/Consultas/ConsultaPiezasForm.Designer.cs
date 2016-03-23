@@ -36,13 +36,14 @@
             this.textBoxFiltro = new System.Windows.Forms.TextBox();
             this.comboBoxCampos = new System.Windows.Forms.ComboBox();
             this.buscarButton = new System.Windows.Forms.Button();
+            this.imprimirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConteo
             // 
             this.labelConteo.AutoSize = true;
-            this.labelConteo.Location = new System.Drawing.Point(4, 292);
+            this.labelConteo.Location = new System.Drawing.Point(5, 293);
             this.labelConteo.Name = "labelConteo";
             this.labelConteo.Size = new System.Drawing.Size(44, 13);
             this.labelConteo.TabIndex = 19;
@@ -50,7 +51,7 @@
             // 
             // textBoxConteo
             // 
-            this.textBoxConteo.Location = new System.Drawing.Point(54, 289);
+            this.textBoxConteo.Location = new System.Drawing.Point(55, 290);
             this.textBoxConteo.Name = "textBoxConteo";
             this.textBoxConteo.ReadOnly = true;
             this.textBoxConteo.Size = new System.Drawing.Size(39, 20);
@@ -61,7 +62,7 @@
             this.dataGridViewConsulta.AllowUserToAddRows = false;
             this.dataGridViewConsulta.AllowUserToDeleteRows = false;
             this.dataGridViewConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsulta.Location = new System.Drawing.Point(11, 55);
+            this.dataGridViewConsulta.Location = new System.Drawing.Point(12, 56);
             this.dataGridViewConsulta.Name = "dataGridViewConsulta";
             this.dataGridViewConsulta.ReadOnly = true;
             this.dataGridViewConsulta.Size = new System.Drawing.Size(490, 214);
@@ -70,7 +71,7 @@
             // labelBuscar
             // 
             this.labelBuscar.AutoSize = true;
-            this.labelBuscar.Location = new System.Drawing.Point(11, 12);
+            this.labelBuscar.Location = new System.Drawing.Point(12, 13);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(62, 13);
             this.labelBuscar.TabIndex = 16;
@@ -78,7 +79,7 @@
             // 
             // textBoxFiltro
             // 
-            this.textBoxFiltro.Location = new System.Drawing.Point(145, 13);
+            this.textBoxFiltro.Location = new System.Drawing.Point(146, 14);
             this.textBoxFiltro.MaxLength = 50;
             this.textBoxFiltro.Name = "textBoxFiltro";
             this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
@@ -91,7 +92,7 @@
             this.comboBoxCampos.Items.AddRange(new object[] {
             "PiezaId",
             "Descripcion"});
-            this.comboBoxCampos.Location = new System.Drawing.Point(79, 12);
+            this.comboBoxCampos.Location = new System.Drawing.Point(80, 13);
             this.comboBoxCampos.Name = "comboBoxCampos";
             this.comboBoxCampos.Size = new System.Drawing.Size(60, 21);
             this.comboBoxCampos.TabIndex = 14;
@@ -102,18 +103,35 @@
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(309, 7);
+            this.buscarButton.Location = new System.Drawing.Point(310, 8);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
             this.buscarButton.TabIndex = 28;
             this.buscarButton.UseVisualStyleBackColor = true;
             this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
+            // imprimirButton
+            // 
+            this.imprimirButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imprimirButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imprimirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimirButton.Image = ((System.Drawing.Image)(resources.GetObject("imprimirButton.Image")));
+            this.imprimirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.imprimirButton.Location = new System.Drawing.Point(415, 279);
+            this.imprimirButton.Name = "imprimirButton";
+            this.imprimirButton.Size = new System.Drawing.Size(88, 27);
+            this.imprimirButton.TabIndex = 60;
+            this.imprimirButton.Text = "Imprimir";
+            this.imprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.imprimirButton.UseVisualStyleBackColor = true;
+            this.imprimirButton.Click += new System.EventHandler(this.imprimirButton_Click);
+            // 
             // ConsultaPiezasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 312);
+            this.Controls.Add(this.imprimirButton);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.labelConteo);
             this.Controls.Add(this.textBoxConteo);
@@ -141,5 +159,6 @@
         private System.Windows.Forms.TextBox textBoxFiltro;
         private System.Windows.Forms.ComboBox comboBoxCampos;
         private System.Windows.Forms.Button buscarButton;
+        private System.Windows.Forms.Button imprimirButton;
     }
 }

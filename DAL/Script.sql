@@ -71,11 +71,23 @@ create table Salidas(
 Go
 
 create table Facturas(
-	FacturaNo int identity primary key,
+	FacturaId int identity primary key,
 	Fecha date,
 	SalidaId int References Salidas (SalidaId),
-	MontoAPagar int,
+	ClienteId int References Clientes (ClienteId),
+	Total float,
+	MontoAPagar float,
 	DespachadoPor varchar(20)
+)
+
+Go
+
+create table ArticulosVendidos(
+	Id int identity primary key,
+	FacturaId int References Facturas (FacturaId),
+	Pieza varchar,
+	Marca varchar,
+	Precio float
 )
 
 Go

@@ -48,7 +48,7 @@ namespace BLL
             object identity;
             try
             {
-                //obtengo el identity insertado en la tabla personas
+                //obtengo el identity insertado en la tabla
                 identity = conexion.ObtenerValor(string.Format("Insert Into Entradas (Fecha, FechaEntrega, ClienteId, Notas, RecibidoPor) Values ('{0}','{2}',{1},'{3}','{4}') Select @@Identity", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor));
 
                 //intento convertirlo a entero
@@ -75,10 +75,10 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Update Entradas Set Fecha='{0}', FechaEntrega='{1}', ClienteId={2}, Notas='{3}', RecibidoPor='{4}' where EntradaId={5}", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor, this.EntradaId));
+                retorno = conexion.Ejecutar(String.Format("Update Entradas Set Fecha='{0}', FechaEntrega='{1}', ClienteId={2}, Notas='{3}', RecibidoPor='{4}' WHERE EntradaId={5}", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor, this.EntradaId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("Delete From EntradasArticulos Where EntradaId= {0}", this.EntradaId));
+                    conexion.Ejecutar(string.Format("Delete FROM EntradasArticulos WHERE EntradaId= {0}", this.EntradaId));
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
                         conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
@@ -94,9 +94,9 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Delete From Entradas where EntradaId={0}", this.EntradaId));
+                retorno = conexion.Ejecutar(String.Format("Delete FROM Entradas WHERE EntradaId={0}", this.EntradaId));
                 if (retorno)
-                    conexion.Ejecutar(string.Format("Delete From EntradasArticulos Where EntradaId={0}", this.EntradaId));
+                    conexion.Ejecutar(string.Format("Delete FROM EntradasArticulos WHERE EntradaId={0}", this.EntradaId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -106,7 +106,7 @@ namespace BLL
         {
             DataTable dtArticulos = new DataTable();
 
-            dt = conexion.ObtenerDatos("Select * From Entradas Where EntradaId=" + IdBuscado);
+            dt = conexion.ObtenerDatos("SELECT * FROM Entradas WHERE EntradaId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 this.EntradaId = (int)dt.Rows[0]["EntradaId"];
@@ -116,7 +116,7 @@ namespace BLL
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
 
-                dtArticulos = conexion.ObtenerDatos(String.Format("Select E.Fecha, A.Articulo as Articulo from Entradas E inner join EntradasArticulos A on E.EntradaId = A.EntradaId where E.EntradaId = {0}", IdBuscado));
+                dtArticulos = conexion.ObtenerDatos(String.Format("SELECT E.Fecha, A.Articulo as Articulo FROM Entradas E inner join EntradasArticulos A on E.EntradaId = A.EntradaId WHERE E.EntradaId = {0}", IdBuscado));
 
                 foreach (DataRow row in dtArticulos.Rows)
                 {
@@ -131,7 +131,7 @@ namespace BLL
             string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("Select " + Campos + " from Entradas where " + Condicion + ordenar));
+            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Entradas WHERE " + Condicion + ordenar));
         }
 
         public bool VerificarAtrasos(string Campos)
