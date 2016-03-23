@@ -24,5 +24,10 @@ namespace Management_System_Pc_Repair_Shop.Consultas
             dataGridViewConsulta.DataSource = entradas.VerificarAtrasos("EntradaId, EntradaId, Fecha, FechaEntrega, ClienteId, problemas, Nota, RecibidoPor");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
+
+        private void imprimirButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

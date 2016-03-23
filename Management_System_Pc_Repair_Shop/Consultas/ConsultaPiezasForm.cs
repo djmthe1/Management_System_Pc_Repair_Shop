@@ -39,7 +39,16 @@ namespace Management_System_Pc_Repair_Shop.Consultas
 
         private void imprimirButton_Click(object sender, EventArgs e)
         {
-            
+            Reportes.VisorReportesForm Visor = new Reportes.VisorReportesForm();
+            DataTable dt = new DataTable();
+
+            dt = (DataTable)dataGridViewConsulta.DataSource;
+            dt.TableName = "Piezas";
+
+            Visor.reporte = "ReportPiezas.rdlc";
+            Visor.data = dt;
+
+            Visor.ShowDialog();
         }
     }
 }

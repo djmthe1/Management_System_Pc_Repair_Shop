@@ -88,6 +88,12 @@
     <Compile Include="Consultas\ConsultaEntradasForm.Designer.cs">
       <DependentUpon>ConsultaEntradasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaFacturasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaFacturasForm.Designer.cs">
+      <DependentUpon>ConsultaFacturasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaMarcasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     <EmbeddedResource Include="Consultas\ConsultaEntradasForm.resx">
       <DependentUpon>ConsultaEntradasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaFacturasForm.resx">
+      <DependentUpon>ConsultaFacturasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaMarcasForm.resx">
       <DependentUpon>ConsultaMarcasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,7 +255,9 @@
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportPiezas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportPiezas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VisorReportesForm.resx">
       <DependentUpon>VisorReportesForm.cs</DependentUpon>
     </EmbeddedResource>

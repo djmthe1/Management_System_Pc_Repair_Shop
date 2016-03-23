@@ -24,5 +24,10 @@ namespace Management_System_Pc_Repair_Shop.Consultas
             dataGridViewConsulta.DataSource = salidas.VerificarVencidos("SalidaId, Fecha, EntradaId, Entregado, RetiradoPor");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
+
+        private void imprimirButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -124,6 +124,7 @@
             this.imprimirButton.Text = "Imprimir";
             this.imprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.imprimirButton.UseVisualStyleBackColor = true;
+            this.imprimirButton.Click += new System.EventHandler(this.imprimirButton_Click);
             // 
             // ConsultaMarcasForm
             // 

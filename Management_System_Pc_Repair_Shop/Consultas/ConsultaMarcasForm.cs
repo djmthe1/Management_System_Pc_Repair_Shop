@@ -36,5 +36,10 @@ namespace Management_System_Pc_Repair_Shop.Consultas
             dataGridViewConsulta.DataSource = marcas.Listado("MarcaId, Descripcion", filtro, "");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
+
+        private void imprimirButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

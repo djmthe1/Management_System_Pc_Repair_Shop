@@ -82,6 +82,12 @@ namespace Management_System_Pc_Repair_Shop
             Rsalidas.Show();
         }
 
+        private void facturasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Registros.FacturaForm Rfacturas = new Registros.FacturaForm();
+            Rfacturas.Show();
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Consultas.ConsultaClientesForm Cclientes = new Consultas.ConsultaClientesForm();
@@ -122,6 +128,12 @@ namespace Management_System_Pc_Repair_Shop
         {
             Consultas.ConsultaVencidosForm Cvencidos = new Consultas.ConsultaVencidosForm();
             Cvencidos.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaFacturasForm Cfacturas = new Consultas.ConsultaFacturasForm();
+            Cfacturas.Show();
         }
 
         private void entradasToolStripButton_Click(object sender, EventArgs e)

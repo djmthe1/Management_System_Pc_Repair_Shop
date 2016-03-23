@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,16 @@ namespace Management_System_Pc_Repair_Shop.Reportes
             InitializeComponent();
         }
 
+        public string reporte { get; set; }
+        public DataTable data { get; set; }
+
         private void VisorReportesForm_Load(object sender, EventArgs e)
         {
-
+            this.visorReportViewer.Reset();
+            this.visorReportViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+            this.visorReportViewer.LocalReport.ReportPath = this.reporte;
+            ReportDataSource source = new ReportDataSource(this.data.TableName, this.data);
+            this.visorReportViewer.LocalReport.DataSources.Add(source);
             this.visorReportViewer.RefreshReport();
         }
     }

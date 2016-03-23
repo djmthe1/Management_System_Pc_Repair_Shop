@@ -45,6 +45,7 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.facturaPanel = new System.Windows.Forms.Panel();
+            this.totalVentaTextBox = new System.Windows.Forms.TextBox();
             this.marcaComboBox = new System.Windows.Forms.ComboBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.botonInsertar = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             this.salidaIdTextBox = new System.Windows.Forms.TextBox();
             this.facturaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaLabel = new System.Windows.Forms.Label();
-            this.totalVentaTextBox = new System.Windows.Forms.TextBox();
             this.cargoDeReparacionTextBox = new System.Windows.Forms.TextBox();
             this.montoAPagarTextBox = new System.Windows.Forms.TextBox();
             this.totalFacturaTextBox = new System.Windows.Forms.TextBox();
@@ -189,7 +189,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(345, 437);
+            this.EliminarButton.Location = new System.Drawing.Point(340, 437);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
             this.EliminarButton.TabIndex = 60;
@@ -204,7 +204,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(103, 437);
+            this.NuevoButton.Location = new System.Drawing.Point(98, 437);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
             this.NuevoButton.TabIndex = 58;
@@ -219,7 +219,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(224, 437);
+            this.GuardarButton.Location = new System.Drawing.Point(219, 437);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
             this.GuardarButton.TabIndex = 59;
@@ -229,6 +229,7 @@
             // 
             // facturaPanel
             // 
+            this.facturaPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.facturaPanel.Controls.Add(this.totalVentaTextBox);
             this.facturaPanel.Controls.Add(this.marcaComboBox);
             this.facturaPanel.Controls.Add(this.precioTextBox);
@@ -244,6 +245,13 @@
             this.facturaPanel.Name = "facturaPanel";
             this.facturaPanel.Size = new System.Drawing.Size(501, 194);
             this.facturaPanel.TabIndex = 61;
+            // 
+            // totalVentaTextBox
+            // 
+            this.totalVentaTextBox.Location = new System.Drawing.Point(389, 162);
+            this.totalVentaTextBox.Name = "totalVentaTextBox";
+            this.totalVentaTextBox.Size = new System.Drawing.Size(67, 20);
+            this.totalVentaTextBox.TabIndex = 84;
             // 
             // marcaComboBox
             // 
@@ -342,13 +350,6 @@
             this.fechaLabel.TabIndex = 67;
             this.fechaLabel.Text = "Fecha";
             // 
-            // totalVentaTextBox
-            // 
-            this.totalVentaTextBox.Location = new System.Drawing.Point(389, 162);
-            this.totalVentaTextBox.Name = "totalVentaTextBox";
-            this.totalVentaTextBox.Size = new System.Drawing.Size(67, 20);
-            this.totalVentaTextBox.TabIndex = 84;
-            // 
             // cargoDeReparacionTextBox
             // 
             this.cargoDeReparacionTextBox.Location = new System.Drawing.Point(145, 122);
@@ -374,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 490);
+            this.ClientSize = new System.Drawing.Size(526, 490);
             this.Controls.Add(this.totalFacturaTextBox);
             this.Controls.Add(this.montoAPagarTextBox);
             this.Controls.Add(this.cargoDeReparacionTextBox);
