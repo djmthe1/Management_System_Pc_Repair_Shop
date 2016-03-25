@@ -37,9 +37,9 @@ namespace BLL
             articulos = new List<EntradasArticulos>();
         }
 
-        public void InsertarArticulo(int Id, int EntradaId, string Articulo, string Problema)
+        public void InsertarArticulo(string Articulo, string Problema)
         {
-            this.articulos.Add(new EntradasArticulos(Id, EntradaId, Articulo, Problema));
+            this.articulos.Add(new EntradasArticulos(Articulo, Problema));
         }
 
         public override bool Insertar()
@@ -120,7 +120,7 @@ namespace BLL
 
                 foreach (DataRow row in dtArticulos.Rows)
                 {
-                    InsertarArticulo(1, EntradaId, row["Articulo"].ToString(), row["Problema"].ToString());
+                    InsertarArticulo(row["Articulo"].ToString(), row["Problema"].ToString());
                 }
             }
             return dt.Rows.Count > 0;

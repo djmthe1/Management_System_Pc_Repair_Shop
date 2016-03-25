@@ -31,9 +31,9 @@ namespace BLL
             telefonos = new List<ClientesTelefonos>();
         }
 
-        public void InsertarTelefono(int Id, int ClienteId, string Telefono)
+        public void InsertarTelefono(int Id, string Tipo, string Telefono)
         {
-            this.telefonos.Add(new ClientesTelefonos(Id, ClienteId, Telefono));
+            this.telefonos.Add(new ClientesTelefonos(Id, Tipo, Telefono));
 
         }
 
@@ -59,7 +59,7 @@ namespace BLL
                 {
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (Telefono) Values ({0})",  numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0})", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -81,7 +81,7 @@ namespace BLL
                     conexion.Ejecutar(string.Format("Delete From ClientesTelefonos Where ClienteId= {0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (Telefono) Values ({0})", numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0})", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -120,7 +120,7 @@ namespace BLL
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
-                    InsertarTelefono(1, ClienteId, row["Telefono"].ToString());
+                    InsertarTelefono(1, row["Tipo"].ToString(), row["Telefono"].ToString());
                 }
             }
             return dt.Rows.Count > 0;

@@ -41,13 +41,11 @@ namespace Management_System_Pc_Repair_Shop.Consultas
         {
             Reportes.VisorReportesForm Visor = new Reportes.VisorReportesForm();
             DataTable dt = new DataTable();
-
+       
             dt = (DataTable)dataGridViewConsulta.DataSource;
             dt.TableName = "Piezas";
-
-            Visor.reporte = "ReportPiezas.rdlc";
+            Visor.reporte = "Reportes.ReportPiezas.rdlc";
             Visor.data = dt;
-
             Visor.ShowDialog();
         }
     }

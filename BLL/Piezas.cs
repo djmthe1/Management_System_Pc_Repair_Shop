@@ -29,7 +29,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Insert Into Piezas (Descripcion) Values ('{0}')", this.Descripcion));
+                conexion.Ejecutar(String.Format("INSERT INTO Piezas (Descripcion) VALUES ('{0}')", this.Descripcion));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -41,7 +41,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Update Piezas set Descripcion='{0}' where PiezaId={1}", this.Descripcion, this.PiezaId));
+                conexion.Ejecutar(String.Format("UPDATE Piezas SET Descripcion='{0}' WHERE PiezaId={1}", this.Descripcion, this.PiezaId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -53,7 +53,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("Delete From Piezas where PiezaId={0}", this.PiezaId));
+                conexion.Ejecutar(String.Format("DELETE FROM Piezas WHERE PiezaId={0}", this.PiezaId));
                 retorno = true;
             }
             catch (Exception ex) { throw ex; }
@@ -64,7 +64,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
 
-            dt = conexion.ObtenerDatos("Select * From Piezas Where PiezaId=" + IdBuscado);
+            dt = conexion.ObtenerDatos("SELECT * FROM Piezas WHERE PiezaId=" + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 this.PiezaId = (int)dt.Rows[0]["PiezaId"];
@@ -78,7 +78,7 @@ namespace BLL
             string ordenFinal = "";
             if (!Orden.Equals(""))
                 ordenFinal = " orden by  " + Orden;
-            return conexion.ObtenerDatos(string.Format("select " + Campos + " from Piezas where " + Condicion + Orden));
+            return conexion.ObtenerDatos(string.Format("SELECT " + Campos + " FROM Piezas WHERE " + Condicion + Orden));
 
         }
     }

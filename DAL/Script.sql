@@ -33,7 +33,8 @@ Go
 Create Table ClientesTelefonos(
 	Id int Identity(1,1) Primary Key,
 	ClienteId int Foreign Key References Clientes (ClienteId),
-	Telefono varchar (12),
+	Tipo varchar (10),
+	Telefono varchar (12)
 )
 
 Go
@@ -75,6 +76,7 @@ create table Facturas(
 	Fecha date,
 	SalidaId int References Salidas (SalidaId),
 	ClienteId int References Clientes (ClienteId),
+	CargoReparacion float,
 	Total float,
 	MontoAPagar float,
 	DespachadoPor varchar(20)

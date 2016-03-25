@@ -47,7 +47,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             nombreTextBox.Clear();
             apellidoTextBox.Clear();
             direccionTextBox.Clear();
-            telefonosListBox.Items.Clear();
+            telefonosDataGridView.Rows.Clear();
             clientes.LimpiarTelefono();
         }
 
@@ -58,6 +58,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             clientes.Nombre = nombreTextBox.Text;
             clientes.Apellido = apellidoTextBox.Text;
             clientes.Direccion = direccionTextBox.Text;
+            foreach (var numeros in clientes.telefonos)
+            {
+                telefonosDataGridView.Rows.Add(numeros.Telefono, numeros.Tipo);
+            }
         }
 
         private void DevolverValores()
@@ -66,6 +70,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             nombreTextBox.Text = clientes.Nombre.ToString();
             apellidoTextBox.Text = clientes.Apellido.ToString();
             direccionTextBox.Text = clientes.Direccion.ToString();
+            foreach (var numeros in clientes.telefonos)
+            {
+                telefonosDataGridView.Rows.Add(numeros.Telefono, numeros.Tipo);
+            }
         }
 
         private void botonBuscarCliente_Click(object sender, EventArgs e)
@@ -91,13 +99,25 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void botonInsertarTelefono_Click(object sender, EventArgs e)
         {
-            telefonosListBox.Items.Add(TelefonoTextBox.Text);
-            TelefonoTextBox.Clear();
+            try
+            { 
+                if (!TelefonoTextBox.Text.Equals("") || !tipoTelefonoComboBox.Text.Equals(""))
+                {
+                    telefonosDataGridView.Rows.Add(TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
+                    clientes.InsertarTelefono(1, TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
+                    TelefonoTextBox.Clear();
+                    tipoTelefonoComboBox.SelectedIndex = -1;
+                }
+            }
+            catch (Exception)
+            {
+                MensajeError("Error al insertar");
+            }
         }
 
         private void botonEliminarTelefono_Click(object sender, EventArgs e)
         {
-            if (telefonosListBox.SelectedIndex > 0)
+            /*if (telefonosDataGridView.SelectedIndex > 0)
             {
                 if (MessageBox.Show("Eliminar el Telefono: ", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     telefonosListBox.Items.RemoveAt(telefonosListBox.SelectedIndex);
@@ -105,7 +125,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             else
             {
                 MensajeAdvertencia("Seleccione un Telefono");
-            }
+            }*/
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -116,10 +136,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            for (int i = 0; i < telefonosListBox.Items.Count; i++)
-            {
-                clientes.InsertarTelefono(1, id, telefonosListBox.Items[i].ToString());
-            }
             if (clienteIdTextBox.Text == "")
             {
                 if (nombreTextBox.Text != "" && apellidoTextBox.Text != "" && direccionTextBox.Text != "")

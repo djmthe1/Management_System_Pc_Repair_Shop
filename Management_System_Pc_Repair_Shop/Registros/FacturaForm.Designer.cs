@@ -38,7 +38,7 @@
             this.cargoDeReparaciónLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.botonBuscarCliente = new System.Windows.Forms.Button();
+            this.botonBuscar = new System.Windows.Forms.Button();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -50,6 +50,9 @@
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.botonInsertar = new System.Windows.Forms.Button();
             this.articulosDataGridView = new System.Windows.Forms.DataGridView();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.articulosComboBox = new System.Windows.Forms.ComboBox();
             this.articuloLabel = new System.Windows.Forms.Label();
             this.marcaLabel = new System.Windows.Forms.Label();
@@ -154,16 +157,17 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "label9";
             // 
-            // botonBuscarCliente
+            // botonBuscar
             // 
-            this.botonBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarCliente.BackgroundImage")));
-            this.botonBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonBuscarCliente.Location = new System.Drawing.Point(200, 23);
-            this.botonBuscarCliente.Name = "botonBuscarCliente";
-            this.botonBuscarCliente.Size = new System.Drawing.Size(31, 29);
-            this.botonBuscarCliente.TabIndex = 57;
-            this.botonBuscarCliente.UseVisualStyleBackColor = true;
+            this.botonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscar.BackgroundImage")));
+            this.botonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonBuscar.Location = new System.Drawing.Point(200, 23);
+            this.botonBuscar.Name = "botonBuscar";
+            this.botonBuscar.Size = new System.Drawing.Size(31, 29);
+            this.botonBuscar.TabIndex = 57;
+            this.botonBuscar.UseVisualStyleBackColor = true;
+            this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
             // 
             // idTextBox
             // 
@@ -196,6 +200,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // NuevoButton
             // 
@@ -211,6 +216,7 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -226,6 +232,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // facturaPanel
             // 
@@ -255,6 +262,7 @@
             // 
             // marcaComboBox
             // 
+            this.marcaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.marcaComboBox.FormattingEnabled = true;
             this.marcaComboBox.Location = new System.Drawing.Point(227, 49);
             this.marcaComboBox.Name = "marcaComboBox";
@@ -277,17 +285,38 @@
             this.botonInsertar.Size = new System.Drawing.Size(25, 24);
             this.botonInsertar.TabIndex = 81;
             this.botonInsertar.UseVisualStyleBackColor = true;
+            this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
             // 
             // articulosDataGridView
             // 
             this.articulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.articulosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Articulo,
+            this.Marca,
+            this.Precio});
             this.articulosDataGridView.Location = new System.Drawing.Point(11, 77);
             this.articulosDataGridView.Name = "articulosDataGridView";
             this.articulosDataGridView.Size = new System.Drawing.Size(474, 76);
             this.articulosDataGridView.TabIndex = 79;
             // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Articulo";
+            this.Articulo.Name = "Articulo";
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
             // articulosComboBox
             // 
+            this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.articulosComboBox.FormattingEnabled = true;
             this.articulosComboBox.Location = new System.Drawing.Point(65, 50);
             this.articulosComboBox.Name = "articulosComboBox";
@@ -324,6 +353,7 @@
             this.buscarSalidaButton.Size = new System.Drawing.Size(31, 29);
             this.buscarSalidaButton.TabIndex = 63;
             this.buscarSalidaButton.UseVisualStyleBackColor = true;
+            this.buscarSalidaButton.Click += new System.EventHandler(this.buscarSalidaButton_Click);
             // 
             // salidaIdTextBox
             // 
@@ -387,7 +417,7 @@
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
-            this.Controls.Add(this.botonBuscarCliente);
+            this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.label9);
@@ -420,7 +450,7 @@
         private System.Windows.Forms.Label cargoDeReparaciónLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button botonBuscarCliente;
+        private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Button EliminarButton;
@@ -442,5 +472,8 @@
         private System.Windows.Forms.TextBox cargoDeReparacionTextBox;
         private System.Windows.Forms.TextBox montoAPagarTextBox;
         private System.Windows.Forms.TextBox totalFacturaTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

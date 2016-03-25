@@ -11,13 +11,28 @@ namespace BLL
     {
         public int Id { get; set; }
         public int ClienteId { get; set; }
+        public string Tipo { get; set; }
         public string Telefono { get; set; }
         ConexionDb conexion = new ConexionDb();
 
-        public ClientesTelefonos(int id, int clienteId, string telefono)
+        public ClientesTelefonos(int id, int clienteId, string tipo, string telefono)
         {
             this.Id = id;
             this.ClienteId = clienteId;
+            this.Tipo = tipo;
+            this.Telefono = telefono;
+        }
+
+        public ClientesTelefonos(int id, string tipo, string telefono)
+        {
+            this.Id = id;
+            this.Tipo = tipo;
+            this.Telefono = telefono;
+        }
+
+        public ClientesTelefonos(string tipo, string telefono)
+        {
+            this.Tipo = tipo;
             this.Telefono = telefono;
         }
 

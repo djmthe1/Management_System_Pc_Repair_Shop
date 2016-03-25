@@ -58,9 +58,13 @@ namespace Management_System_Pc_Repair_Shop.Registros
             entrada.Fecha = entradaDateTimePicker.Text;
             entrada.FechaEntrega = entregaDateTimePicker.Text;
             int clienteid = 0;
-            int.TryParse(idTextBox.Text, out clienteid);
+            int.TryParse(clienteIdTextBox.Text, out clienteid);
             entrada.ClienteId = clienteid;
             entrada.Notas = notasTextBox.Text;
+            foreach (var articulo in entrada.articulos)
+            {
+                articulosDataGridView.Rows.Add(articulo.Articulo, articulo.Problema);
+            }
         }
 
         private void DevolverValores()
@@ -70,6 +74,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             entregaDateTimePicker.Text = entrada.FechaEntrega.ToString();
             clienteIdTextBox.Text = entrada.ClienteId.ToString();
             notasTextBox.Text = entrada.Notas.ToString();
+            foreach (var articulo in entrada.articulos)
+            {
+                articulosDataGridView.Rows.Add(articulo.Articulo, articulo.Problema);
+            }
         }
         
         private void buscarButton_Click(object sender, EventArgs e)
@@ -100,7 +108,20 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void botonInsertar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (!articulosComboBox.Text.Equals("") || !problemaTextBox.Text.Equals(""))
+                {
+                    articulosDataGridView.Rows.Add(articulosComboBox.Text, problemaTextBox.Text);
+                    entrada.InsertarArticulo(articulosComboBox.Text, problemaTextBox.Text);
+                    articulosComboBox.SelectedIndex = -1;
+                    problemaTextBox.Clear();
+                }
+            }
+            catch (Exception)
+            {
+                MensajeError("Error al insertar");
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)

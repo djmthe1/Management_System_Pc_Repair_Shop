@@ -23,6 +23,12 @@ namespace BLL
             this.Precio = precio;
         }
 
+        public ArticulosVendidos(string Pieza, string Marca, float precio)
+        {
+            this.Pieza = Pieza;
+            this.Marca = Marca;
+            this.Precio = precio;
+        }
         public ArticulosVendidos()
         {
 

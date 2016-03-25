@@ -15,19 +15,21 @@ namespace BLL
         public string Fecha { set; get; }
         public int SalidaId { set; get; }
         public int ClienteId { set; get; }
+        public float CargoReparacion { set; get; }
         public float Total { set; get; }
         public float MontoAPagar { set; get; }
         public string DespachadoPor { set; get; }
-    ArticulosVendidos Articulo = new ArticulosVendidos();
+        ArticulosVendidos Articulo = new ArticulosVendidos();
         public List<ArticulosVendidos> articulos { get; set; }
         ConexionDb conexion = new ConexionDb();
 
-        public Facturas(int facturaId, string fecha, int salidaId, int clienteId, float total, float montoAPagar, string despachadoPor)
+        public Facturas(int facturaId, string fecha, int salidaId, int clienteId, float cargoReparacion, float total, float montoAPagar, string despachadoPor)
         {
             this.FacturaId = facturaId;
             this.Fecha = fecha;
             this.SalidaId = salidaId;
             this.ClienteId = clienteId;
+            this.CargoReparacion = cargoReparacion;
             this.Total = total;
             this.MontoAPagar = montoAPagar;
             this.DespachadoPor = despachadoPor;
@@ -38,6 +40,12 @@ namespace BLL
 
         }
 
+        public void InsertarArticulo(string Pieza, string Marca, float Precio)
+        {
+            this.articulos.Add(new ArticulosVendidos(Pieza, Marca, Precio));
+
+        }
+
         public override bool Insertar()
         {
             int retorno = 0;
@@ -45,7 +53,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(string.Format("INSERT INTO Facturas (Fecha, SalidaId, ClienteId, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},'{5}') Select @@Identity", this.SalidaId, this.ClienteId, this.Total, this.MontoAPagar, this.DespachadoPor));
+                identity = conexion.ObtenerValor(string.Format("INSERT INTO Facturas (Fecha, SalidaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},{5},'{6}') Select @@Identity", this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
