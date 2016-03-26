@@ -104,12 +104,12 @@
             this.comboBoxCampos.FormattingEnabled = true;
             this.comboBoxCampos.Items.AddRange(new object[] {
             "EntradaId",
-            "EntradaId",
             "Fecha",
             "FechaEntrega",
             "ClienteId",
             "Nota",
-            "RecibidoPor"});
+            "RecibidoPor",
+            "Salio"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
             this.comboBoxCampos.Size = new System.Drawing.Size(91, 21);

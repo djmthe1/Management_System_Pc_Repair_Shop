@@ -33,13 +33,20 @@ namespace Management_System_Pc_Repair_Shop.Consultas
                 filtro = comboBoxCampos.Text + " like '%" + textBoxFiltro.Text + "%'";
             }
 
-            dataGridViewConsulta.DataSource = salidas.Listado("SalidaId, Fecha, EntradaId, Entregado, RetiradoPor", filtro, "");
+            dataGridViewConsulta.DataSource = salidas.Listado("SalidaId, Fecha, EntradaId, Observacion, Entregado, RetiradoPor", filtro, "");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
 
         private void imprimirButton_Click(object sender, EventArgs e)
         {
+            Reportes.VisorReportesForm Visor = new Reportes.VisorReportesForm();
+            DataTable dt = new DataTable();
 
+            dt = (DataTable)dataGridViewConsulta.DataSource;
+            dt.TableName = "Salidas";
+            Visor.reporte = "ReportSalidas.rdlc";
+            Visor.data = dt;
+            Visor.ShowDialog();
         }
     }
 }

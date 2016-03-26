@@ -106,6 +106,7 @@
             "SalidaId",
             "Fecha",
             "EntradaId",
+            "Observacion",
             "Entregado",
             "RetiradoPor"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
