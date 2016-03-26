@@ -115,19 +115,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
         }
 
-        private void botonEliminarTelefono_Click(object sender, EventArgs e)
-        {
-            /*if (telefonosDataGridView.SelectedIndex > 0)
-            {
-                if (MessageBox.Show("Eliminar el Telefono: ", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    telefonosListBox.Items.RemoveAt(telefonosListBox.SelectedIndex);
-            }
-            else
-            {
-                MensajeAdvertencia("Seleccione un Telefono");
-            }*/
-        }
-
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();

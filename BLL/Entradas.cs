@@ -116,11 +116,15 @@ namespace BLL
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
 
-                dtArticulos = conexion.ObtenerDatos(String.Format("SELECT E.Fecha, A.Articulo as Articulo FROM Entradas E inner join EntradasArticulos A on E.EntradaId = A.EntradaId WHERE E.EntradaId = {0}", IdBuscado));
+                dtArticulos = conexion.ObtenerDatos(String.Format("SELECT * FROM EntradasArticulos WHERE EntradaId = " + IdBuscado));
 
                 foreach (DataRow row in dtArticulos.Rows)
                 {
-                    InsertarArticulo(row["Articulo"].ToString(), row["Problema"].ToString());
+                    EntradasArticulos Earticulo = new EntradasArticulos();
+                    Earticulo.Id = (int)row["Id"];
+                    Earticulo.Articulo = row["Articulo"].ToString();
+                    Earticulo.Problema = row["Problema"].ToString();
+                    articulos.Add(Earticulo);
                 }
             }
             return dt.Rows.Count > 0;

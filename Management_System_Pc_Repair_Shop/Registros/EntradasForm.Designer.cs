@@ -45,13 +45,13 @@
             this.entregaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.articulosComboBox = new System.Windows.Forms.ComboBox();
             this.articulosDataGridView = new System.Windows.Forms.DataGridView();
+            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.problemaTextBox = new System.Windows.Forms.TextBox();
             this.botonInsertar = new System.Windows.Forms.Button();
             this.clienteIdTextBox = new System.Windows.Forms.TextBox();
             this.clienteIdLabel = new System.Windows.Forms.Label();
             this.buscarClienteButton = new System.Windows.Forms.Button();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.articulosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,14 +216,28 @@
             // 
             // articulosDataGridView
             // 
+            this.articulosDataGridView.AllowUserToAddRows = false;
             this.articulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articulosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Articulo,
             this.Problema});
             this.articulosDataGridView.Location = new System.Drawing.Point(34, 250);
             this.articulosDataGridView.Name = "articulosDataGridView";
+            this.articulosDataGridView.ReadOnly = true;
             this.articulosDataGridView.Size = new System.Drawing.Size(374, 150);
             this.articulosDataGridView.TabIndex = 72;
+            // 
+            // Articulo
+            // 
+            this.Articulo.HeaderText = "Articulo";
+            this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
+            // 
+            // Problema
+            // 
+            this.Problema.HeaderText = "Problema";
+            this.Problema.Name = "Problema";
+            this.Problema.ReadOnly = true;
             // 
             // problemaTextBox
             // 
@@ -271,16 +285,6 @@
             this.buscarClienteButton.TabIndex = 78;
             this.buscarClienteButton.UseVisualStyleBackColor = true;
             this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
-            // 
-            // Articulo
-            // 
-            this.Articulo.HeaderText = "Articulo";
-            this.Articulo.Name = "Articulo";
-            // 
-            // Problema
-            // 
-            this.Problema.HeaderText = "Problema";
-            this.Problema.Name = "Problema";
             // 
             // EntradasForm
             // 

@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisorReportesForm));
             this.visorReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // visorReportViewer
             // 
-            this.visorReportViewer.Location = new System.Drawing.Point(12, 12);
+            this.visorReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visorReportViewer.Location = new System.Drawing.Point(0, 0);
             this.visorReportViewer.Name = "visorReportViewer";
-            this.visorReportViewer.Size = new System.Drawing.Size(704, 408);
+            this.visorReportViewer.Size = new System.Drawing.Size(728, 432);
             this.visorReportViewer.TabIndex = 0;
             // 
             // VisorReportesForm
@@ -44,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 432);
             this.Controls.Add(this.visorReportViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisorReportesForm";
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.VisorReportesForm_Load);

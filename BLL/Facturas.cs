@@ -10,7 +10,6 @@ namespace BLL
 {
     public class Facturas : ClaseMaestra
     {
-
         public int FacturaId { set; get; }
         public string Fecha { set; get; }
         public int SalidaId { set; get; }
@@ -53,7 +52,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(string.Format("INSERT INTO Facturas (Fecha, SalidaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},{5},'{6}') Select @@Identity", this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor));
+                identity = conexion.ObtenerValor(string.Format("INSERT INTO Facturas (Fecha, SalidaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},{5},'{6}') Select @@Identity", this.Fecha, this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -76,17 +75,61 @@ namespace BLL
 
         public override bool Editar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            try
+            {
+                retorno = conexion.Ejecutar(String.Format("UPDATE Facturas SET Fecha='{0}', SalidaId={1}, ClienteId={2}, CargoReparacion={3}, Total={4}, MontoAPagar={5}, DespachadoPor={6} WHERE FacturaId={7}", this.Fecha, this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor, this.FacturaId));
+                if (retorno)
+                {
+                    conexion.Ejecutar(string.Format("DELETE FROM ArticulosVendidos WHERE FacturaId= {0}", this.FacturaId));
+                    foreach (ArticulosVendidos datos in this.articulos)
+                    {
+                        conexion.Ejecutar(string.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", datos.FacturaId, datos.Pieza, datos.Marca, datos.Precio));
+                    }
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            return retorno;
         }
 
         public override bool Eliminar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            try
+            {
+                retorno = conexion.Ejecutar(String.Format("DELETE FROM Facturas WHERE FacturaId={0}", this.FacturaId));
+                if (retorno)
+                    conexion.Ejecutar(string.Format("DELETE FROM ArticulosVendidos WHERE FacturaId={0}", this.FacturaId));
+            }
+            catch (Exception ex) { throw ex; }
+            return retorno;
         }
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            DataTable dtArticuloss = new DataTable();
+
+            dt = conexion.ObtenerDatos("SELECT * FROM Facturas WHERE FacturaId=" + IdBuscado);
+            if (dt.Rows.Count > 0)
+            {
+                this.FacturaId = (int)dt.Rows[0]["FacturaId"];
+                this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                this.SalidaId = (int)dt.Rows[0]["SalidaId"];
+                this.ClienteId = (int)dt.Rows[0]["ClienteId"];
+                this.CargoReparacion = (float)Convert.ToDecimal(dt.Rows[0]["CargoReparacion"]);
+                this.Total = (float)Convert.ToDecimal(dt.Rows[0]["Total"]);
+                this.MontoAPagar = (float)Convert.ToDecimal(dt.Rows[0]["MontoAPagar"]);
+                this.DespachadoPor = dt.Rows[0]["DespachadoPor"].ToString();
+
+                dtArticuloss = conexion.ObtenerDatos(String.Format("SELECT * FROM ArticulosVendidos WHERE FacturaId =" + IdBuscado));
+
+                foreach (DataRow row in dtArticuloss.Rows)
+                {
+                    InsertarArticulo(row["Pieza"].ToString(), row["Marca"].ToString(), (float)Convert.ToDecimal(dt.Rows[0]["Precio"]));
+                }
+            }
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

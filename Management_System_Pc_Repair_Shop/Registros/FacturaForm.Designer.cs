@@ -289,6 +289,7 @@
             // 
             // articulosDataGridView
             // 
+            this.articulosDataGridView.AllowUserToAddRows = false;
             this.articulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articulosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Articulo,
@@ -296,6 +297,7 @@
             this.Precio});
             this.articulosDataGridView.Location = new System.Drawing.Point(11, 77);
             this.articulosDataGridView.Name = "articulosDataGridView";
+            this.articulosDataGridView.ReadOnly = true;
             this.articulosDataGridView.Size = new System.Drawing.Size(474, 76);
             this.articulosDataGridView.TabIndex = 79;
             // 
@@ -303,16 +305,19 @@
             // 
             this.Articulo.HeaderText = "Articulo";
             this.Articulo.Name = "Articulo";
+            this.Articulo.ReadOnly = true;
             // 
             // Marca
             // 
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
             // articulosComboBox
             // 

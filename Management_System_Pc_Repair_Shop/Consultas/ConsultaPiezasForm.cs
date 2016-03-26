@@ -44,7 +44,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
        
             dt = (DataTable)dataGridViewConsulta.DataSource;
             dt.TableName = "Piezas";
-            Visor.reporte = "Reportes.ReportPiezas.rdlc";
+            Visor.reporte = "ReportPiezas.rdlc";
             Visor.data = dt;
             Visor.ShowDialog();
         }

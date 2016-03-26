@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Entradas entrada = new Entradas();
+        Clientes cliente = new Clientes();
 
         private void EntradasForm_Load(object sender, EventArgs e)
         {
@@ -103,7 +104,23 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void buscarClienteButton_Click(object sender, EventArgs e)
         {
-
+            ObtenerValores();
+            if (clienteIdTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (cliente.Buscar(entrada.ClienteId))
+                {
+                    DevolverValores();
+                }
+                else
+                {
+                    MensajeAdvertencia("Id no encontrado");
+                    Limpiar();
+                }
+            }
         }
 
         private void botonInsertar_Click(object sender, EventArgs e)

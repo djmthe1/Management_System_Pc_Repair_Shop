@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Facturas factura = new Facturas();
+        Salidas salida = new Salidas();
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
@@ -127,7 +128,23 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void buscarSalidaButton_Click(object sender, EventArgs e)
         {
-
+            ObtenerValores();
+            if (salidaIdTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (salida.Buscar(factura.SalidaId))
+                {
+                    DevolverValores();
+                }
+                else
+                {
+                    MensajeAdvertencia("Id no encontrado");
+                    salidaIdTextBox.Clear();
+                }
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -137,6 +154,46 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+
+            ObtenerValores();
+            if (idTextBox.Text == "")
+            {
+                if (salidaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                {
+                    if (factura.Insertar())
+                    {
+                        Limpiar();
+                        MensajeOk("Insertado correctamente");
+                    }
+                    else
+                    {
+                        MensajeError("Error al insertar");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los campos", "Error al insertar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                if (salidaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                {
+                    if (factura.Editar())
+                    {
+                        Limpiar();
+                        MensajeOk("Modificado correctamente");
+                    }
+                    else
+                    {
+                        MensajeError("Error al modificar");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los campos", "Error al modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
 
         }
 
