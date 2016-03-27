@@ -55,9 +55,10 @@
             // nombreTextBox
             // 
             this.nombreTextBox.Location = new System.Drawing.Point(98, 53);
+            this.nombreTextBox.MaxLength = 40;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 32;
+            this.nombreTextBox.TabIndex = 3;
             // 
             // nombreClienteLabel
             // 
@@ -98,16 +99,18 @@
             // clienteIdTextBox
             // 
             this.clienteIdTextBox.Location = new System.Drawing.Point(98, 24);
+            this.clienteIdTextBox.MaxLength = 5;
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(64, 20);
-            this.clienteIdTextBox.TabIndex = 31;
+            this.clienteIdTextBox.TabIndex = 1;
             // 
             // apellidoTextBox
             // 
             this.apellidoTextBox.Location = new System.Drawing.Point(98, 79);
+            this.apellidoTextBox.MaxLength = 40;
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.apellidoTextBox.TabIndex = 33;
+            this.apellidoTextBox.TabIndex = 4;
             // 
             // botonBuscarCliente
             // 
@@ -117,7 +120,7 @@
             this.botonBuscarCliente.Location = new System.Drawing.Point(167, 19);
             this.botonBuscarCliente.Name = "botonBuscarCliente";
             this.botonBuscarCliente.Size = new System.Drawing.Size(31, 29);
-            this.botonBuscarCliente.TabIndex = 34;
+            this.botonBuscarCliente.TabIndex = 2;
             this.botonBuscarCliente.UseVisualStyleBackColor = true;
             this.botonBuscarCliente.Click += new System.EventHandler(this.botonBuscarCliente_Click);
             // 
@@ -136,9 +139,10 @@
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(98, 105);
+            this.direccionTextBox.MaxLength = 30;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.direccionTextBox.TabIndex = 36;
+            this.direccionTextBox.TabIndex = 5;
             // 
             // EliminarButton
             // 
@@ -150,7 +154,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(246, 272);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
-            this.EliminarButton.TabIndex = 53;
+            this.EliminarButton.TabIndex = 11;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -166,7 +170,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(12, 272);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
-            this.NuevoButton.TabIndex = 51;
+            this.NuevoButton.TabIndex = 9;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -182,7 +186,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(129, 272);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
-            this.GuardarButton.TabIndex = 52;
+            this.GuardarButton.TabIndex = 10;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -195,7 +199,7 @@
             this.botonInsertarTelefono.Location = new System.Drawing.Point(291, 126);
             this.botonInsertarTelefono.Name = "botonInsertarTelefono";
             this.botonInsertarTelefono.Size = new System.Drawing.Size(30, 28);
-            this.botonInsertarTelefono.TabIndex = 58;
+            this.botonInsertarTelefono.TabIndex = 8;
             this.botonInsertarTelefono.UseVisualStyleBackColor = true;
             this.botonInsertarTelefono.Click += new System.EventHandler(this.botonInsertarTelefono_Click);
             // 
@@ -214,9 +218,10 @@
             // TelefonoTextBox
             // 
             this.TelefonoTextBox.Location = new System.Drawing.Point(98, 131);
+            this.TelefonoTextBox.MaxLength = 12;
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(75, 20);
-            this.TelefonoTextBox.TabIndex = 55;
+            this.TelefonoTextBox.TabIndex = 6;
             // 
             // telefonosDataGridView
             // 
@@ -253,7 +258,7 @@
             this.tipoTelefonoComboBox.Location = new System.Drawing.Point(210, 131);
             this.tipoTelefonoComboBox.Name = "tipoTelefonoComboBox";
             this.tipoTelefonoComboBox.Size = new System.Drawing.Size(75, 21);
-            this.tipoTelefonoComboBox.TabIndex = 60;
+            this.tipoTelefonoComboBox.TabIndex = 7;
             // 
             // tipoTelefonoLabel
             // 

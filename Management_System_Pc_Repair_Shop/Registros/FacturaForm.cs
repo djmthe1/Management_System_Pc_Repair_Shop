@@ -50,6 +50,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             articulosComboBox.SelectedIndex = -1;
             marcaComboBox.SelectedIndex = -1;
             precioTextBox.Clear();
+            articulosDataGridView.Rows.Clear();
         }
 
         private void ObtenerValores()
@@ -111,7 +112,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             float.TryParse(precioTextBox.Text, out precio);
             try
             {
-                if (!articulosComboBox.Text.Equals("") || !marcaComboBox.Text.Equals("") || !precioTextBox.Text.Equals(""))
+                if (!articulosComboBox.Text.Equals("") && !marcaComboBox.Text.Equals("") && !precioTextBox.Text.Equals(""))
                 {
                     articulosDataGridView.Rows.Add(articulosComboBox.Text, marcaComboBox.Text, precioTextBox.Text);
                     factura.InsertarArticulo( articulosComboBox.Text, marcaComboBox.Text, precio);

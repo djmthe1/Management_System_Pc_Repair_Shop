@@ -65,7 +65,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(307, 415);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(101, 41);
-            this.EliminarButton.TabIndex = 57;
+            this.EliminarButton.TabIndex = 13;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(34, 415);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(101, 41);
-            this.NuevoButton.TabIndex = 55;
+            this.NuevoButton.TabIndex = 11;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(170, 415);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(101, 41);
-            this.GuardarButton.TabIndex = 56;
+            this.GuardarButton.TabIndex = 12;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -151,16 +151,17 @@
             this.buscarButton.Location = new System.Drawing.Point(175, 25);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(25, 22);
-            this.buscarButton.TabIndex = 68;
+            this.buscarButton.TabIndex = 2;
             this.buscarButton.UseVisualStyleBackColor = true;
             this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
             // idTextBox
             // 
             this.idTextBox.Location = new System.Drawing.Point(116, 27);
+            this.idTextBox.MaxLength = 6;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(56, 20);
-            this.idTextBox.TabIndex = 67;
+            this.idTextBox.TabIndex = 1;
             // 
             // entradaDateTimePicker
             // 
@@ -168,7 +169,7 @@
             this.entradaDateTimePicker.Location = new System.Drawing.Point(113, 53);
             this.entradaDateTimePicker.Name = "entradaDateTimePicker";
             this.entradaDateTimePicker.Size = new System.Drawing.Size(112, 20);
-            this.entradaDateTimePicker.TabIndex = 66;
+            this.entradaDateTimePicker.TabIndex = 3;
             // 
             // fechaLabel
             // 
@@ -193,26 +194,30 @@
             // notasTextBox
             // 
             this.notasTextBox.Location = new System.Drawing.Point(113, 128);
+            this.notasTextBox.MaxLength = 100;
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
             this.notasTextBox.Size = new System.Drawing.Size(297, 82);
-            this.notasTextBox.TabIndex = 69;
+            this.notasTextBox.TabIndex = 7;
             // 
             // entregaDateTimePicker
             // 
             this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.entregaDateTimePicker.Location = new System.Drawing.Point(113, 79);
+            this.entregaDateTimePicker.Location = new System.Drawing.Point(113, 76);
             this.entregaDateTimePicker.Name = "entregaDateTimePicker";
             this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
-            this.entregaDateTimePicker.TabIndex = 70;
+            this.entregaDateTimePicker.TabIndex = 4;
             // 
             // articulosComboBox
             // 
+            this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.articulosComboBox.FormattingEnabled = true;
+            this.articulosComboBox.Items.AddRange(new object[] {
+            "Procesador"});
             this.articulosComboBox.Location = new System.Drawing.Point(86, 220);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
-            this.articulosComboBox.TabIndex = 71;
+            this.articulosComboBox.TabIndex = 8;
             // 
             // articulosDataGridView
             // 
@@ -242,9 +247,10 @@
             // problemaTextBox
             // 
             this.problemaTextBox.Location = new System.Drawing.Point(261, 222);
+            this.problemaTextBox.MaxLength = 200;
             this.problemaTextBox.Name = "problemaTextBox";
             this.problemaTextBox.Size = new System.Drawing.Size(117, 20);
-            this.problemaTextBox.TabIndex = 73;
+            this.problemaTextBox.TabIndex = 9;
             // 
             // botonInsertar
             // 
@@ -253,16 +259,17 @@
             this.botonInsertar.Location = new System.Drawing.Point(383, 222);
             this.botonInsertar.Name = "botonInsertar";
             this.botonInsertar.Size = new System.Drawing.Size(25, 24);
-            this.botonInsertar.TabIndex = 75;
+            this.botonInsertar.TabIndex = 10;
             this.botonInsertar.UseVisualStyleBackColor = true;
             this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
             // 
             // clienteIdTextBox
             // 
             this.clienteIdTextBox.Location = new System.Drawing.Point(113, 102);
+            this.clienteIdTextBox.MaxLength = 5;
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(56, 20);
-            this.clienteIdTextBox.TabIndex = 77;
+            this.clienteIdTextBox.TabIndex = 5;
             // 
             // clienteIdLabel
             // 
@@ -282,7 +289,7 @@
             this.buscarClienteButton.Location = new System.Drawing.Point(175, 98);
             this.buscarClienteButton.Name = "buscarClienteButton";
             this.buscarClienteButton.Size = new System.Drawing.Size(25, 24);
-            this.buscarClienteButton.TabIndex = 78;
+            this.buscarClienteButton.TabIndex = 6;
             this.buscarClienteButton.UseVisualStyleBackColor = true;
             this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
             // 

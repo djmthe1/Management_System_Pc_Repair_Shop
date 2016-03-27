@@ -36,13 +36,12 @@ namespace BLL
 
         public Facturas()
         {
-
+            articulos = new List<ArticulosVendidos>();
         }
 
         public void InsertarArticulo(string Pieza, string Marca, float Precio)
         {
             this.articulos.Add(new ArticulosVendidos(Pieza, Marca, Precio));
-
         }
 
         public override bool Insertar()
@@ -59,12 +58,12 @@ namespace BLL
 
                 this.FacturaId = retorno;
                 if (retorno > 0)
-                 {
-                     foreach (ArticulosVendidos datos in this.articulos)
-                     {
-                         conexion.Ejecutar(string.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", datos.FacturaId, datos.Pieza, datos.Marca, datos.Precio));
-                     }
-                 }
+                {
+                    foreach (ArticulosVendidos descripcion in this.articulos)
+                    {
+                        conexion.Ejecutar(string.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", descripcion.FacturaId, descripcion.Pieza, descripcion.Marca, descripcion.Precio));
+                    }
+                }
             }
             catch (Exception ex)
             {

@@ -79,7 +79,7 @@
             // 
             // textBoxFiltro
             // 
-            this.textBoxFiltro.Location = new System.Drawing.Point(150, 11);
+            this.textBoxFiltro.Location = new System.Drawing.Point(180, 11);
             this.textBoxFiltro.MaxLength = 50;
             this.textBoxFiltro.Name = "textBoxFiltro";
             this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
@@ -90,11 +90,13 @@
             this.comboBoxCampos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCampos.FormattingEnabled = true;
             this.comboBoxCampos.Items.AddRange(new object[] {
-            "MarcaId",
-            "Descripcion"});
+            "ClienteId",
+            "Nombre",
+            "Apellido",
+            "Direccion"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
-            this.comboBoxCampos.Size = new System.Drawing.Size(60, 21);
+            this.comboBoxCampos.Size = new System.Drawing.Size(90, 21);
             this.comboBoxCampos.TabIndex = 36;
             // 
             // buscarButton
@@ -103,7 +105,7 @@
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(314, 5);
+            this.buscarButton.Location = new System.Drawing.Point(344, 5);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
             this.buscarButton.TabIndex = 42;

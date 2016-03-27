@@ -31,15 +31,9 @@ namespace BLL
             telefonos = new List<ClientesTelefonos>();
         }
 
-        public void InsertarTelefono(int Id, string Tipo, string Telefono)
+        public void InsertarTelefono(string Tipo, string Telefono)
         {
-            this.telefonos.Add(new ClientesTelefonos(Id, Tipo, Telefono));
-
-        }
-
-        public void LimpiarTelefono()
-        {
-            this.telefonos.Clear();
+            this.telefonos.Add(new ClientesTelefonos(Tipo, Telefono));
         }
 
         public override bool Insertar()
@@ -59,7 +53,7 @@ namespace BLL
                 {
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0})", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -81,7 +75,7 @@ namespace BLL
                     conexion.Ejecutar(string.Format("Delete From ClientesTelefonos Where ClienteId= {0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0})", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -115,11 +109,14 @@ namespace BLL
                 this.Apellido = dt.Rows[0]["Apellido"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
 
-                dtTelefonos = conexion.ObtenerDatos(String.Format("SELECT * FROM ClientesTelefonos WHERE ClienteId =" + IdBuscado));
+                dtTelefonos = conexion.ObtenerDatos(String.Format("SELECT * FROM ClientesTelefonos WHERE ClienteId=" + IdBuscado));
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
-                    InsertarTelefono(1, row["Tipo"].ToString(), row["Telefono"].ToString());
+                    ClientesTelefonos ctelefono = new ClientesTelefonos();
+                    ctelefono.Tipo = row["Tipo"].ToString();
+                    ctelefono.Telefono = row["Telefono"].ToString();
+                    telefonos.Add(ctelefono);
                 }
             }
             return dt.Rows.Count > 0;

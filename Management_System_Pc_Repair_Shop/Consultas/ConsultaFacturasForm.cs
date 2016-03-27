@@ -33,7 +33,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
                 filtro = comboBoxCampos.Text + " like '%" + textBoxFiltro.Text + "%'";
             }
 
-            dataGridViewConsulta.DataSource = facturas.Listado("FactuaId, SalidaId", filtro, "");
+            dataGridViewConsulta.DataSource = facturas.Listado("FacturaId, Fecha, SalidaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor", filtro, "");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
 

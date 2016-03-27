@@ -65,17 +65,19 @@
             // 
             this.descripcionTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.descripcionTextBox.Location = new System.Drawing.Point(115, 62);
+            this.descripcionTextBox.MaxLength = 50;
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(81, 20);
-            this.descripcionTextBox.TabIndex = 24;
+            this.descripcionTextBox.TabIndex = 3;
             // 
             // idTextBox
             // 
             this.idTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idTextBox.Location = new System.Drawing.Point(115, 11);
+            this.idTextBox.MaxLength = 5;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(43, 20);
-            this.idTextBox.TabIndex = 23;
+            this.idTextBox.TabIndex = 1;
             // 
             // buscarButton
             // 
@@ -86,7 +88,7 @@
             this.buscarButton.Location = new System.Drawing.Point(164, 11);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
-            this.buscarButton.TabIndex = 27;
+            this.buscarButton.TabIndex = 2;
             this.buscarButton.UseVisualStyleBackColor = true;
             this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 
@@ -100,7 +102,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(241, 122);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
-            this.EliminarButton.TabIndex = 53;
+            this.EliminarButton.TabIndex = 6;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -116,7 +118,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(7, 122);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
-            this.NuevoButton.TabIndex = 51;
+            this.NuevoButton.TabIndex = 4;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -132,7 +134,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(124, 122);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
-            this.GuardarButton.TabIndex = 52;
+            this.GuardarButton.TabIndex = 5;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;

@@ -49,6 +49,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             notasTextBox.Clear();
             articulosComboBox.SelectedIndex = -1;
             problemaTextBox.Clear();
+            articulosDataGridView.Rows.Clear();
         }
         
         private void ObtenerValores()
@@ -127,7 +128,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             try
             {
-                if (!articulosComboBox.Text.Equals("") || !problemaTextBox.Text.Equals(""))
+                if (!articulosComboBox.Text.Equals("") && !problemaTextBox.Text.Equals(""))
                 {
                     articulosDataGridView.Rows.Add(articulosComboBox.Text, problemaTextBox.Text);
                     entrada.InsertarArticulo(articulosComboBox.Text, problemaTextBox.Text);

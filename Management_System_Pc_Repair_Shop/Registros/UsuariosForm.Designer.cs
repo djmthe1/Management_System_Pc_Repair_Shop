@@ -56,7 +56,7 @@
             this.prioridadComboBox.Location = new System.Drawing.Point(134, 166);
             this.prioridadComboBox.Name = "prioridadComboBox";
             this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
-            this.prioridadComboBox.TabIndex = 39;
+            this.prioridadComboBox.TabIndex = 6;
             // 
             // confirmarContraseñaLabel
             // 
@@ -72,35 +72,39 @@
             // 
             this.confirmarPassTextBox.AllowDrop = true;
             this.confirmarPassTextBox.Location = new System.Drawing.Point(134, 136);
+            this.confirmarPassTextBox.MaxLength = 50;
             this.confirmarPassTextBox.Name = "confirmarPassTextBox";
             this.confirmarPassTextBox.Size = new System.Drawing.Size(100, 20);
-            this.confirmarPassTextBox.TabIndex = 38;
+            this.confirmarPassTextBox.TabIndex = 5;
             this.confirmarPassTextBox.UseSystemPasswordChar = true;
             // 
             // passTextBox
             // 
             this.passTextBox.AllowDrop = true;
             this.passTextBox.Location = new System.Drawing.Point(134, 106);
+            this.passTextBox.MaxLength = 50;
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passTextBox.TabIndex = 37;
+            this.passTextBox.TabIndex = 4;
             this.passTextBox.UseSystemPasswordChar = true;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.AllowDrop = true;
             this.nombreTextBox.Location = new System.Drawing.Point(134, 76);
+            this.nombreTextBox.MaxLength = 50;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 36;
+            this.nombreTextBox.TabIndex = 3;
             // 
             // usuarioIdTextBox
             // 
             this.usuarioIdTextBox.AllowDrop = true;
             this.usuarioIdTextBox.Location = new System.Drawing.Point(134, 46);
+            this.usuarioIdTextBox.MaxLength = 5;
             this.usuarioIdTextBox.Name = "usuarioIdTextBox";
             this.usuarioIdTextBox.Size = new System.Drawing.Size(35, 20);
-            this.usuarioIdTextBox.TabIndex = 35;
+            this.usuarioIdTextBox.TabIndex = 1;
             // 
             // prioridadLabel
             // 
@@ -152,7 +156,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(253, 225);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
-            this.EliminarButton.TabIndex = 47;
+            this.EliminarButton.TabIndex = 9;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -168,7 +172,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(11, 225);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
-            this.NuevoButton.TabIndex = 45;
+            this.NuevoButton.TabIndex = 7;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -184,7 +188,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(132, 225);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
-            this.GuardarButton.TabIndex = 46;
+            this.GuardarButton.TabIndex = 8;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -199,7 +203,7 @@
             this.buscarButton.Location = new System.Drawing.Point(175, 40);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
-            this.buscarButton.TabIndex = 48;
+            this.buscarButton.TabIndex = 2;
             this.buscarButton.UseVisualStyleBackColor = true;
             this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
             // 

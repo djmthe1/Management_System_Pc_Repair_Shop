@@ -36,8 +36,6 @@
             this.montoAPagarLabel = new System.Windows.Forms.Label();
             this.precioLabel = new System.Windows.Forms.Label();
             this.cargoDeReparaciónLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.botonBuscar = new System.Windows.Forms.Button();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
@@ -137,26 +135,6 @@
             this.cargoDeReparaciónLabel.TabIndex = 6;
             this.cargoDeReparaciónLabel.Text = "Cargo de Reparación";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(459, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(459, 99);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
-            // 
             // botonBuscar
             // 
             this.botonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscar.BackgroundImage")));
@@ -165,16 +143,17 @@
             this.botonBuscar.Location = new System.Drawing.Point(200, 23);
             this.botonBuscar.Name = "botonBuscar";
             this.botonBuscar.Size = new System.Drawing.Size(31, 29);
-            this.botonBuscar.TabIndex = 57;
+            this.botonBuscar.TabIndex = 2;
             this.botonBuscar.UseVisualStyleBackColor = true;
             this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
             // 
             // idTextBox
             // 
             this.idTextBox.Location = new System.Drawing.Point(145, 28);
+            this.idTextBox.MaxLength = 5;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(49, 20);
-            this.idTextBox.TabIndex = 56;
+            this.idTextBox.TabIndex = 1;
             // 
             // idLabel
             // 
@@ -196,7 +175,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(340, 437);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
-            this.EliminarButton.TabIndex = 60;
+            this.EliminarButton.TabIndex = 13;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -212,7 +191,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(98, 437);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
-            this.NuevoButton.TabIndex = 58;
+            this.NuevoButton.TabIndex = 11;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -228,7 +207,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(219, 437);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
-            this.GuardarButton.TabIndex = 59;
+            this.GuardarButton.TabIndex = 12;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -257,6 +236,7 @@
             // 
             this.totalVentaTextBox.Location = new System.Drawing.Point(389, 162);
             this.totalVentaTextBox.Name = "totalVentaTextBox";
+            this.totalVentaTextBox.ReadOnly = true;
             this.totalVentaTextBox.Size = new System.Drawing.Size(67, 20);
             this.totalVentaTextBox.TabIndex = 84;
             // 
@@ -264,17 +244,20 @@
             // 
             this.marcaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.marcaComboBox.FormattingEnabled = true;
+            this.marcaComboBox.Items.AddRange(new object[] {
+            "Dell"});
             this.marcaComboBox.Location = new System.Drawing.Point(227, 49);
             this.marcaComboBox.Name = "marcaComboBox";
             this.marcaComboBox.Size = new System.Drawing.Size(104, 21);
-            this.marcaComboBox.TabIndex = 83;
+            this.marcaComboBox.TabIndex = 8;
             // 
             // precioTextBox
             // 
             this.precioTextBox.Location = new System.Drawing.Point(389, 50);
+            this.precioTextBox.MaxLength = 5;
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(67, 20);
-            this.precioTextBox.TabIndex = 82;
+            this.precioTextBox.TabIndex = 9;
             // 
             // botonInsertar
             // 
@@ -323,10 +306,12 @@
             // 
             this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.articulosComboBox.FormattingEnabled = true;
+            this.articulosComboBox.Items.AddRange(new object[] {
+            "Motherboard"});
             this.articulosComboBox.Location = new System.Drawing.Point(65, 50);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
-            this.articulosComboBox.TabIndex = 78;
+            this.articulosComboBox.TabIndex = 7;
             // 
             // articuloLabel
             // 
@@ -356,24 +341,26 @@
             this.buscarSalidaButton.Location = new System.Drawing.Point(200, 58);
             this.buscarSalidaButton.Name = "buscarSalidaButton";
             this.buscarSalidaButton.Size = new System.Drawing.Size(31, 29);
-            this.buscarSalidaButton.TabIndex = 63;
+            this.buscarSalidaButton.TabIndex = 4;
             this.buscarSalidaButton.UseVisualStyleBackColor = true;
             this.buscarSalidaButton.Click += new System.EventHandler(this.buscarSalidaButton_Click);
             // 
             // salidaIdTextBox
             // 
             this.salidaIdTextBox.Location = new System.Drawing.Point(145, 63);
+            this.salidaIdTextBox.MaxLength = 5;
             this.salidaIdTextBox.Name = "salidaIdTextBox";
             this.salidaIdTextBox.Size = new System.Drawing.Size(49, 20);
-            this.salidaIdTextBox.TabIndex = 62;
+            this.salidaIdTextBox.TabIndex = 3;
             // 
             // facturaDateTimePicker
             // 
             this.facturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.facturaDateTimePicker.Location = new System.Drawing.Point(145, 92);
+            this.facturaDateTimePicker.MinDate = new System.DateTime(2016, 3, 27, 0, 0, 0, 0);
             this.facturaDateTimePicker.Name = "facturaDateTimePicker";
             this.facturaDateTimePicker.Size = new System.Drawing.Size(112, 20);
-            this.facturaDateTimePicker.TabIndex = 68;
+            this.facturaDateTimePicker.TabIndex = 5;
             // 
             // fechaLabel
             // 
@@ -388,21 +375,24 @@
             // cargoDeReparacionTextBox
             // 
             this.cargoDeReparacionTextBox.Location = new System.Drawing.Point(145, 122);
+            this.cargoDeReparacionTextBox.MaxLength = 6;
             this.cargoDeReparacionTextBox.Name = "cargoDeReparacionTextBox";
             this.cargoDeReparacionTextBox.Size = new System.Drawing.Size(67, 20);
-            this.cargoDeReparacionTextBox.TabIndex = 85;
+            this.cargoDeReparacionTextBox.TabIndex = 6;
             // 
             // montoAPagarTextBox
             // 
             this.montoAPagarTextBox.Location = new System.Drawing.Point(446, 385);
+            this.montoAPagarTextBox.MaxLength = 6;
             this.montoAPagarTextBox.Name = "montoAPagarTextBox";
             this.montoAPagarTextBox.Size = new System.Drawing.Size(67, 20);
-            this.montoAPagarTextBox.TabIndex = 86;
+            this.montoAPagarTextBox.TabIndex = 10;
             // 
             // totalFacturaTextBox
             // 
             this.totalFacturaTextBox.Location = new System.Drawing.Point(446, 359);
             this.totalFacturaTextBox.Name = "totalFacturaTextBox";
+            this.totalFacturaTextBox.ReadOnly = true;
             this.totalFacturaTextBox.Size = new System.Drawing.Size(67, 20);
             this.totalFacturaTextBox.TabIndex = 87;
             // 
@@ -425,8 +415,6 @@
             this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.idLabel);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.cargoDeReparaciónLabel);
             this.Controls.Add(this.montoAPagarLabel);
             this.Controls.Add(this.totalFacturaLabel);
@@ -453,8 +441,6 @@
         private System.Windows.Forms.Label montoAPagarLabel;
         private System.Windows.Forms.Label precioLabel;
         private System.Windows.Forms.Label cargoDeReparaciónLabel;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button botonBuscar;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label idLabel;

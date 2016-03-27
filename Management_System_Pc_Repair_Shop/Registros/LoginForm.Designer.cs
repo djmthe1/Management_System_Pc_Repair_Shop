@@ -63,22 +63,24 @@
             this.prioridadComboBox.Location = new System.Drawing.Point(129, 38);
             this.prioridadComboBox.Name = "prioridadComboBox";
             this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
-            this.prioridadComboBox.TabIndex = 13;
+            this.prioridadComboBox.TabIndex = 1;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(129, 107);
+            this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 12;
+            this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // usuarioTextBox
             // 
             this.usuarioTextBox.Location = new System.Drawing.Point(129, 73);
+            this.usuarioTextBox.MaxLength = 50;
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usuarioTextBox.TabIndex = 11;
+            this.usuarioTextBox.TabIndex = 2;
             // 
             // passwordLabel
             // 
@@ -138,7 +140,7 @@
             this.loginButton.Location = new System.Drawing.Point(12, 270);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(97, 41);
-            this.loginButton.TabIndex = 46;
+            this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Entrar";
             this.loginButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.loginButton.UseVisualStyleBackColor = true;
@@ -154,7 +156,7 @@
             this.cancelarButton.Location = new System.Drawing.Point(556, 270);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(97, 41);
-            this.cancelarButton.TabIndex = 47;
+            this.cancelarButton.TabIndex = 5;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cancelarButton.UseVisualStyleBackColor = true;

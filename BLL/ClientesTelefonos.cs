@@ -23,9 +23,9 @@ namespace BLL
             this.Telefono = telefono;
         }
 
-        public ClientesTelefonos(int id, string tipo, string telefono)
+        public ClientesTelefonos(int clienteId, string tipo, string telefono)
         {
-            this.Id = id;
+            this.ClienteId = clienteId;
             this.Tipo = tipo;
             this.Telefono = telefono;
         }
@@ -38,6 +38,7 @@ namespace BLL
 
         public ClientesTelefonos()
         {
+
         }
     }
 }
