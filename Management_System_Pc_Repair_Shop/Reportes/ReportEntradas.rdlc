@@ -545,6 +545,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetManagementDb</DataSetName>
+        <Top>1.64042cm</Top>
         <Height>1.2cm</Height>
         <Width>17.5cm</Width>
         <Style>
@@ -553,6 +554,42 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REPORTE DE ENTRADAS</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.3937cm</Top>
+        <Left>3.70099cm</Left>
+        <Height>0.81167cm</Height>
+        <Width>10.30521cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />

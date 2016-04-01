@@ -46,7 +46,7 @@
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(345, 5);
+            this.buscarButton.Location = new System.Drawing.Point(373, 4);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
             this.buscarButton.TabIndex = 49;
@@ -75,10 +75,10 @@
             this.dataGridViewConsulta.AllowUserToAddRows = false;
             this.dataGridViewConsulta.AllowUserToDeleteRows = false;
             this.dataGridViewConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsulta.Location = new System.Drawing.Point(16, 53);
+            this.dataGridViewConsulta.Location = new System.Drawing.Point(16, 82);
             this.dataGridViewConsulta.Name = "dataGridViewConsulta";
             this.dataGridViewConsulta.ReadOnly = true;
-            this.dataGridViewConsulta.Size = new System.Drawing.Size(490, 214);
+            this.dataGridViewConsulta.Size = new System.Drawing.Size(490, 185);
             this.dataGridViewConsulta.TabIndex = 46;
             // 
             // labelBuscar
@@ -92,7 +92,7 @@
             // 
             // textBoxFiltro
             // 
-            this.textBoxFiltro.Location = new System.Drawing.Point(181, 11);
+            this.textBoxFiltro.Location = new System.Drawing.Point(209, 10);
             this.textBoxFiltro.MaxLength = 50;
             this.textBoxFiltro.Name = "textBoxFiltro";
             this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
@@ -112,7 +112,7 @@
             "Salio"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
-            this.comboBoxCampos.Size = new System.Drawing.Size(91, 21);
+            this.comboBoxCampos.Size = new System.Drawing.Size(112, 21);
             this.comboBoxCampos.TabIndex = 43;
             // 
             // imprimirButton

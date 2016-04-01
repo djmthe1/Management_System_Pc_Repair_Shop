@@ -77,6 +77,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void botonBuscarCliente_Click(object sender, EventArgs e)
         {
+            telefonosDataGridView.Rows.Clear();
             ObtenerValores();
             if (clienteIdTextBox.Text.Length == 0)
             {
@@ -103,7 +104,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 if (!TelefonoTextBox.Text.Equals("") && !tipoTelefonoComboBox.Text.Equals(""))
                 {
                     telefonosDataGridView.Rows.Add(TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
-                    clientes.InsertarTelefono(TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
+                    clientes.InsertarTelefono(1,TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
                     TelefonoTextBox.Clear();
                     tipoTelefonoComboBox.SelectedIndex = -1;
                 }

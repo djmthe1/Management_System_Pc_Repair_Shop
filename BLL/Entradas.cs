@@ -144,7 +144,7 @@ namespace BLL
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("SELECT * FROM Entradas WHERE Fecha >= getDate()");
+                dt = conexion.ObtenerDatos("SELECT * FROM Entradas WHERE Salio='False' AND FechaEntrega <= getDate()");
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;

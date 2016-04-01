@@ -255,6 +255,7 @@
     <EmbeddedResource Include="Registros\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ReportEntradas.rdlc" />
     <EmbeddedResource Include="Reportes\ReportMarcas.rdlc" />
     <EmbeddedResource Include="Reportes\ReportPiezas.rdlc">

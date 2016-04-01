@@ -31,9 +31,9 @@ namespace BLL
             telefonos = new List<ClientesTelefonos>();
         }
 
-        public void InsertarTelefono(string Tipo, string Telefono)
+        public void InsertarTelefono(int ClienteId, string Tipo, string Telefono)
         {
-            this.telefonos.Add(new ClientesTelefonos(Tipo, Telefono));
+            this.telefonos.Add(new ClientesTelefonos(ClienteId, Tipo, Telefono));
         }
 
         public override bool Insertar()
@@ -43,7 +43,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(string.Format("Insert Into Clientes (Nombre, Apellido, Direccion) Values ('{0}','{1}','{2}') Select @@Identity", this.Nombre, this.Apellido, this.Direccion));
+                identity = conexion.ObtenerValor(String.Format("INSERT INTO Clientes (Nombre, Apellido, Direccion) VALUES ('{0}','{1}','{2}') SELECT @@Identity", this.Nombre, this.Apellido, this.Direccion));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -53,7 +53,7 @@ namespace BLL
                 {
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(String.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", retorno, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -69,13 +69,13 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Update Clientes set Nombre='{0}', Apellido='{1}', Direccion='{2}', where ClienteId={3}", this.Nombre, this.Apellido, this.Direccion, this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("UPDATE Clientes SET Nombre='{0}', Apellido='{1}', Direccion='{2}' WHERE ClienteId={3}", this.Nombre, this.Apellido, this.Direccion, this.ClienteId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("Delete From ClientesTelefonos Where ClienteId= {0}", this.ClienteId));
+                    conexion.Ejecutar(string.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into ClientesTelefonos (ClienteId, Tipo, Telefono) Values ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }
@@ -88,9 +88,9 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Delete From Clientes where ClienteId={0}", this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("DELETE FROM Clientes WHERE ClienteId={0}", this.ClienteId));
                 if (retorno)
-                    conexion.Ejecutar(string.Format("Delete From ClientesTelefonos Where ClienteId={0}", this.ClienteId));
+                    conexion.Ejecutar(string.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -113,10 +113,7 @@ namespace BLL
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
-                    ClientesTelefonos ctelefono = new ClientesTelefonos();
-                    ctelefono.Tipo = row["Tipo"].ToString();
-                    ctelefono.Telefono = row["Telefono"].ToString();
-                    telefonos.Add(ctelefono);
+                    this.InsertarTelefono((int)dtTelefonos.Rows[0]["ClienteId"], row["Telefono"].ToString(), row["Tipo"].ToString());
                 }
             }
             return dt.Rows.Count > 0;
@@ -127,7 +124,7 @@ namespace BLL
             string ordenar = "";
             if (!Orden.Equals(""))
                 ordenar = " orden by  " + Orden;
-            return conexion.ObtenerDatos(("Select " + Campos + " from Clientes where " + Condicion + ordenar));
+            return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Clientes WHERE " + Condicion + ordenar));
         }
     }
 }

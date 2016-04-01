@@ -57,9 +57,9 @@
             // 
             this.dataGridViewConsulta.AllowUserToOrderColumns = true;
             this.dataGridViewConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsulta.Location = new System.Drawing.Point(18, 9);
+            this.dataGridViewConsulta.Location = new System.Drawing.Point(18, 12);
             this.dataGridViewConsulta.Name = "dataGridViewConsulta";
-            this.dataGridViewConsulta.Size = new System.Drawing.Size(486, 255);
+            this.dataGridViewConsulta.Size = new System.Drawing.Size(486, 252);
             this.dataGridViewConsulta.TabIndex = 35;
             // 
             // imprimirButton

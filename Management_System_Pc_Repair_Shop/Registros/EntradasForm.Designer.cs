@@ -42,7 +42,6 @@
             this.fechaLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.notasTextBox = new System.Windows.Forms.TextBox();
-            this.entregaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.articulosComboBox = new System.Windows.Forms.ComboBox();
             this.articulosDataGridView = new System.Windows.Forms.DataGridView();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
             this.clienteIdTextBox = new System.Windows.Forms.TextBox();
             this.clienteIdLabel = new System.Windows.Forms.Label();
             this.buscarClienteButton = new System.Windows.Forms.Button();
+            this.entregaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.articulosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,14 +200,6 @@
             this.notasTextBox.Size = new System.Drawing.Size(297, 82);
             this.notasTextBox.TabIndex = 7;
             // 
-            // entregaDateTimePicker
-            // 
-            this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.entregaDateTimePicker.Location = new System.Drawing.Point(113, 76);
-            this.entregaDateTimePicker.Name = "entregaDateTimePicker";
-            this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
-            this.entregaDateTimePicker.TabIndex = 4;
-            // 
             // articulosComboBox
             // 
             this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -293,11 +285,20 @@
             this.buscarClienteButton.UseVisualStyleBackColor = true;
             this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
             // 
+            // entregaDateTimePicker
+            // 
+            this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.entregaDateTimePicker.Location = new System.Drawing.Point(113, 80);
+            this.entregaDateTimePicker.Name = "entregaDateTimePicker";
+            this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
+            this.entregaDateTimePicker.TabIndex = 4;
+            // 
             // EntradasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 468);
+            this.Controls.Add(this.entregaDateTimePicker);
             this.Controls.Add(this.buscarClienteButton);
             this.Controls.Add(this.clienteIdTextBox);
             this.Controls.Add(this.clienteIdLabel);
@@ -305,7 +306,6 @@
             this.Controls.Add(this.problemaTextBox);
             this.Controls.Add(this.articulosDataGridView);
             this.Controls.Add(this.articulosComboBox);
-            this.Controls.Add(this.entregaDateTimePicker);
             this.Controls.Add(this.notasTextBox);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.idTextBox);
@@ -346,7 +346,6 @@
         private System.Windows.Forms.Label fechaLabel;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.TextBox notasTextBox;
-        private System.Windows.Forms.DateTimePicker entregaDateTimePicker;
         private System.Windows.Forms.ComboBox articulosComboBox;
         private System.Windows.Forms.DataGridView articulosDataGridView;
         private System.Windows.Forms.TextBox problemaTextBox;
@@ -356,5 +355,6 @@
         private System.Windows.Forms.Button buscarClienteButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Problema;
+        private System.Windows.Forms.DateTimePicker entregaDateTimePicker;
     }
 }

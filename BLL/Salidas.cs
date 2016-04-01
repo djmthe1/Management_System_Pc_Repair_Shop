@@ -101,7 +101,7 @@ namespace BLL
             string hoy = DateTime.Now.ToShortDateString();
             try
             {
-                dt = conexion.ObtenerDatos("SELECT * FROM Salidas WHERE Fecha >= " + hoy + Campos);
+                dt = conexion.ObtenerDatos("SELECT * FROM Salidas WHERE Entregado='False' AND Fecha >= " + hoy + Campos);
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;
