@@ -66,7 +66,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 {
                     portada.toolStripStatusLabel.Text = usuarioTextBox.Text;
                     portada.Show();
-                    this.Close();
                     Limpiar();
                 }
                 else
