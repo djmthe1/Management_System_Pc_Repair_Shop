@@ -43,23 +43,23 @@
             // 
             this.descripcionLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.descripcionLabel.AutoSize = true;
-            this.descripcionLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descripcionLabel.Location = new System.Drawing.Point(34, 62);
             this.descripcionLabel.Name = "descripcionLabel";
-            this.descripcionLabel.Size = new System.Drawing.Size(72, 14);
+            this.descripcionLabel.Size = new System.Drawing.Size(78, 13);
             this.descripcionLabel.TabIndex = 21;
-            this.descripcionLabel.Text = "Descripcion";
+            this.descripcionLabel.Text = "Descripción:";
             // 
             // idLabel
             // 
             this.idLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idLabel.AutoSize = true;
-            this.idLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLabel.Location = new System.Drawing.Point(89, 15);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(17, 14);
+            this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 20;
-            this.idLabel.Text = "Id";
+            this.idLabel.Text = "Id:";
             // 
             // descripcionTextBox
             // 

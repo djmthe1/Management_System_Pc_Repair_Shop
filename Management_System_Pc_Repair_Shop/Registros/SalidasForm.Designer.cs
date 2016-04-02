@@ -49,9 +49,9 @@
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLabel.Location = new System.Drawing.Point(72, 16);
             this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(18, 13);
+            this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 6;
-            this.idLabel.Text = "Id";
+            this.idLabel.Text = "Id:";
             // 
             // fechaLabel
             // 
@@ -59,9 +59,9 @@
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechaLabel.Location = new System.Drawing.Point(48, 47);
             this.fechaLabel.Name = "fechaLabel";
-            this.fechaLabel.Size = new System.Drawing.Size(42, 13);
+            this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 7;
-            this.fechaLabel.Text = "Fecha";
+            this.fechaLabel.Text = "Fecha:";
             // 
             // label3
             // 
@@ -69,9 +69,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "EntradaId";
+            this.label3.Text = "EntradaId:";
             // 
             // observacionLabel
             // 
@@ -79,9 +79,9 @@
             this.observacionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.observacionLabel.Location = new System.Drawing.Point(12, 109);
             this.observacionLabel.Name = "observacionLabel";
-            this.observacionLabel.Size = new System.Drawing.Size(78, 13);
+            this.observacionLabel.Size = new System.Drawing.Size(82, 13);
             this.observacionLabel.TabIndex = 9;
-            this.observacionLabel.Text = "Observación";
+            this.observacionLabel.Text = "Observación:";
             // 
             // salidaDateTimePicker
             // 
@@ -96,7 +96,7 @@
             this.idTextBox.Location = new System.Drawing.Point(96, 16);
             this.idTextBox.MaxLength = 5;
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(49, 20);
+            this.idTextBox.Size = new System.Drawing.Size(60, 20);
             this.idTextBox.TabIndex = 1;
             // 
             // EntradaComboBox
@@ -170,7 +170,7 @@
             this.botonBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarCliente.BackgroundImage")));
             this.botonBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botonBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonBuscarCliente.Location = new System.Drawing.Point(151, 11);
+            this.botonBuscarCliente.Location = new System.Drawing.Point(162, 11);
             this.botonBuscarCliente.Name = "botonBuscarCliente";
             this.botonBuscarCliente.Size = new System.Drawing.Size(31, 29);
             this.botonBuscarCliente.TabIndex = 2;

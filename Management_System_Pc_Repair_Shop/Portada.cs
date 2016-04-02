@@ -19,7 +19,7 @@ namespace Management_System_Pc_Repair_Shop
 
         private void Portada_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         Reportes.VisorReportesForm PresentarR = new Reportes.VisorReportesForm();
@@ -92,6 +92,12 @@ namespace Management_System_Pc_Repair_Shop
         {
             Consultas.ConsultaClientesForm Cclientes = new Consultas.ConsultaClientesForm();
             Cclientes.Show();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaUsuariosForm Cusuarios = new Consultas.ConsultaUsuariosForm();
+            Cusuarios.Show();
         }
 
         private void marcasToolStripMenuItem1_Click(object sender, EventArgs e)

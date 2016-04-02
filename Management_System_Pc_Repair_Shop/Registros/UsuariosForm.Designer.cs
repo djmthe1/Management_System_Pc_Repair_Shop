@@ -53,7 +53,7 @@
             this.prioridadComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.prioridadComboBox.Location = new System.Drawing.Point(134, 166);
+            this.prioridadComboBox.Location = new System.Drawing.Point(134, 162);
             this.prioridadComboBox.Name = "prioridadComboBox";
             this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
             this.prioridadComboBox.TabIndex = 6;
@@ -62,11 +62,12 @@
             // 
             this.confirmarContraseñaLabel.AllowDrop = true;
             this.confirmarContraseñaLabel.AutoSize = true;
-            this.confirmarContraseñaLabel.Location = new System.Drawing.Point(24, 136);
+            this.confirmarContraseñaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmarContraseñaLabel.Location = new System.Drawing.Point(0, 136);
             this.confirmarContraseñaLabel.Name = "confirmarContraseñaLabel";
-            this.confirmarContraseñaLabel.Size = new System.Drawing.Size(108, 13);
+            this.confirmarContraseñaLabel.Size = new System.Drawing.Size(132, 13);
             this.confirmarContraseñaLabel.TabIndex = 44;
-            this.confirmarContraseñaLabel.Text = "Confirmar Contraseña";
+            this.confirmarContraseñaLabel.Text = "Confirmar Contraseña:";
             // 
             // confirmarPassTextBox
             // 
@@ -110,41 +111,45 @@
             // 
             this.prioridadLabel.AllowDrop = true;
             this.prioridadLabel.AutoSize = true;
-            this.prioridadLabel.Location = new System.Drawing.Point(84, 165);
+            this.prioridadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prioridadLabel.Location = new System.Drawing.Point(71, 165);
             this.prioridadLabel.Name = "prioridadLabel";
-            this.prioridadLabel.Size = new System.Drawing.Size(48, 13);
+            this.prioridadLabel.Size = new System.Drawing.Size(61, 13);
             this.prioridadLabel.TabIndex = 43;
-            this.prioridadLabel.Text = "Prioridad";
+            this.prioridadLabel.Text = "Prioridad:";
             // 
             // passLabel
             // 
             this.passLabel.AllowDrop = true;
             this.passLabel.AutoSize = true;
-            this.passLabel.Location = new System.Drawing.Point(71, 107);
+            this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passLabel.Location = new System.Drawing.Point(57, 107);
             this.passLabel.Name = "passLabel";
-            this.passLabel.Size = new System.Drawing.Size(61, 13);
+            this.passLabel.Size = new System.Drawing.Size(75, 13);
             this.passLabel.TabIndex = 42;
-            this.passLabel.Text = "Contraseña";
+            this.passLabel.Text = "Contraseña:";
             // 
             // nombreLabel
             // 
             this.nombreLabel.AllowDrop = true;
             this.nombreLabel.AutoSize = true;
-            this.nombreLabel.Location = new System.Drawing.Point(88, 78);
+            this.nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreLabel.Location = new System.Drawing.Point(78, 78);
             this.nombreLabel.Name = "nombreLabel";
-            this.nombreLabel.Size = new System.Drawing.Size(44, 13);
+            this.nombreLabel.Size = new System.Drawing.Size(54, 13);
             this.nombreLabel.TabIndex = 41;
-            this.nombreLabel.Text = "Nombre";
+            this.nombreLabel.Text = "Nombre:";
             // 
             // IDlabel
             // 
             this.IDlabel.AllowDrop = true;
             this.IDlabel.AutoSize = true;
-            this.IDlabel.Location = new System.Drawing.Point(116, 49);
+            this.IDlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDlabel.Location = new System.Drawing.Point(110, 49);
             this.IDlabel.Name = "IDlabel";
-            this.IDlabel.Size = new System.Drawing.Size(16, 13);
+            this.IDlabel.Size = new System.Drawing.Size(22, 13);
             this.IDlabel.TabIndex = 40;
-            this.IDlabel.Text = "Id";
+            this.IDlabel.Text = "Id:";
             // 
             // EliminarButton
             // 

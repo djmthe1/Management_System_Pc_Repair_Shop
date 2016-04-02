@@ -114,7 +114,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             {
                 if (cliente.Buscar(entrada.ClienteId))
                 {
-                    DevolverValores();
+                    nombreTextBox.Text = cliente.Nombre.ToString();
                 }
                 else
                 {
@@ -131,7 +131,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 if (!articulosComboBox.Text.Equals("") && !problemaTextBox.Text.Equals(""))
                 {
                     articulosDataGridView.Rows.Add(articulosComboBox.Text, problemaTextBox.Text);
-                    entrada.InsertarArticulo(articulosComboBox.Text, problemaTextBox.Text);
+                    entrada.InsertarArticulo(1, articulosComboBox.Text, problemaTextBox.Text);
                     articulosComboBox.SelectedIndex = -1;
                     problemaTextBox.Clear();
                 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.prioridadLabel = new System.Windows.Forms.Label();
-            this.prioridadComboBox = new System.Windows.Forms.ComboBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -42,32 +40,9 @@
             this.loginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // prioridadLabel
-            // 
-            this.prioridadLabel.AutoSize = true;
-            this.prioridadLabel.BackColor = System.Drawing.Color.Transparent;
-            this.prioridadLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prioridadLabel.Location = new System.Drawing.Point(25, 41);
-            this.prioridadLabel.Name = "prioridadLabel";
-            this.prioridadLabel.Size = new System.Drawing.Size(98, 14);
-            this.prioridadLabel.TabIndex = 14;
-            this.prioridadLabel.Text = "TIPO DE USUARIO";
-            // 
-            // prioridadComboBox
-            // 
-            this.prioridadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.prioridadComboBox.FormattingEnabled = true;
-            this.prioridadComboBox.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.prioridadComboBox.Location = new System.Drawing.Point(129, 38);
-            this.prioridadComboBox.Name = "prioridadComboBox";
-            this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
-            this.prioridadComboBox.TabIndex = 1;
-            // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(129, 107);
+            this.passwordTextBox.Location = new System.Drawing.Point(129, 81);
             this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
@@ -76,7 +51,7 @@
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(129, 73);
+            this.usuarioTextBox.Location = new System.Drawing.Point(129, 47);
             this.usuarioTextBox.MaxLength = 50;
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
@@ -86,36 +61,34 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.passwordLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(43, 109);
+            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Location = new System.Drawing.Point(32, 83);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(80, 14);
+            this.passwordLabel.Size = new System.Drawing.Size(95, 13);
             this.passwordLabel.TabIndex = 10;
-            this.passwordLabel.Text = "CONTRASEÑA";
+            this.passwordLabel.Text = "CONTRASEÑA:";
             // 
             // usuarioLabel
             // 
             this.usuarioLabel.AutoSize = true;
             this.usuarioLabel.BackColor = System.Drawing.Color.Transparent;
-            this.usuarioLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioLabel.Location = new System.Drawing.Point(69, 75);
+            this.usuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioLabel.Location = new System.Drawing.Point(60, 49);
             this.usuarioLabel.Name = "usuarioLabel";
-            this.usuarioLabel.Size = new System.Drawing.Size(54, 14);
+            this.usuarioLabel.Size = new System.Drawing.Size(67, 13);
             this.usuarioLabel.TabIndex = 9;
-            this.usuarioLabel.Text = "USUARIO";
+            this.usuarioLabel.Text = "USUARIO:";
             // 
             // loginPanel
             // 
             this.loginPanel.Controls.Add(this.mensajeLabel);
-            this.loginPanel.Controls.Add(this.prioridadComboBox);
-            this.loginPanel.Controls.Add(this.prioridadLabel);
             this.loginPanel.Controls.Add(this.usuarioLabel);
             this.loginPanel.Controls.Add(this.passwordLabel);
             this.loginPanel.Controls.Add(this.passwordTextBox);
             this.loginPanel.Controls.Add(this.usuarioTextBox);
-            this.loginPanel.Location = new System.Drawing.Point(208, 107);
+            this.loginPanel.Location = new System.Drawing.Point(208, 130);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(256, 143);
+            this.loginPanel.Size = new System.Drawing.Size(256, 120);
             this.loginPanel.TabIndex = 15;
             // 
             // mensajeLabel
@@ -185,16 +158,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label prioridadLabel;
-        private System.Windows.Forms.ComboBox prioridadComboBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usuarioLabel;
         private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button cancelarButton;
         private System.Windows.Forms.Label mensajeLabel;
+        private System.Windows.Forms.TextBox usuarioTextBox;
     }
 }

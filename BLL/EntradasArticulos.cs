@@ -23,6 +23,13 @@ namespace BLL
             this.Problema = problema;
         }
 
+        public EntradasArticulos(int entradaId, string Articulo, string problema)
+        {
+            this.EntradaId = entradaId;
+            this.Articulo = Articulo;
+            this.Problema = problema;
+        }
+
         public EntradasArticulos( string Articulo, string problema)
         {
             this.Articulo = Articulo;

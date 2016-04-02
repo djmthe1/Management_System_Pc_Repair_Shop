@@ -69,7 +69,7 @@
             // 
             this.salidaIdLabel.AutoSize = true;
             this.salidaIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salidaIdLabel.Location = new System.Drawing.Point(86, 67);
+            this.salidaIdLabel.Location = new System.Drawing.Point(88, 88);
             this.salidaIdLabel.Name = "salidaIdLabel";
             this.salidaIdLabel.Size = new System.Drawing.Size(53, 13);
             this.salidaIdLabel.TabIndex = 0;
@@ -78,10 +78,10 @@
             // ventaPiezasLabel
             // 
             this.ventaPiezasLabel.AutoSize = true;
-            this.ventaPiezasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventaPiezasLabel.Location = new System.Drawing.Point(10, 22);
+            this.ventaPiezasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ventaPiezasLabel.Location = new System.Drawing.Point(159, 11);
             this.ventaPiezasLabel.Name = "ventaPiezasLabel";
-            this.ventaPiezasLabel.Size = new System.Drawing.Size(99, 13);
+            this.ventaPiezasLabel.Size = new System.Drawing.Size(184, 25);
             this.ventaPiezasLabel.TabIndex = 1;
             this.ventaPiezasLabel.Text = "Venta de Piezas";
             // 
@@ -99,7 +99,7 @@
             // 
             this.totalFacturaLabel.AutoSize = true;
             this.totalFacturaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFacturaLabel.Location = new System.Drawing.Point(404, 362);
+            this.totalFacturaLabel.Location = new System.Drawing.Point(406, 383);
             this.totalFacturaLabel.Name = "totalFacturaLabel";
             this.totalFacturaLabel.Size = new System.Drawing.Size(36, 13);
             this.totalFacturaLabel.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             this.montoAPagarLabel.AutoSize = true;
             this.montoAPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.montoAPagarLabel.Location = new System.Drawing.Point(350, 388);
+            this.montoAPagarLabel.Location = new System.Drawing.Point(352, 409);
             this.montoAPagarLabel.Name = "montoAPagarLabel";
             this.montoAPagarLabel.Size = new System.Drawing.Size(90, 13);
             this.montoAPagarLabel.TabIndex = 4;
@@ -119,7 +119,7 @@
             // 
             this.precioLabel.AutoSize = true;
             this.precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precioLabel.Location = new System.Drawing.Point(346, 54);
+            this.precioLabel.Location = new System.Drawing.Point(337, 54);
             this.precioLabel.Name = "precioLabel";
             this.precioLabel.Size = new System.Drawing.Size(47, 13);
             this.precioLabel.TabIndex = 5;
@@ -129,7 +129,7 @@
             // 
             this.cargoDeReparaciónLabel.AutoSize = true;
             this.cargoDeReparaciónLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cargoDeReparaciónLabel.Location = new System.Drawing.Point(12, 125);
+            this.cargoDeReparaciónLabel.Location = new System.Drawing.Point(14, 146);
             this.cargoDeReparaciónLabel.Name = "cargoDeReparaciónLabel";
             this.cargoDeReparaciónLabel.Size = new System.Drawing.Size(127, 13);
             this.cargoDeReparaciónLabel.TabIndex = 6;
@@ -140,7 +140,7 @@
             this.botonBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscar.BackgroundImage")));
             this.botonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.botonBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonBuscar.Location = new System.Drawing.Point(200, 23);
+            this.botonBuscar.Location = new System.Drawing.Point(251, 44);
             this.botonBuscar.Name = "botonBuscar";
             this.botonBuscar.Size = new System.Drawing.Size(31, 29);
             this.botonBuscar.TabIndex = 2;
@@ -149,17 +149,17 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(145, 28);
+            this.idTextBox.Location = new System.Drawing.Point(147, 49);
             this.idTextBox.MaxLength = 5;
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(49, 20);
+            this.idTextBox.Size = new System.Drawing.Size(98, 20);
             this.idTextBox.TabIndex = 1;
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(121, 28);
+            this.idLabel.Location = new System.Drawing.Point(123, 49);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(18, 13);
             this.idLabel.TabIndex = 55;
@@ -227,9 +227,9 @@
             this.facturaPanel.Controls.Add(this.ventaPiezasLabel);
             this.facturaPanel.Controls.Add(this.precioLabel);
             this.facturaPanel.Controls.Add(this.totalVentaLabel);
-            this.facturaPanel.Location = new System.Drawing.Point(12, 159);
+            this.facturaPanel.Location = new System.Drawing.Point(15, 169);
             this.facturaPanel.Name = "facturaPanel";
-            this.facturaPanel.Size = new System.Drawing.Size(501, 194);
+            this.facturaPanel.Size = new System.Drawing.Size(501, 205);
             this.facturaPanel.TabIndex = 61;
             // 
             // totalVentaTextBox
@@ -253,7 +253,7 @@
             // 
             // precioTextBox
             // 
-            this.precioTextBox.Location = new System.Drawing.Point(389, 50);
+            this.precioTextBox.Location = new System.Drawing.Point(380, 50);
             this.precioTextBox.MaxLength = 5;
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(67, 20);
@@ -263,9 +263,9 @@
             // 
             this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
             this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertar.Location = new System.Drawing.Point(462, 48);
+            this.botonInsertar.Location = new System.Drawing.Point(453, 45);
             this.botonInsertar.Name = "botonInsertar";
-            this.botonInsertar.Size = new System.Drawing.Size(25, 24);
+            this.botonInsertar.Size = new System.Drawing.Size(32, 29);
             this.botonInsertar.TabIndex = 81;
             this.botonInsertar.UseVisualStyleBackColor = true;
             this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
@@ -308,7 +308,7 @@
             this.articulosComboBox.FormattingEnabled = true;
             this.articulosComboBox.Items.AddRange(new object[] {
             "Motherboard"});
-            this.articulosComboBox.Location = new System.Drawing.Point(65, 50);
+            this.articulosComboBox.Location = new System.Drawing.Point(70, 50);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
             this.articulosComboBox.TabIndex = 7;
@@ -327,7 +327,7 @@
             // 
             this.marcaLabel.AutoSize = true;
             this.marcaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.marcaLabel.Location = new System.Drawing.Point(175, 54);
+            this.marcaLabel.Location = new System.Drawing.Point(175, 53);
             this.marcaLabel.Name = "marcaLabel";
             this.marcaLabel.Size = new System.Drawing.Size(46, 13);
             this.marcaLabel.TabIndex = 76;
@@ -338,7 +338,7 @@
             this.buscarSalidaButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarSalidaButton.BackgroundImage")));
             this.buscarSalidaButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarSalidaButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarSalidaButton.Location = new System.Drawing.Point(200, 58);
+            this.buscarSalidaButton.Location = new System.Drawing.Point(251, 79);
             this.buscarSalidaButton.Name = "buscarSalidaButton";
             this.buscarSalidaButton.Size = new System.Drawing.Size(31, 29);
             this.buscarSalidaButton.TabIndex = 4;
@@ -347,26 +347,26 @@
             // 
             // salidaIdTextBox
             // 
-            this.salidaIdTextBox.Location = new System.Drawing.Point(145, 63);
+            this.salidaIdTextBox.Location = new System.Drawing.Point(147, 84);
             this.salidaIdTextBox.MaxLength = 5;
             this.salidaIdTextBox.Name = "salidaIdTextBox";
-            this.salidaIdTextBox.Size = new System.Drawing.Size(49, 20);
+            this.salidaIdTextBox.Size = new System.Drawing.Size(98, 20);
             this.salidaIdTextBox.TabIndex = 3;
             // 
             // facturaDateTimePicker
             // 
             this.facturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.facturaDateTimePicker.Location = new System.Drawing.Point(145, 92);
+            this.facturaDateTimePicker.Location = new System.Drawing.Point(147, 113);
             this.facturaDateTimePicker.MinDate = new System.DateTime(2016, 3, 27, 0, 0, 0, 0);
             this.facturaDateTimePicker.Name = "facturaDateTimePicker";
-            this.facturaDateTimePicker.Size = new System.Drawing.Size(112, 20);
+            this.facturaDateTimePicker.Size = new System.Drawing.Size(98, 20);
             this.facturaDateTimePicker.TabIndex = 5;
             // 
             // fechaLabel
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(97, 96);
+            this.fechaLabel.Location = new System.Drawing.Point(99, 117);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(42, 13);
             this.fechaLabel.TabIndex = 67;
@@ -374,15 +374,15 @@
             // 
             // cargoDeReparacionTextBox
             // 
-            this.cargoDeReparacionTextBox.Location = new System.Drawing.Point(145, 122);
+            this.cargoDeReparacionTextBox.Location = new System.Drawing.Point(147, 143);
             this.cargoDeReparacionTextBox.MaxLength = 6;
             this.cargoDeReparacionTextBox.Name = "cargoDeReparacionTextBox";
-            this.cargoDeReparacionTextBox.Size = new System.Drawing.Size(67, 20);
+            this.cargoDeReparacionTextBox.Size = new System.Drawing.Size(98, 20);
             this.cargoDeReparacionTextBox.TabIndex = 6;
             // 
             // montoAPagarTextBox
             // 
-            this.montoAPagarTextBox.Location = new System.Drawing.Point(446, 385);
+            this.montoAPagarTextBox.Location = new System.Drawing.Point(448, 406);
             this.montoAPagarTextBox.MaxLength = 6;
             this.montoAPagarTextBox.Name = "montoAPagarTextBox";
             this.montoAPagarTextBox.Size = new System.Drawing.Size(67, 20);
@@ -390,7 +390,7 @@
             // 
             // totalFacturaTextBox
             // 
-            this.totalFacturaTextBox.Location = new System.Drawing.Point(446, 359);
+            this.totalFacturaTextBox.Location = new System.Drawing.Point(448, 380);
             this.totalFacturaTextBox.Name = "totalFacturaTextBox";
             this.totalFacturaTextBox.ReadOnly = true;
             this.totalFacturaTextBox.Size = new System.Drawing.Size(67, 20);

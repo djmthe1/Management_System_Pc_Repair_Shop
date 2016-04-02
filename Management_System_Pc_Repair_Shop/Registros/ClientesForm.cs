@@ -47,6 +47,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
             nombreTextBox.Clear();
             apellidoTextBox.Clear();
             direccionTextBox.Clear();
+            telefonoMaskedTextBox.Clear();
+            tipoTelefonoComboBox.SelectedIndex = -1;
             telefonosDataGridView.Rows.Clear();
         }
 
@@ -101,11 +103,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             try
             { 
-                if (!TelefonoTextBox.Text.Equals("") && !tipoTelefonoComboBox.Text.Equals(""))
+                if (!telefonoMaskedTextBox.Text.Equals("") && !tipoTelefonoComboBox.Text.Equals(""))
                 {
-                    telefonosDataGridView.Rows.Add(TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
-                    clientes.InsertarTelefono(1,TelefonoTextBox.Text, tipoTelefonoComboBox.Text);
-                    TelefonoTextBox.Clear();
+                    telefonosDataGridView.Rows.Add(telefonoMaskedTextBox.Text, tipoTelefonoComboBox.Text);
+                    clientes.InsertarTelefono(1, telefonoMaskedTextBox.Text, tipoTelefonoComboBox.Text);
+                    telefonoMaskedTextBox.Clear();
                     tipoTelefonoComboBox.SelectedIndex = -1;
                 }
             }

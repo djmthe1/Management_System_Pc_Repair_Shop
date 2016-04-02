@@ -18,6 +18,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             InitializeComponent();
         }
 
+        Portada portada = new Portada();
         Usuarios usuarios = new Usuarios();
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -42,7 +43,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void Limpiar()
         {
-            prioridadComboBox.SelectedIndex = -1;
             usuarioTextBox.Clear();
             passwordTextBox.Clear();
         }
@@ -51,22 +51,22 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             usuarios.Nombre = usuarioTextBox.Text;
             usuarios.Password = passwordTextBox.Text;
-            usuarios.Prioridad = prioridadComboBox.Text;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (usuarioTextBox.Text == "" || passwordTextBox.Text == "" || prioridadComboBox.Text == "")
+            if (usuarioTextBox.Text == "" || passwordTextBox.Text == "")
             {
                 MessageBox.Show("Debe llenar todos los Campos", "Error Al Iniciar Sesion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Limpiar();
             }
             else
             {
-                if (usuarios.Verificar(usuarioTextBox.Text, passwordTextBox.Text, prioridadComboBox.Text))
+                if (usuarios.Verificar(usuarioTextBox.Text, passwordTextBox.Text))
                 {
-                    Portada portada = new Portada();
+                    portada.toolStripStatusLabel.Text = usuarioTextBox.Text;
                     portada.Show();
+                    this.Close();
                     Limpiar();
                 }
                 else

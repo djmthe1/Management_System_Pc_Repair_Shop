@@ -54,9 +54,11 @@
   <ItemGroup>
     <Compile Include="ClientesTests.cs" />
     <Compile Include="EntradasTests.cs" />
+    <Compile Include="FacturasTests.cs" />
     <Compile Include="MarcasTests.cs" />
     <Compile Include="PiezasTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalidasTests.cs" />
     <Compile Include="UsuariosTests.cs" />
   </ItemGroup>
   <ItemGroup>

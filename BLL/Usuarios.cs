@@ -87,12 +87,12 @@ namespace BLL
             return conexion.ObtenerDatos(("SELECT " + Campos + " FROM Usuarios WHERE " + Condicion + ordenar));
         }
 
-        public bool Verificar(string Nombre, string Password, string Prioridad)
+        public bool Verificar(string Nombre, string Password)
         {
             bool retorno = false;
             try
             {
-                dt = conexion.ObtenerDatos(String.Format("SELECT * FROM Usuarios WHERE Nombre='{0}' AND Password='{1}' AND Prioridad='{2}'", Nombre, Password, Prioridad));
+                dt = conexion.ObtenerDatos(String.Format("SELECT * FROM Usuarios WHERE Nombre='{0}' AND Password='{1}'", Nombre, Password));
                 if (dt.Rows.Count > 0)
                 {
                     retorno = true;
