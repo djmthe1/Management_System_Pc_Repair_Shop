@@ -156,6 +156,12 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
                 ObtenerValores();
+            if (usuarioIdTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
                 if (usuarios.Buscar(usuarios.UsuarioId))
                 {
                     if (usuarios.Eliminar())
@@ -173,6 +179,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                     MensajeAdvertencia("Este Id no existe");
                     Limpiar();
                 }
+            }
         }
     }
 }

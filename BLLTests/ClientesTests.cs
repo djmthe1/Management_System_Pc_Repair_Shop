@@ -32,7 +32,12 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            Clientes clientes = new Clientes();
+            clientes.Nombre = "";
+            clientes.Apellido = "";
+            clientes.Direccion = "";
+
+            Assert.IsTrue(clientes.Insertar());
         }
 
         [TestMethod()]

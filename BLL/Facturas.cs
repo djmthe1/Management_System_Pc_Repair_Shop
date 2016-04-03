@@ -12,7 +12,7 @@ namespace BLL
     {
         public int FacturaId { set; get; }
         public string Fecha { set; get; }
-        public int SalidaId { set; get; }
+        public int EntradaId { set; get; }
         public int ClienteId { set; get; }
         public float CargoReparacion { set; get; }
         public float Total { set; get; }
@@ -22,11 +22,11 @@ namespace BLL
         public List<ArticulosVendidos> articulos { get; set; }
         ConexionDb conexion = new ConexionDb();
 
-        public Facturas(int facturaId, string fecha, int salidaId, int clienteId, float cargoReparacion, float total, float montoAPagar, string despachadoPor)
+        public Facturas(int facturaId, string fecha, int entradaId, int clienteId, float cargoReparacion, float total, float montoAPagar, string despachadoPor)
         {
             this.FacturaId = facturaId;
             this.Fecha = fecha;
-            this.SalidaId = salidaId;
+            this.EntradaId = entradaId;
             this.ClienteId = clienteId;
             this.CargoReparacion = cargoReparacion;
             this.Total = total;
@@ -51,7 +51,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(string.Format("INSERT INTO Facturas (Fecha, SalidaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},{5},'{6}') Select @@Identity", this.Fecha, this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor));
+                identity = conexion.ObtenerValor(String.Format("INSERT INTO Facturas (Fecha, EntradaId, ClienteId, CargoReparacion, Total, MontoAPagar, DespachadoPor) VALUES ('{0}'.{1},{2},{3},{4},{5},'{6}') Select @@Identity", this.Fecha, this.EntradaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -59,9 +59,10 @@ namespace BLL
                 this.FacturaId = retorno;
                 if (retorno > 0)
                 {
+                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Entregado='True', WHERE EntradaId={0}", this.EntradaId));
                     foreach (ArticulosVendidos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", descripcion.FacturaId, descripcion.Pieza, descripcion.Marca, descripcion.Precio));
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", descripcion.FacturaId, descripcion.Pieza, descripcion.Marca, descripcion.Precio));
                     }
                 }
             }
@@ -77,13 +78,13 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("UPDATE Facturas SET Fecha='{0}', SalidaId={1}, ClienteId={2}, CargoReparacion={3}, Total={4}, MontoAPagar={5}, DespachadoPor={6} WHERE FacturaId={7}", this.Fecha, this.SalidaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor, this.FacturaId));
+                retorno = conexion.Ejecutar(String.Format("UPDATE Facturas SET Fecha='{0}', EntradaId={1}, ClienteId={2}, CargoReparacion={3}, Total={4}, MontoAPagar={5}, DespachadoPor={6} WHERE FacturaId={7}", this.Fecha, this.EntradaId, this.ClienteId, this.CargoReparacion, this.Total, this.MontoAPagar, this.DespachadoPor, this.FacturaId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("DELETE FROM ArticulosVendidos WHERE FacturaId= {0}", this.FacturaId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ArticulosVendidos WHERE FacturaId= {0}", this.FacturaId));
                     foreach (ArticulosVendidos datos in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", datos.FacturaId, datos.Pieza, datos.Marca, datos.Precio));
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", datos.FacturaId, datos.Pieza, datos.Marca, datos.Precio));
                     }
                 }
             }
@@ -98,7 +99,7 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(String.Format("DELETE FROM Facturas WHERE FacturaId={0}", this.FacturaId));
                 if (retorno)
-                    conexion.Ejecutar(string.Format("DELETE FROM ArticulosVendidos WHERE FacturaId={0}", this.FacturaId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ArticulosVendidos WHERE FacturaId={0}", this.FacturaId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -114,7 +115,7 @@ namespace BLL
             {
                 this.FacturaId = (int)dt.Rows[0]["FacturaId"];
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.SalidaId = (int)dt.Rows[0]["SalidaId"];
+                this.EntradaId = (int)dt.Rows[0]["EntradaId"];
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
                 this.CargoReparacion = (float)Convert.ToDecimal(dt.Rows[0]["CargoReparacion"]);
                 this.Total = (float)Convert.ToDecimal(dt.Rows[0]["Total"]);

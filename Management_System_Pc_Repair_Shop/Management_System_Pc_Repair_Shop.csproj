@@ -262,6 +262,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportSalidas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportUsuarios.rdlc" />
     <EmbeddedResource Include="Reportes\VisorReportesForm.resx">
       <DependentUpon>VisorReportesForm.cs</DependentUpon>
     </EmbeddedResource>

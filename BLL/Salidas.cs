@@ -14,18 +14,16 @@ namespace BLL
         public string Fecha { set; get; }
         public int EntradaId { set; get; }
         public string Observacion { set; get; }
-        public bool Entregado { set; get; }
         public string RetiradoPor { set; get; }
         ConexionDb conexion = new ConexionDb();
         DataTable dt = new DataTable();
 
-        public Salidas(int salidaId, string fecha, int entradaId, string obsevacion, bool entregado, string retiradoPor)
+        public Salidas(int salidaId, string fecha, int entradaId, string obsevacion, string retiradoPor)
         {
             this.SalidaId = salidaId;
             this.Fecha = fecha;
             this.EntradaId = entradaId;
             this.Observacion = obsevacion;
-            this.Entregado = entregado;
             this.RetiradoPor = retiradoPor;
         }
 

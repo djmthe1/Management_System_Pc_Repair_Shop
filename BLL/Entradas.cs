@@ -17,12 +17,13 @@ namespace BLL
         public string Notas { set; get; }
         public string RecibidoPor { set; get; }
         public bool Salio { set; get; }
+        public bool Entregado { set; get; }
         EntradasArticulos Articulo = new EntradasArticulos();
         public List<EntradasArticulos> articulos { get; set; }
         ConexionDb conexion = new ConexionDb();
         DataTable dt = new DataTable();
 
-        public Entradas(int entradaId, string fecha, string fechaEntrega, int clienteId, string nota, string recibidoPor)
+        public Entradas(int entradaId, string fecha, string fechaEntrega, int clienteId, string nota, string recibidoPor, bool salio, bool entregado)
         {
             this.EntradaId = entradaId;
             this.Fecha = fecha;
@@ -30,6 +31,8 @@ namespace BLL
             this.ClienteId = clienteId;
             this.Notas = nota;
             this.RecibidoPor = recibidoPor;
+            this.Salio = salio;
+            this.Entregado = entregado;
         }
 
         public Entradas()
@@ -42,6 +45,11 @@ namespace BLL
             this.articulos.Add(new EntradasArticulos(EntradaId, Articulo, Problema));
         }
 
+        public void LimpiarArticulo()
+        {
+            this.articulos.Clear();
+        }
+
         public override bool Insertar()
         {
             int retorno = 0;
@@ -49,7 +57,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(string.Format("Insert Into Entradas (Fecha, FechaEntrega, ClienteId, Notas, RecibidoPor) Values ('{0}','{2}',{1},'{3}','{4}') Select @@Identity", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor));
+                identity = conexion.ObtenerValor(String.Format("Insert Into Entradas (Fecha, FechaEntrega, ClienteId, Notas, RecibidoPor) Values ('{0}','{1}',{2},'{3}','{4}') Select @@Identity", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -59,7 +67,7 @@ namespace BLL
                 {
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
+                        conexion.Ejecutar(String.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", retorno, descripcion.Articulo, descripcion.Problema));
                     }
                 }
             }
@@ -78,10 +86,10 @@ namespace BLL
                 retorno = conexion.Ejecutar(String.Format("Update Entradas Set Fecha='{0}', FechaEntrega='{1}', ClienteId={2}, Notas='{3}', RecibidoPor='{4}' WHERE EntradaId={5}", this.Fecha, this.FechaEntrega, this.ClienteId, this.Notas, this.RecibidoPor, this.EntradaId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("Delete FROM EntradasArticulos WHERE EntradaId= {0}", this.EntradaId));
+                    conexion.Ejecutar(String.Format("Delete FROM EntradasArticulos WHERE EntradaId= {0}", this.EntradaId));
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(string.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
+                        conexion.Ejecutar(String.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
                     }
                 }
             }
@@ -96,7 +104,7 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(String.Format("Delete FROM Entradas WHERE EntradaId={0}", this.EntradaId));
                 if (retorno)
-                    conexion.Ejecutar(string.Format("Delete FROM EntradasArticulos WHERE EntradaId={0}", this.EntradaId));
+                    conexion.Ejecutar(String.Format("Delete FROM EntradasArticulos WHERE EntradaId={0}", this.EntradaId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -116,7 +124,7 @@ namespace BLL
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
 
-                dtArticulos = conexion.ObtenerDatos(String.Format("SELECT * FROM EntradasArticulos WHERE EntradaId = " + IdBuscado));
+                dtArticulos = conexion.ObtenerDatos(String.Format("SELECT * FROM EntradasArticulos WHERE EntradaId=" + IdBuscado));
 
                 foreach (DataRow row in dtArticulos.Rows)
                 {

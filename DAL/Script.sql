@@ -33,7 +33,7 @@ Go
 Create Table ClientesTelefonos(
 	Id int Identity(1,1) Primary Key,
 	ClienteId int References Clientes (ClienteId),
-	Tipo varchar (10),
+	Tipo varchar (12),
 	Telefono varchar (12)
 )
 
@@ -41,12 +41,13 @@ Go
 
 create table Entradas(
 	EntradaId int identity primary key,
-	Fecha varchar(25),
-	FechaEntrega varchar(25),
+	Fecha datetime,
+	FechaEntrega datetime,
 	ClienteId int References Clientes (ClienteId),
 	Notas varchar (100),
 	RecibidoPor varchar(20),
-	Salio bit
+	Salio bit,
+	Entregado bit
 )
 
 Go
@@ -62,10 +63,9 @@ Go
 
 create table Salidas(
 	SalidaId int identity primary key,
-	Fecha varchar(25),
+	Fecha datetime,
 	EntradaId int References Entradas (EntradaId),
 	Observacion varchar (200),
-	Entregado bit,
 	RetiradoPor varchar(20)
 )
 
@@ -73,8 +73,8 @@ Go
 
 create table Facturas(
 	FacturaId int identity primary key,
-	Fecha varchar(25),
-	SalidaId int References Salidas (SalidaId),
+	Fecha datetime,
+	EntradaId int References Entradas (EntradaId),
 	ClienteId int References Clientes (ClienteId),
 	CargoReparacion float,
 	Total float,

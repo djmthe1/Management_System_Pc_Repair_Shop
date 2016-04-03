@@ -22,7 +22,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void SalidasForm_Load(object sender, EventArgs e)
         {
-
+            this.salidaDateTimePicker.Enabled = false;
         }
 
         private void MensajeOk(string mensaje)
@@ -52,7 +52,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             int id = 0;
             int.TryParse(idTextBox.Text, out id);
             salida.SalidaId = id;
-            salida.Fecha = salidaDateTimePicker.Text;
+            salida.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
             int salidaid = 0;
             int.TryParse(idTextBox.Text, out salidaid);
             salida.SalidaId = salidaid;
@@ -139,22 +139,29 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (salida.Buscar(salida.EntradaId))
+            if (idTextBox.Text.Length == 0)
             {
-                if (salida.Eliminar())
-                {
-                    MensajeOk("Eliminado correctamente");
-                    Limpiar();
-                }
-                else
-                {
-                    MensajeError("Error al eliminar");
-                }
+                MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MensajeAdvertencia("Este Id no existe");
-                Limpiar();
+                if (salida.Buscar(salida.EntradaId))
+                {
+                    if (salida.Eliminar())
+                    {
+                        MensajeOk("Eliminado correctamente");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MensajeError("Error al eliminar");
+                    }
+                }
+                else
+                {
+                    MensajeAdvertencia("Este Id no existe");
+                    Limpiar();
+                }
             }
         }
     }

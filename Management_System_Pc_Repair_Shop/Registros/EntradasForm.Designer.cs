@@ -109,7 +109,7 @@
             // 
             this.fechaEntregaLabel.AutoSize = true;
             this.fechaEntregaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaEntregaLabel.Location = new System.Drawing.Point(-1, 79);
+            this.fechaEntregaLabel.Location = new System.Drawing.Point(12, 79);
             this.fechaEntregaLabel.Name = "fechaEntregaLabel";
             this.fechaEntregaLabel.Size = new System.Drawing.Size(112, 13);
             this.fechaEntregaLabel.TabIndex = 60;
@@ -129,7 +129,7 @@
             // 
             this.notasLabel.AutoSize = true;
             this.notasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasLabel.Location = new System.Drawing.Point(67, 158);
+            this.notasLabel.Location = new System.Drawing.Point(12, 158);
             this.notasLabel.Name = "notasLabel";
             this.notasLabel.Size = new System.Drawing.Size(44, 13);
             this.notasLabel.TabIndex = 62;
@@ -159,7 +159,7 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(112, 27);
+            this.idTextBox.Location = new System.Drawing.Point(130, 24);
             this.idTextBox.MaxLength = 6;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(78, 20);
@@ -167,8 +167,9 @@
             // 
             // entradaDateTimePicker
             // 
-            this.entradaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.entradaDateTimePicker.Location = new System.Drawing.Point(112, 53);
+            this.entradaDateTimePicker.CustomFormat = "yyyy-MM-dd";
+            this.entradaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.entradaDateTimePicker.Location = new System.Drawing.Point(130, 50);
             this.entradaDateTimePicker.Name = "entradaDateTimePicker";
             this.entradaDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.entradaDateTimePicker.TabIndex = 3;
@@ -177,7 +178,7 @@
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(65, 53);
+            this.fechaLabel.Location = new System.Drawing.Point(12, 53);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 65;
@@ -187,7 +188,7 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(89, 27);
+            this.idLabel.Location = new System.Drawing.Point(12, 27);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 64;
@@ -195,7 +196,7 @@
             // 
             // notasTextBox
             // 
-            this.notasTextBox.Location = new System.Drawing.Point(113, 158);
+            this.notasTextBox.Location = new System.Drawing.Point(131, 155);
             this.notasTextBox.MaxLength = 100;
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
@@ -250,7 +251,7 @@
             // 
             this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
             this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertar.Location = new System.Drawing.Point(383, 233);
+            this.botonInsertar.Location = new System.Drawing.Point(383, 252);
             this.botonInsertar.Name = "botonInsertar";
             this.botonInsertar.Size = new System.Drawing.Size(25, 24);
             this.botonInsertar.TabIndex = 10;
@@ -259,7 +260,7 @@
             // 
             // clienteIdTextBox
             // 
-            this.clienteIdTextBox.Location = new System.Drawing.Point(112, 102);
+            this.clienteIdTextBox.Location = new System.Drawing.Point(130, 99);
             this.clienteIdTextBox.MaxLength = 5;
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(81, 20);
@@ -269,7 +270,7 @@
             // 
             this.clienteIdLabel.AutoSize = true;
             this.clienteIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteIdLabel.Location = new System.Drawing.Point(50, 109);
+            this.clienteIdLabel.Location = new System.Drawing.Point(12, 109);
             this.clienteIdLabel.Name = "clienteIdLabel";
             this.clienteIdLabel.Size = new System.Drawing.Size(61, 13);
             this.clienteIdLabel.TabIndex = 76;
@@ -289,15 +290,16 @@
             // 
             // entregaDateTimePicker
             // 
-            this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.entregaDateTimePicker.Location = new System.Drawing.Point(112, 80);
+            this.entregaDateTimePicker.CustomFormat = "yyyy-MM-dd";
+            this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.entregaDateTimePicker.Location = new System.Drawing.Point(130, 77);
             this.entregaDateTimePicker.Name = "entregaDateTimePicker";
             this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.entregaDateTimePicker.TabIndex = 4;
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(112, 132);
+            this.nombreTextBox.Location = new System.Drawing.Point(130, 129);
             this.nombreTextBox.MaxLength = 40;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.ReadOnly = true;
@@ -310,7 +312,7 @@
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(57, 134);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(12, 134);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
             this.nombreClienteLabel.Size = new System.Drawing.Size(54, 13);
             this.nombreClienteLabel.TabIndex = 78;

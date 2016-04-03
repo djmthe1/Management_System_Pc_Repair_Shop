@@ -19,11 +19,12 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Entradas entrada = new Entradas();
+        Portada portada = new Portada();
         Clientes cliente = new Clientes();
 
         private void EntradasForm_Load(object sender, EventArgs e)
         {
-
+            this.entradaDateTimePicker.Enabled = false;
         }
         
         private void MensajeOk(string mensaje)
@@ -57,12 +58,14 @@ namespace Management_System_Pc_Repair_Shop.Registros
             int id = 0;
             int.TryParse(idTextBox.Text, out id);
             entrada.EntradaId = id;
-            entrada.Fecha = entradaDateTimePicker.Text;
+            entrada.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
             entrada.FechaEntrega = entregaDateTimePicker.Text;
             int clienteid = 0;
             int.TryParse(clienteIdTextBox.Text, out clienteid);
             entrada.ClienteId = clienteid;
             entrada.Notas = notasTextBox.Text;
+            entrada.RecibidoPor = portada.toolStripStatusLabel.Text;
+            entrada.LimpiarArticulo();
             foreach (var articulo in entrada.articulos)
             {
                 articulosDataGridView.Rows.Add(articulo.Articulo, articulo.Problema);
@@ -72,8 +75,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void DevolverValores()
         {
             idTextBox.Text = entrada.EntradaId.ToString();
-            entradaDateTimePicker.Text = entrada.Fecha.ToString();
-            entregaDateTimePicker.Text = entrada.FechaEntrega.ToString();
+            entradaDateTimePicker.Text = entrada.Fecha;
+            entregaDateTimePicker.Text = entrada.FechaEntrega;
             clienteIdTextBox.Text = entrada.ClienteId.ToString();
             notasTextBox.Text = entrada.Notas.ToString();
             foreach (var articulo in entrada.articulos)
@@ -84,6 +87,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         
         private void buscarButton_Click(object sender, EventArgs e)
         {
+            articulosDataGridView.Rows.Clear();
             ObtenerValores();
             if (idTextBox.Text.Length == 0)
             {
@@ -193,22 +197,29 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (entrada.Buscar(entrada.EntradaId))
+            if (clienteIdTextBox.Text.Length == 0)
             {
-                if (entrada.Eliminar())
-                {
-                    MensajeOk("Eliminado correctamente");
-                    Limpiar();
-                }
-                else
-                {
-                    MensajeError("Error al eliminar");
-                }
+                MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MensajeAdvertencia("Este Id no existe");
-                Limpiar();
+                if (entrada.Buscar(entrada.EntradaId))
+                {
+                    if (entrada.Eliminar())
+                    {
+                        MensajeOk("Eliminado correctamente");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MensajeError("Error al eliminar");
+                    }
+                }
+                else
+                {
+                    MensajeAdvertencia("Este Id no existe");
+                    Limpiar();
+                }
             }
         }
     }

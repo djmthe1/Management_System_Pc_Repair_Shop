@@ -23,7 +23,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
-
+            this.facturaDateTimePicker.Enabled = false;
         }
 
         private void MensajeOk(string mensaje)
@@ -45,7 +45,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             idTextBox.Clear();
             facturaDateTimePicker.ResetText();
-            salidaIdTextBox.Clear();
+            entradaIdTextBox.Clear();
             cargoDeReparacionTextBox.Clear();
             articulosComboBox.SelectedIndex = -1;
             marcaComboBox.SelectedIndex = -1;
@@ -58,10 +58,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             int id = 0;
             int.TryParse(idTextBox.Text, out id);
             factura.FacturaId = id;
-            factura.Fecha = facturaDateTimePicker.Text;
+            factura.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
             int salidaid = 0;
-            int.TryParse(salidaIdTextBox.Text, out salidaid);
-            factura.SalidaId = salidaid;
+            int.TryParse(entradaIdTextBox.Text, out salidaid);
+            factura.EntradaId = salidaid;
             float montoapagar = 0;
             float.TryParse(montoAPagarTextBox.Text, out montoapagar);
             factura.MontoAPagar = montoapagar;
@@ -75,7 +75,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             idTextBox.Text = factura.FacturaId.ToString();
             facturaDateTimePicker.Text = factura.Fecha.ToString();
-            salidaIdTextBox.Text = factura.SalidaId.ToString();
+            entradaIdTextBox.Text = factura.EntradaId.ToString();
             cargoDeReparacionTextBox.Text = factura.CargoReparacion.ToString();
             totalFacturaTextBox.Text = factura.Total.ToString();
             montoAPagarTextBox.Text = factura.MontoAPagar.ToString();
@@ -130,20 +130,20 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void buscarSalidaButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (salidaIdTextBox.Text.Length == 0)
+            if (entradaIdTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (salida.Buscar(factura.SalidaId))
+                if (salida.Buscar(factura.EntradaId))
                 {
                     DevolverValores();
                 }
                 else
                 {
                     MensajeAdvertencia("Id no encontrado");
-                    salidaIdTextBox.Clear();
+                    entradaIdTextBox.Clear();
                 }
             }
         }
@@ -159,7 +159,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (salidaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Insertar())
                     {
@@ -178,7 +178,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (salidaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Editar())
                     {
@@ -201,22 +201,29 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (factura.Buscar(factura.FacturaId))
+            if (idTextBox.Text.Length == 0)
             {
-                if (factura.Eliminar())
-                {
-                    MensajeOk("Eliminado correctamente");
-                    Limpiar();
-                }
-                else
-                {
-                    MensajeError("Error al eliminar");
-                }
+                MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MensajeAdvertencia("Este Id no existe");
-                Limpiar();
+                if (factura.Buscar(factura.FacturaId))
+                {
+                    if (factura.Eliminar())
+                    {
+                        MensajeOk("Eliminado correctamente");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MensajeError("Error al eliminar");
+                    }
+                }
+                else
+                {
+                    MensajeAdvertencia("Este Id no existe");
+                    Limpiar();
+                }
             }
         }
     }

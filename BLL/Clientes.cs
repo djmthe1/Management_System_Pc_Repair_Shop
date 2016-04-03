@@ -72,7 +72,7 @@ namespace BLL
                 retorno = conexion.Ejecutar(String.Format("UPDATE Clientes SET Nombre='{0}', Apellido='{1}', Direccion='{2}' WHERE ClienteId={3}", this.Nombre, this.Apellido, this.Direccion, this.ClienteId));
                 if (retorno)
                 {
-                    conexion.Ejecutar(string.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
                         conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
@@ -90,7 +90,7 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(String.Format("DELETE FROM Clientes WHERE ClienteId={0}", this.ClienteId));
                 if (retorno)
-                    conexion.Ejecutar(string.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;

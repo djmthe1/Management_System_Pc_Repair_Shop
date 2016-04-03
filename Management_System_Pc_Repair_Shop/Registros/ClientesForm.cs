@@ -168,22 +168,29 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (clientes.Buscar(clientes.ClienteId))
+            if (clienteIdTextBox.Text.Length == 0)
             {
-                if (clientes.Eliminar())
-                {
-                    MensajeOk("Eliminado correctamente");
-                    Limpiar();
-                }
-                else
-                {
-                    MensajeError("Error al eliminar");
-                }
+                MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MensajeAdvertencia("Este Id no existe");
-                Limpiar();
+                if (clientes.Buscar(clientes.ClienteId))
+                {
+                    if (clientes.Eliminar())
+                    {
+                        MensajeOk("Eliminado correctamente");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MensajeError("Error al eliminar");
+                    }
+                }
+                else
+                {
+                    MensajeAdvertencia("Este Id no existe");
+                    Limpiar();
+                }
             }
         }
     }
