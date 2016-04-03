@@ -45,7 +45,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             idTextBox.Clear();
             facturaDateTimePicker.ResetText();
-            entradaIdTextBox.Clear();
+            entradaComboBox.SelectedIndex = -1;
             cargoDeReparacionTextBox.Clear();
             articulosComboBox.SelectedIndex = -1;
             marcaComboBox.SelectedIndex = -1;
@@ -60,7 +60,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             factura.FacturaId = id;
             factura.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
             int salidaid = 0;
-            int.TryParse(entradaIdTextBox.Text, out salidaid);
+            int.TryParse(entradaComboBox.Text, out salidaid);
             factura.EntradaId = salidaid;
             float montoapagar = 0;
             float.TryParse(montoAPagarTextBox.Text, out montoapagar);
@@ -75,7 +75,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             idTextBox.Text = factura.FacturaId.ToString();
             facturaDateTimePicker.Text = factura.Fecha.ToString();
-            entradaIdTextBox.Text = factura.EntradaId.ToString();
+            entradaComboBox.Text = factura.EntradaId.ToString();
             cargoDeReparacionTextBox.Text = factura.CargoReparacion.ToString();
             totalFacturaTextBox.Text = factura.Total.ToString();
             montoAPagarTextBox.Text = factura.MontoAPagar.ToString();
@@ -130,7 +130,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void buscarSalidaButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (entradaIdTextBox.Text.Length == 0)
+            if (entradaComboBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -143,7 +143,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 else
                 {
                     MensajeAdvertencia("Id no encontrado");
-                    entradaIdTextBox.Clear();
+                    entradaComboBox.SelectedIndex = -1;
                 }
             }
         }
@@ -159,7 +159,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (entradaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Insertar())
                     {
@@ -178,7 +178,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (entradaIdTextBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Editar())
                     {

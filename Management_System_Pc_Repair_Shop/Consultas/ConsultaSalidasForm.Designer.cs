@@ -96,7 +96,6 @@
             "Fecha",
             "EntradaId",
             "Observacion",
-            "Entregado",
             "RetiradoPor"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";

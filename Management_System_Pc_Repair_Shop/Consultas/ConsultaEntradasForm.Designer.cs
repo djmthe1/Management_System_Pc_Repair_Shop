@@ -109,7 +109,8 @@
             "ClienteId",
             "Nota",
             "RecibidoPor",
-            "Salio"});
+            "Salio",
+            "Entregado"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
             this.comboBoxCampos.Size = new System.Drawing.Size(112, 21);
