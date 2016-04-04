@@ -33,35 +33,48 @@ namespace BLL.Tests
         public void InsertarTest()
         {
             Clientes clientes = new Clientes();
-            clientes.Nombre = "";
-            clientes.Apellido = "";
-            clientes.Direccion = "";
 
+            clientes.Nombre = "Jeff";
+            clientes.Apellido = "Rodriguez";
+            clientes.Direccion = "Duarte";
             Assert.IsTrue(clientes.Insertar());
         }
 
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Clientes clientes = new Clientes();
+
+            clientes.ClienteId = 1;
+            clientes.Nombre = "Jeff";
+            clientes.Apellido = "Rodriguez";
+            clientes.Direccion = "Duarte";
+            Assert.IsTrue(clientes.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Clientes clientes = new Clientes();
+
+            clientes.ClienteId = 1;
+            Assert.IsTrue(clientes.Eliminar());
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Clientes clientes = new Clientes();
+
+            Assert.IsTrue(clientes.Buscar(0));
         }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Clientes clientes = new Clientes();
+
+            Assert.IsTrue(clientes.Listado(" * ", " 1=1 ", "").Rows.Count > 0);
         }
     }
 }

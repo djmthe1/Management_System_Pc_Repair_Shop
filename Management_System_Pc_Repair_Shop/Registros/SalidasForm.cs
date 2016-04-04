@@ -20,6 +20,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         Salidas salida = new Salidas();
         Entradas entrada = new Entradas();
+        Portada portada = new Portada();
         Validaciones validar = new Validaciones();
 
         private void SalidasForm_Load(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             int.TryParse(idTextBox.Text, out salidaid);
             salida.SalidaId = salidaid;
             salida.Observacion = observacionTextBox.Text;
+            salida.RetiradoPor = portada.toolStripStatusLabel.Text;
         }
 
         private void DevolverValores()

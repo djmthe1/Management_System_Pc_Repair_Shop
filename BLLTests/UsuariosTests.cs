@@ -26,31 +26,49 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+            
+            usuario.Nombre = "Jeff";
+            usuario.Password = "1234";
+            usuario.Prioridad = "Administrador";
+            Assert.IsTrue(usuario.Insertar());
         }
 
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            usuario.UsuarioId = 1;
+            usuario.Nombre = "Jeff";
+            usuario.Password = "1234";
+            usuario.Prioridad = "Administrador";
+            Assert.IsTrue(usuario.Editar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            usuario.UsuarioId = 1;
+            Assert.IsTrue(usuario.Eliminar());
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            Assert.IsTrue(usuario.Buscar(0));
         }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Usuarios usuario = new Usuarios();
+
+            Assert.IsTrue(usuario.Listado(" * ", " 1=1 ", "").Rows.Count > 0);
         }
 
         [TestMethod()]

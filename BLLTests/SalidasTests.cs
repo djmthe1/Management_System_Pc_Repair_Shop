@@ -26,31 +26,47 @@ namespace BLL.Tests
         [TestMethod()]
         public void InsertarTest()
         {
-            Assert.Fail();
+            Salidas salida = new Salidas();
+            salida.Fecha = "2016-2-2";
+            salida.EntradaId = 1;
+            salida.Observacion = "nada";
+            salida.RetiradoPor = "Jeff";
+            Assert.IsTrue(salida.Insertar());
         }
 
         [TestMethod()]
         public void EditarTest()
         {
-            Assert.Fail();
+            Salidas salida = new Salidas();
+            salida.SalidaId = 1;
+            salida.Fecha = "2016-2-2";
+            salida.EntradaId = 1;
+            salida.Observacion = "nada";
+            salida.RetiradoPor = "Jeff";
+            Assert.IsTrue(salida.Insertar());
         }
 
         [TestMethod()]
         public void EliminarTest()
         {
-            Assert.Fail();
+            Salidas salida = new Salidas();
+            salida.SalidaId = 1;
+            Assert.IsTrue(salida.Eliminar());
         }
 
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Salidas salida = new Salidas();
+            salida.SalidaId = 1;
+            Assert.IsTrue(salida.Buscar(2));
         }
 
         [TestMethod()]
         public void ListadoTest()
         {
-            Assert.Fail();
+            Salidas salida = new Salidas();
+            Assert.IsTrue(salida.Listado(" * ", " 1=1 ", "").Rows.Count > 0);
         }
 
         [TestMethod()]
