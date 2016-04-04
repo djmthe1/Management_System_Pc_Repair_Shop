@@ -18,9 +18,16 @@ namespace Management_System_Pc_Repair_Shop.Consultas
             InitializeComponent();
         }
 
+        Validaciones validar = new Validaciones();
+
         private void ConsultaFacturasForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void buscarButton_Click(object sender, EventArgs e)

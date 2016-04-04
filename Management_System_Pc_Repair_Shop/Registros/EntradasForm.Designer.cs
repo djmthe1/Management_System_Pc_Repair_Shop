@@ -129,7 +129,7 @@
             // 
             this.notasLabel.AutoSize = true;
             this.notasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasLabel.Location = new System.Drawing.Point(12, 158);
+            this.notasLabel.Location = new System.Drawing.Point(80, 158);
             this.notasLabel.Name = "notasLabel";
             this.notasLabel.Size = new System.Drawing.Size(44, 13);
             this.notasLabel.TabIndex = 62;
@@ -150,7 +150,7 @@
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(200, 27);
+            this.buscarButton.Location = new System.Drawing.Point(217, 24);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(25, 22);
             this.buscarButton.TabIndex = 2;
@@ -164,6 +164,7 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(78, 20);
             this.idTextBox.TabIndex = 1;
+            this.idTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idTextBox_KeyPress);
             // 
             // entradaDateTimePicker
             // 
@@ -178,7 +179,7 @@
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(12, 53);
+            this.fechaLabel.Location = new System.Drawing.Point(78, 53);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 65;
@@ -188,7 +189,7 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(12, 27);
+            this.idLabel.Location = new System.Drawing.Point(102, 27);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 64;
@@ -202,6 +203,7 @@
             this.notasTextBox.Name = "notasTextBox";
             this.notasTextBox.Size = new System.Drawing.Size(297, 82);
             this.notasTextBox.TabIndex = 7;
+            this.notasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.notasTextBox_KeyPress);
             // 
             // articulosComboBox
             // 
@@ -246,6 +248,7 @@
             this.problemaTextBox.Name = "problemaTextBox";
             this.problemaTextBox.Size = new System.Drawing.Size(117, 20);
             this.problemaTextBox.TabIndex = 9;
+            this.problemaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.problemaTextBox_KeyPress);
             // 
             // botonInsertar
             // 
@@ -265,12 +268,13 @@
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(81, 20);
             this.clienteIdTextBox.TabIndex = 5;
+            this.clienteIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clienteIdTextBox_KeyPress);
             // 
             // clienteIdLabel
             // 
             this.clienteIdLabel.AutoSize = true;
             this.clienteIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteIdLabel.Location = new System.Drawing.Point(12, 109);
+            this.clienteIdLabel.Location = new System.Drawing.Point(63, 109);
             this.clienteIdLabel.Name = "clienteIdLabel";
             this.clienteIdLabel.Size = new System.Drawing.Size(61, 13);
             this.clienteIdLabel.TabIndex = 76;
@@ -281,7 +285,7 @@
             this.buscarClienteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarClienteButton.BackgroundImage")));
             this.buscarClienteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarClienteButton.Location = new System.Drawing.Point(200, 102);
+            this.buscarClienteButton.Location = new System.Drawing.Point(217, 99);
             this.buscarClienteButton.Name = "buscarClienteButton";
             this.buscarClienteButton.Size = new System.Drawing.Size(25, 24);
             this.buscarClienteButton.TabIndex = 6;
@@ -312,7 +316,7 @@
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(12, 134);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(70, 134);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
             this.nombreClienteLabel.Size = new System.Drawing.Size(54, 13);
             this.nombreClienteLabel.TabIndex = 78;

@@ -86,6 +86,7 @@
             this.textBoxFiltro.Name = "textBoxFiltro";
             this.textBoxFiltro.Size = new System.Drawing.Size(158, 20);
             this.textBoxFiltro.TabIndex = 30;
+            this.textBoxFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFiltro_KeyPress);
             // 
             // comboBoxCampos
             // 

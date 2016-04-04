@@ -20,6 +20,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         Portada portada = new Portada();
         Usuarios usuarios = new Usuarios();
+        Validaciones validar = new Validaciones();
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -39,6 +40,16 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void usuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Letras_KeyPress(e);
+        }
+
+        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

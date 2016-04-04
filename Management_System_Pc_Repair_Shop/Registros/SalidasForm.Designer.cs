@@ -98,6 +98,7 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(60, 20);
             this.idTextBox.TabIndex = 1;
+            this.idTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idTextBox_KeyPress);
             // 
             // EntradaComboBox
             // 
@@ -116,6 +117,7 @@
             this.observacionTextBox.Name = "observacionTextBox";
             this.observacionTextBox.Size = new System.Drawing.Size(255, 82);
             this.observacionTextBox.TabIndex = 5;
+            this.observacionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.observacionTextBox_KeyPress);
             // 
             // EliminarButton
             // 

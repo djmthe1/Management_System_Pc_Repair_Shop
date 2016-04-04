@@ -21,6 +21,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         Entradas entrada = new Entradas();
         Portada portada = new Portada();
         Clientes cliente = new Clientes();
+        Validaciones validar = new Validaciones();
 
         private void EntradasForm_Load(object sender, EventArgs e)
         {
@@ -40,6 +41,26 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Entradas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void clienteIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void notasTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
+        }
+
+        private void problemaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

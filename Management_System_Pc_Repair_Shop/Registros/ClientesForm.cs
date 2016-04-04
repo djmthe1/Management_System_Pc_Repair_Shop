@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Clientes clientes = new Clientes();
+        Validaciones validar = new Validaciones();
         int id = 0;
 
         private void ClientesForm_Load(object sender, EventArgs e)
@@ -39,6 +40,26 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Clientes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        
+        private void clienteIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Letras_KeyPress(e);
+        }
+
+        private void apellidoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Letras_KeyPress(e);
+        }
+
+        private void direccionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

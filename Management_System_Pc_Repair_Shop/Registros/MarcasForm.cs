@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Marcas marcas = new Marcas();
+        Validaciones validar = new Validaciones();
 
         private void MarcasForm_Load(object sender, EventArgs e)
         {
@@ -38,6 +39,16 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Marcas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void descripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

@@ -154,6 +154,7 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(98, 20);
             this.idTextBox.TabIndex = 1;
+            this.idTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idTextBox_KeyPress);
             // 
             // idLabel
             // 
@@ -257,6 +258,7 @@
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(67, 20);
             this.precioTextBox.TabIndex = 9;
+            this.precioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioTextBox_KeyPress);
             // 
             // botonInsertar
             // 
@@ -366,6 +368,7 @@
             this.cargoDeReparacionTextBox.Name = "cargoDeReparacionTextBox";
             this.cargoDeReparacionTextBox.Size = new System.Drawing.Size(98, 20);
             this.cargoDeReparacionTextBox.TabIndex = 6;
+            this.cargoDeReparacionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cargoDeReparacionTextBox_KeyPress);
             // 
             // montoAPagarTextBox
             // 
@@ -374,6 +377,7 @@
             this.montoAPagarTextBox.Name = "montoAPagarTextBox";
             this.montoAPagarTextBox.Size = new System.Drawing.Size(67, 20);
             this.montoAPagarTextBox.TabIndex = 10;
+            this.montoAPagarTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.montoAPagarTextBox_KeyPress);
             // 
             // totalFacturaTextBox
             // 

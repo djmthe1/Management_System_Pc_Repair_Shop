@@ -191,6 +191,7 @@
     <Compile Include="Reportes\VisorReportesForm.Designer.cs">
       <DependentUpon>VisorReportesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Consultas\ConsultaAtrasadosForm.resx">
       <DependentUpon>ConsultaAtrasadosForm.cs</DependentUpon>
     </EmbeddedResource>

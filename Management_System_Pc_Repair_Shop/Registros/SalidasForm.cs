@@ -19,6 +19,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Salidas salida = new Salidas();
+        Entradas entrada = new Entradas();
+        Validaciones validar = new Validaciones();
 
         private void SalidasForm_Load(object sender, EventArgs e)
         {
@@ -38,6 +40,16 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Salidas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void observacionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

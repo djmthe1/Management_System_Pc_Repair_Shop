@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Piezas piezas = new Piezas();
+        Validaciones validar = new Validaciones();
 
         private void PiezasForm_Load(object sender, EventArgs e)
         {
@@ -38,6 +39,16 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Piezas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void descripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

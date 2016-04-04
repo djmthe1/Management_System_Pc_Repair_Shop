@@ -20,6 +20,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         Facturas factura = new Facturas();
         Salidas salida = new Salidas();
+        Validaciones validar = new Validaciones();
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
@@ -41,6 +42,26 @@ namespace Management_System_Pc_Repair_Shop.Registros
             MessageBox.Show(mensaje, "Registro de Facturas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void cargoDeReparacionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void precioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void montoAPagarTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
         private void Limpiar()
         {
             idTextBox.Clear();
@@ -51,6 +72,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             marcaComboBox.SelectedIndex = -1;
             precioTextBox.Clear();
             articulosDataGridView.Rows.Clear();
+            montoAPagarTextBox.Clear();
         }
 
         private void ObtenerValores()

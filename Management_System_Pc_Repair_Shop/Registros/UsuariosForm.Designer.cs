@@ -78,6 +78,7 @@
             this.confirmarPassTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmarPassTextBox.TabIndex = 5;
             this.confirmarPassTextBox.UseSystemPasswordChar = true;
+            this.confirmarPassTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirmarPassTextBox_KeyPress);
             // 
             // passTextBox
             // 
@@ -88,6 +89,7 @@
             this.passTextBox.Size = new System.Drawing.Size(100, 20);
             this.passTextBox.TabIndex = 4;
             this.passTextBox.UseSystemPasswordChar = true;
+            this.passTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passTextBox_KeyPress);
             // 
             // nombreTextBox
             // 
@@ -97,6 +99,7 @@
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombreTextBox.TabIndex = 3;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // usuarioIdTextBox
             // 
@@ -106,6 +109,7 @@
             this.usuarioIdTextBox.Name = "usuarioIdTextBox";
             this.usuarioIdTextBox.Size = new System.Drawing.Size(35, 20);
             this.usuarioIdTextBox.TabIndex = 1;
+            this.usuarioIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idTextBox_KeyPress);
             // 
             // prioridadLabel
             // 

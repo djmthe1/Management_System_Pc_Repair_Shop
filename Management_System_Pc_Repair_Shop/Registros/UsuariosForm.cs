@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Usuarios usuarios = new Usuarios();
+        Validaciones validar = new Validaciones();
 
         private void UsuariosForm_Load(object sender, EventArgs e)
         {
@@ -38,6 +39,26 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void MensajeAdvertencia(string mensaje)
         {
             MessageBox.Show(mensaje, "Registro de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void idTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Numeros_KeyPress(e);
+        }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.Letras_KeyPress(e);
+        }
+
+        private void passTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
+        }
+
+        private void confirmarPassTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.LetrasNumeros_KeyPress(e);
         }
 
         private void Limpiar()

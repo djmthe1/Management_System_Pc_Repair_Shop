@@ -1,4 +1,7 @@
-﻿namespace Management_System_Pc_Repair_Shop.Registros
+﻿using System;
+using System.Windows.Forms;
+
+namespace Management_System_Pc_Repair_Shop.Registros
 {
     partial class ClientesForm
     {
@@ -59,6 +62,7 @@
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombreTextBox.TabIndex = 3;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
             // nombreClienteLabel
             // 
@@ -103,6 +107,7 @@
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(64, 20);
             this.clienteIdTextBox.TabIndex = 1;
+            this.clienteIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clienteIdTextBox_KeyPress);
             // 
             // apellidoTextBox
             // 
@@ -111,6 +116,7 @@
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
             this.apellidoTextBox.TabIndex = 4;
+            this.apellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellidoTextBox_KeyPress);
             // 
             // botonBuscarCliente
             // 
@@ -143,6 +149,7 @@
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
             this.direccionTextBox.TabIndex = 5;
+            this.direccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.direccionTextBox_KeyPress);
             // 
             // EliminarButton
             // 
