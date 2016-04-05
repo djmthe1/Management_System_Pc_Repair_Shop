@@ -47,7 +47,7 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(72, 16);
+            this.idLabel.Location = new System.Drawing.Point(72, 19);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 6;
@@ -57,7 +57,7 @@
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(48, 47);
+            this.fechaLabel.Location = new System.Drawing.Point(48, 50);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 7;
@@ -67,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 75);
+            this.label3.Location = new System.Drawing.Point(28, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 8;
@@ -77,7 +77,7 @@
             // 
             this.observacionLabel.AutoSize = true;
             this.observacionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.observacionLabel.Location = new System.Drawing.Point(12, 109);
+            this.observacionLabel.Location = new System.Drawing.Point(12, 112);
             this.observacionLabel.Name = "observacionLabel";
             this.observacionLabel.Size = new System.Drawing.Size(82, 13);
             this.observacionLabel.TabIndex = 9;
@@ -86,14 +86,14 @@
             // salidaDateTimePicker
             // 
             this.salidaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.salidaDateTimePicker.Location = new System.Drawing.Point(96, 47);
+            this.salidaDateTimePicker.Location = new System.Drawing.Point(96, 50);
             this.salidaDateTimePicker.Name = "salidaDateTimePicker";
             this.salidaDateTimePicker.Size = new System.Drawing.Size(97, 20);
             this.salidaDateTimePicker.TabIndex = 3;
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(96, 16);
+            this.idTextBox.Location = new System.Drawing.Point(96, 19);
             this.idTextBox.MaxLength = 5;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(60, 20);
@@ -104,18 +104,18 @@
             // 
             this.EntradaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EntradaComboBox.FormattingEnabled = true;
-            this.EntradaComboBox.Location = new System.Drawing.Point(96, 75);
+            this.EntradaComboBox.Location = new System.Drawing.Point(96, 78);
             this.EntradaComboBox.Name = "EntradaComboBox";
             this.EntradaComboBox.Size = new System.Drawing.Size(97, 21);
             this.EntradaComboBox.TabIndex = 4;
             // 
             // observacionTextBox
             // 
-            this.observacionTextBox.Location = new System.Drawing.Point(96, 109);
+            this.observacionTextBox.Location = new System.Drawing.Point(96, 112);
             this.observacionTextBox.MaxLength = 200;
             this.observacionTextBox.Multiline = true;
             this.observacionTextBox.Name = "observacionTextBox";
-            this.observacionTextBox.Size = new System.Drawing.Size(255, 82);
+            this.observacionTextBox.Size = new System.Drawing.Size(246, 82);
             this.observacionTextBox.TabIndex = 5;
             this.observacionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.observacionTextBox_KeyPress);
             // 
@@ -183,6 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(368, 279);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);

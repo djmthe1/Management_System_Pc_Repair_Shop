@@ -57,7 +57,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(98, 53);
+            this.nombreTextBox.Location = new System.Drawing.Point(98, 50);
             this.nombreTextBox.MaxLength = 40;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
@@ -70,7 +70,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(41, 54);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(41, 55);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
             this.nombreClienteLabel.Size = new System.Drawing.Size(54, 15);
             this.nombreClienteLabel.TabIndex = 28;
@@ -82,7 +82,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.apellidoLabel.BackColor = System.Drawing.Color.Transparent;
             this.apellidoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoLabel.ForeColor = System.Drawing.Color.Black;
-            this.apellidoLabel.Location = new System.Drawing.Point(41, 79);
+            this.apellidoLabel.Location = new System.Drawing.Point(41, 81);
             this.apellidoLabel.Name = "apellidoLabel";
             this.apellidoLabel.Size = new System.Drawing.Size(54, 15);
             this.apellidoLabel.TabIndex = 29;
@@ -111,7 +111,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // apellidoTextBox
             // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(98, 79);
+            this.apellidoTextBox.Location = new System.Drawing.Point(98, 76);
             this.apellidoTextBox.MaxLength = 40;
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
@@ -144,7 +144,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(98, 105);
+            this.direccionTextBox.Location = new System.Drawing.Point(98, 102);
             this.direccionTextBox.MaxLength = 30;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
@@ -158,7 +158,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(246, 272);
+            this.EliminarButton.Location = new System.Drawing.Point(246, 261);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
             this.EliminarButton.TabIndex = 11;
@@ -174,7 +174,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(12, 272);
+            this.NuevoButton.Location = new System.Drawing.Point(12, 261);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
             this.NuevoButton.TabIndex = 9;
@@ -190,7 +190,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(129, 272);
+            this.GuardarButton.Location = new System.Drawing.Point(129, 261);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
             this.GuardarButton.TabIndex = 10;
@@ -203,7 +203,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             this.botonInsertarTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertarTelefono.BackgroundImage")));
             this.botonInsertarTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertarTelefono.Location = new System.Drawing.Point(299, 131);
+            this.botonInsertarTelefono.Location = new System.Drawing.Point(299, 120);
             this.botonInsertarTelefono.Name = "botonInsertarTelefono";
             this.botonInsertarTelefono.Size = new System.Drawing.Size(30, 28);
             this.botonInsertarTelefono.TabIndex = 8;
@@ -229,7 +229,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.telefonosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Telefono,
             this.Tipo});
-            this.telefonosDataGridView.Location = new System.Drawing.Point(44, 157);
+            this.telefonosDataGridView.Location = new System.Drawing.Point(42, 151);
             this.telefonosDataGridView.MultiSelect = false;
             this.telefonosDataGridView.Name = "telefonosDataGridView";
             this.telefonosDataGridView.ReadOnly = true;
@@ -259,9 +259,9 @@ namespace Management_System_Pc_Repair_Shop.Registros
             "Trabajo",
             "Fax",
             "Otro"});
-            this.tipoTelefonoComboBox.Location = new System.Drawing.Point(218, 131);
+            this.tipoTelefonoComboBox.Location = new System.Drawing.Point(214, 127);
             this.tipoTelefonoComboBox.Name = "tipoTelefonoComboBox";
-            this.tipoTelefonoComboBox.Size = new System.Drawing.Size(75, 21);
+            this.tipoTelefonoComboBox.Size = new System.Drawing.Size(79, 21);
             this.tipoTelefonoComboBox.TabIndex = 7;
             // 
             // tipoTelefonoLabel
@@ -276,7 +276,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // telefonoMaskedTextBox
             // 
-            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(98, 131);
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(98, 128);
             this.telefonoMaskedTextBox.Mask = "000-000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(79, 20);
@@ -286,8 +286,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(345, 325);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(345, 314);
             this.Controls.Add(this.telefonoMaskedTextBox);
             this.Controls.Add(this.tipoTelefonoLabel);
             this.Controls.Add(this.tipoTelefonoComboBox);

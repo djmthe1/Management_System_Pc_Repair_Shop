@@ -53,7 +53,7 @@
             this.prioridadComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.prioridadComboBox.Location = new System.Drawing.Point(134, 162);
+            this.prioridadComboBox.Location = new System.Drawing.Point(162, 138);
             this.prioridadComboBox.Name = "prioridadComboBox";
             this.prioridadComboBox.Size = new System.Drawing.Size(100, 21);
             this.prioridadComboBox.TabIndex = 6;
@@ -63,7 +63,7 @@
             this.confirmarContraseñaLabel.AllowDrop = true;
             this.confirmarContraseñaLabel.AutoSize = true;
             this.confirmarContraseñaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmarContraseñaLabel.Location = new System.Drawing.Point(0, 136);
+            this.confirmarContraseñaLabel.Location = new System.Drawing.Point(28, 112);
             this.confirmarContraseñaLabel.Name = "confirmarContraseñaLabel";
             this.confirmarContraseñaLabel.Size = new System.Drawing.Size(132, 13);
             this.confirmarContraseñaLabel.TabIndex = 44;
@@ -72,7 +72,7 @@
             // confirmarPassTextBox
             // 
             this.confirmarPassTextBox.AllowDrop = true;
-            this.confirmarPassTextBox.Location = new System.Drawing.Point(134, 136);
+            this.confirmarPassTextBox.Location = new System.Drawing.Point(162, 112);
             this.confirmarPassTextBox.MaxLength = 50;
             this.confirmarPassTextBox.Name = "confirmarPassTextBox";
             this.confirmarPassTextBox.Size = new System.Drawing.Size(100, 20);
@@ -83,7 +83,7 @@
             // passTextBox
             // 
             this.passTextBox.AllowDrop = true;
-            this.passTextBox.Location = new System.Drawing.Point(134, 106);
+            this.passTextBox.Location = new System.Drawing.Point(162, 82);
             this.passTextBox.MaxLength = 50;
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.Size = new System.Drawing.Size(100, 20);
@@ -94,7 +94,7 @@
             // nombreTextBox
             // 
             this.nombreTextBox.AllowDrop = true;
-            this.nombreTextBox.Location = new System.Drawing.Point(134, 76);
+            this.nombreTextBox.Location = new System.Drawing.Point(162, 52);
             this.nombreTextBox.MaxLength = 50;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
@@ -104,7 +104,7 @@
             // usuarioIdTextBox
             // 
             this.usuarioIdTextBox.AllowDrop = true;
-            this.usuarioIdTextBox.Location = new System.Drawing.Point(134, 46);
+            this.usuarioIdTextBox.Location = new System.Drawing.Point(162, 22);
             this.usuarioIdTextBox.MaxLength = 5;
             this.usuarioIdTextBox.Name = "usuarioIdTextBox";
             this.usuarioIdTextBox.Size = new System.Drawing.Size(35, 20);
@@ -116,7 +116,7 @@
             this.prioridadLabel.AllowDrop = true;
             this.prioridadLabel.AutoSize = true;
             this.prioridadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prioridadLabel.Location = new System.Drawing.Point(71, 165);
+            this.prioridadLabel.Location = new System.Drawing.Point(99, 141);
             this.prioridadLabel.Name = "prioridadLabel";
             this.prioridadLabel.Size = new System.Drawing.Size(61, 13);
             this.prioridadLabel.TabIndex = 43;
@@ -127,7 +127,7 @@
             this.passLabel.AllowDrop = true;
             this.passLabel.AutoSize = true;
             this.passLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passLabel.Location = new System.Drawing.Point(57, 107);
+            this.passLabel.Location = new System.Drawing.Point(85, 83);
             this.passLabel.Name = "passLabel";
             this.passLabel.Size = new System.Drawing.Size(75, 13);
             this.passLabel.TabIndex = 42;
@@ -138,7 +138,7 @@
             this.nombreLabel.AllowDrop = true;
             this.nombreLabel.AutoSize = true;
             this.nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLabel.Location = new System.Drawing.Point(78, 78);
+            this.nombreLabel.Location = new System.Drawing.Point(106, 54);
             this.nombreLabel.Name = "nombreLabel";
             this.nombreLabel.Size = new System.Drawing.Size(54, 13);
             this.nombreLabel.TabIndex = 41;
@@ -149,7 +149,7 @@
             this.IDlabel.AllowDrop = true;
             this.IDlabel.AutoSize = true;
             this.IDlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDlabel.Location = new System.Drawing.Point(110, 49);
+            this.IDlabel.Location = new System.Drawing.Point(138, 25);
             this.IDlabel.Name = "IDlabel";
             this.IDlabel.Size = new System.Drawing.Size(22, 13);
             this.IDlabel.TabIndex = 40;
@@ -162,7 +162,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(253, 225);
+            this.EliminarButton.Location = new System.Drawing.Point(253, 202);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
             this.EliminarButton.TabIndex = 9;
@@ -178,7 +178,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(11, 225);
+            this.NuevoButton.Location = new System.Drawing.Point(11, 202);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
             this.NuevoButton.TabIndex = 7;
@@ -194,7 +194,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(132, 225);
+            this.GuardarButton.Location = new System.Drawing.Point(132, 202);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
             this.GuardarButton.TabIndex = 8;
@@ -209,7 +209,7 @@
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(175, 40);
+            this.buscarButton.Location = new System.Drawing.Point(205, 15);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(32, 30);
             this.buscarButton.TabIndex = 2;
@@ -220,7 +220,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 278);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(352, 255);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);

@@ -20,6 +20,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         Facturas factura = new Facturas();
         Salidas salida = new Salidas();
+        Portada portada = new Portada();
         Validaciones validar = new Validaciones();
 
         private void FacturaForm_Load(object sender, EventArgs e)
@@ -67,11 +68,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
             idTextBox.Clear();
             facturaDateTimePicker.ResetText();
             entradaComboBox.SelectedIndex = -1;
-            cargoDeReparacionTextBox.Clear();
+            totalReparacionTextBox.Clear();
             articulosComboBox.SelectedIndex = -1;
             marcaComboBox.SelectedIndex = -1;
             precioTextBox.Clear();
-            articulosDataGridView.Rows.Clear();
+            articulosVendidosDataGridView.Rows.Clear();
             montoAPagarTextBox.Clear();
         }
 
@@ -87,9 +88,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             float montoapagar = 0;
             float.TryParse(montoAPagarTextBox.Text, out montoapagar);
             factura.MontoAPagar = montoapagar;
+            factura.DespachadoPor = portada.toolStripStatusLabel.Text;
             foreach (var articulo in factura.articulos)
             {
-                articulosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
+                articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
             }
         }
 
@@ -98,12 +100,12 @@ namespace Management_System_Pc_Repair_Shop.Registros
             idTextBox.Text = factura.FacturaId.ToString();
             facturaDateTimePicker.Text = factura.Fecha.ToString();
             entradaComboBox.Text = factura.EntradaId.ToString();
-            cargoDeReparacionTextBox.Text = factura.CargoReparacion.ToString();
+            totalReparacionTextBox.Text = factura.CargoReparacion.ToString();
             totalFacturaTextBox.Text = factura.Total.ToString();
             montoAPagarTextBox.Text = factura.MontoAPagar.ToString();
             foreach (var articulo in factura.articulos)
             {
-                articulosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
+                articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
             }
         }
 
@@ -136,7 +138,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             {
                 if (!articulosComboBox.Text.Equals("") && !marcaComboBox.Text.Equals("") && !precioTextBox.Text.Equals(""))
                 {
-                    articulosDataGridView.Rows.Add(articulosComboBox.Text, marcaComboBox.Text, precioTextBox.Text);
+                    articulosVendidosDataGridView.Rows.Add(articulosComboBox.Text, marcaComboBox.Text, precioTextBox.Text);
                     factura.InsertarArticulo( articulosComboBox.Text, marcaComboBox.Text, precio);
                     articulosComboBox.SelectedIndex = -1;
                     marcaComboBox.SelectedIndex = -1;
@@ -181,7 +183,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (entradaComboBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text != "" && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Insertar())
                     {
@@ -200,7 +202,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (entradaComboBox.Text != "" && cargoDeReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text != "" && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Editar())
                     {

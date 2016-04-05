@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntradasForm));
-            this.EliminarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
             this.fechaEntregaLabel = new System.Windows.Forms.Label();
             this.problemaLabel = new System.Windows.Forms.Label();
             this.notasLabel = new System.Windows.Forms.Label();
             this.articuloLabel = new System.Windows.Forms.Label();
-            this.buscarButton = new System.Windows.Forms.Button();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.entradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fechaLabel = new System.Windows.Forms.Label();
@@ -47,69 +43,27 @@
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.problemaTextBox = new System.Windows.Forms.TextBox();
-            this.botonInsertar = new System.Windows.Forms.Button();
             this.clienteIdTextBox = new System.Windows.Forms.TextBox();
             this.clienteIdLabel = new System.Windows.Forms.Label();
-            this.buscarClienteButton = new System.Windows.Forms.Button();
             this.entregaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.nombreClienteLabel = new System.Windows.Forms.Label();
+            this.entradasPanel = new System.Windows.Forms.Panel();
+            this.botonInsertar = new System.Windows.Forms.Button();
+            this.buscarClienteButton = new System.Windows.Forms.Button();
+            this.buscarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.articulosDataGridView)).BeginInit();
+            this.entradasPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // EliminarButton
-            // 
-            this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.EliminarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
-            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(307, 436);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(101, 41);
-            this.EliminarButton.TabIndex = 13;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
-            // 
-            // NuevoButton
-            // 
-            this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
-            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(34, 436);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(101, 41);
-            this.NuevoButton.TabIndex = 11;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
-            // 
-            // GuardarButton
-            // 
-            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
-            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(170, 436);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(101, 41);
-            this.GuardarButton.TabIndex = 12;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // fechaEntregaLabel
             // 
             this.fechaEntregaLabel.AutoSize = true;
             this.fechaEntregaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaEntregaLabel.Location = new System.Drawing.Point(12, 79);
+            this.fechaEntregaLabel.Location = new System.Drawing.Point(202, 63);
             this.fechaEntregaLabel.Name = "fechaEntregaLabel";
             this.fechaEntregaLabel.Size = new System.Drawing.Size(112, 13);
             this.fechaEntregaLabel.TabIndex = 60;
@@ -119,7 +73,7 @@
             // 
             this.problemaLabel.AutoSize = true;
             this.problemaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.problemaLabel.Location = new System.Drawing.Point(196, 255);
+            this.problemaLabel.Location = new System.Drawing.Point(176, 14);
             this.problemaLabel.Name = "problemaLabel";
             this.problemaLabel.Size = new System.Drawing.Size(63, 13);
             this.problemaLabel.TabIndex = 61;
@@ -129,7 +83,7 @@
             // 
             this.notasLabel.AutoSize = true;
             this.notasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasLabel.Location = new System.Drawing.Point(80, 158);
+            this.notasLabel.Location = new System.Drawing.Point(202, 96);
             this.notasLabel.Name = "notasLabel";
             this.notasLabel.Size = new System.Drawing.Size(44, 13);
             this.notasLabel.TabIndex = 62;
@@ -139,27 +93,15 @@
             // 
             this.articuloLabel.AutoSize = true;
             this.articuloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.articuloLabel.Location = new System.Drawing.Point(31, 253);
+            this.articuloLabel.Location = new System.Drawing.Point(11, 12);
             this.articuloLabel.Name = "articuloLabel";
             this.articuloLabel.Size = new System.Drawing.Size(54, 13);
             this.articuloLabel.TabIndex = 63;
             this.articuloLabel.Text = "Articulo:";
             // 
-            // buscarButton
-            // 
-            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
-            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(217, 24);
-            this.buscarButton.Name = "buscarButton";
-            this.buscarButton.Size = new System.Drawing.Size(25, 22);
-            this.buscarButton.TabIndex = 2;
-            this.buscarButton.UseVisualStyleBackColor = true;
-            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
-            // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(130, 24);
+            this.idTextBox.Location = new System.Drawing.Point(84, 27);
             this.idTextBox.MaxLength = 6;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(78, 20);
@@ -170,7 +112,7 @@
             // 
             this.entradaDateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.entradaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.entradaDateTimePicker.Location = new System.Drawing.Point(130, 50);
+            this.entradaDateTimePicker.Location = new System.Drawing.Point(320, 27);
             this.entradaDateTimePicker.Name = "entradaDateTimePicker";
             this.entradaDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.entradaDateTimePicker.TabIndex = 3;
@@ -179,7 +121,7 @@
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(78, 53);
+            this.fechaLabel.Location = new System.Drawing.Point(268, 30);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 65;
@@ -189,7 +131,7 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(102, 27);
+            this.idLabel.Location = new System.Drawing.Point(56, 30);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 64;
@@ -197,11 +139,11 @@
             // 
             // notasTextBox
             // 
-            this.notasTextBox.Location = new System.Drawing.Point(131, 155);
+            this.notasTextBox.Location = new System.Drawing.Point(253, 93);
             this.notasTextBox.MaxLength = 100;
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
-            this.notasTextBox.Size = new System.Drawing.Size(297, 82);
+            this.notasTextBox.Size = new System.Drawing.Size(180, 89);
             this.notasTextBox.TabIndex = 7;
             this.notasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.notasTextBox_KeyPress);
             // 
@@ -211,7 +153,7 @@
             this.articulosComboBox.FormattingEnabled = true;
             this.articulosComboBox.Items.AddRange(new object[] {
             "Procesador"});
-            this.articulosComboBox.Location = new System.Drawing.Point(86, 250);
+            this.articulosComboBox.Location = new System.Drawing.Point(66, 9);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
             this.articulosComboBox.TabIndex = 8;
@@ -223,7 +165,7 @@
             this.articulosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Articulo,
             this.Problema});
-            this.articulosDataGridView.Location = new System.Drawing.Point(34, 280);
+            this.articulosDataGridView.Location = new System.Drawing.Point(14, 39);
             this.articulosDataGridView.Name = "articulosDataGridView";
             this.articulosDataGridView.ReadOnly = true;
             this.articulosDataGridView.Size = new System.Drawing.Size(374, 150);
@@ -243,27 +185,16 @@
             // 
             // problemaTextBox
             // 
-            this.problemaTextBox.Location = new System.Drawing.Point(261, 252);
+            this.problemaTextBox.Location = new System.Drawing.Point(241, 11);
             this.problemaTextBox.MaxLength = 200;
             this.problemaTextBox.Name = "problemaTextBox";
             this.problemaTextBox.Size = new System.Drawing.Size(117, 20);
             this.problemaTextBox.TabIndex = 9;
             this.problemaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.problemaTextBox_KeyPress);
             // 
-            // botonInsertar
-            // 
-            this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
-            this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertar.Location = new System.Drawing.Point(383, 252);
-            this.botonInsertar.Name = "botonInsertar";
-            this.botonInsertar.Size = new System.Drawing.Size(25, 24);
-            this.botonInsertar.TabIndex = 10;
-            this.botonInsertar.UseVisualStyleBackColor = true;
-            this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
-            // 
             // clienteIdTextBox
             // 
-            this.clienteIdTextBox.Location = new System.Drawing.Point(130, 99);
+            this.clienteIdTextBox.Location = new System.Drawing.Point(84, 61);
             this.clienteIdTextBox.MaxLength = 5;
             this.clienteIdTextBox.Name = "clienteIdTextBox";
             this.clienteIdTextBox.Size = new System.Drawing.Size(81, 20);
@@ -274,36 +205,24 @@
             // 
             this.clienteIdLabel.AutoSize = true;
             this.clienteIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteIdLabel.Location = new System.Drawing.Point(63, 109);
+            this.clienteIdLabel.Location = new System.Drawing.Point(17, 63);
             this.clienteIdLabel.Name = "clienteIdLabel";
             this.clienteIdLabel.Size = new System.Drawing.Size(61, 13);
             this.clienteIdLabel.TabIndex = 76;
             this.clienteIdLabel.Text = "ClienteId:";
             // 
-            // buscarClienteButton
-            // 
-            this.buscarClienteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarClienteButton.BackgroundImage")));
-            this.buscarClienteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarClienteButton.Location = new System.Drawing.Point(217, 99);
-            this.buscarClienteButton.Name = "buscarClienteButton";
-            this.buscarClienteButton.Size = new System.Drawing.Size(25, 24);
-            this.buscarClienteButton.TabIndex = 6;
-            this.buscarClienteButton.UseVisualStyleBackColor = true;
-            this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
-            // 
             // entregaDateTimePicker
             // 
             this.entregaDateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.entregaDateTimePicker.Location = new System.Drawing.Point(130, 77);
+            this.entregaDateTimePicker.Location = new System.Drawing.Point(320, 61);
             this.entregaDateTimePicker.Name = "entregaDateTimePicker";
             this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.entregaDateTimePicker.TabIndex = 4;
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(130, 129);
+            this.nombreTextBox.Location = new System.Drawing.Point(84, 96);
             this.nombreTextBox.MaxLength = 40;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.ReadOnly = true;
@@ -316,36 +235,129 @@
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(70, 134);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(24, 96);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
             this.nombreClienteLabel.Size = new System.Drawing.Size(54, 13);
             this.nombreClienteLabel.TabIndex = 78;
             this.nombreClienteLabel.Text = "Nombre:";
             // 
+            // entradasPanel
+            // 
+            this.entradasPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.entradasPanel.Controls.Add(this.articulosComboBox);
+            this.entradasPanel.Controls.Add(this.problemaLabel);
+            this.entradasPanel.Controls.Add(this.articuloLabel);
+            this.entradasPanel.Controls.Add(this.articulosDataGridView);
+            this.entradasPanel.Controls.Add(this.problemaTextBox);
+            this.entradasPanel.Controls.Add(this.botonInsertar);
+            this.entradasPanel.Location = new System.Drawing.Point(33, 199);
+            this.entradasPanel.Name = "entradasPanel";
+            this.entradasPanel.Size = new System.Drawing.Size(400, 203);
+            this.entradasPanel.TabIndex = 79;
+            // 
+            // botonInsertar
+            // 
+            this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
+            this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonInsertar.Location = new System.Drawing.Point(363, 9);
+            this.botonInsertar.Name = "botonInsertar";
+            this.botonInsertar.Size = new System.Drawing.Size(25, 24);
+            this.botonInsertar.TabIndex = 10;
+            this.botonInsertar.UseVisualStyleBackColor = true;
+            this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
+            // 
+            // buscarClienteButton
+            // 
+            this.buscarClienteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarClienteButton.BackgroundImage")));
+            this.buscarClienteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarClienteButton.Location = new System.Drawing.Point(171, 61);
+            this.buscarClienteButton.Name = "buscarClienteButton";
+            this.buscarClienteButton.Size = new System.Drawing.Size(25, 24);
+            this.buscarClienteButton.TabIndex = 6;
+            this.buscarClienteButton.UseVisualStyleBackColor = true;
+            this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
+            // 
+            // buscarButton
+            // 
+            this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
+            this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarButton.Location = new System.Drawing.Point(171, 27);
+            this.buscarButton.Name = "buscarButton";
+            this.buscarButton.Size = new System.Drawing.Size(25, 22);
+            this.buscarButton.TabIndex = 2;
+            this.buscarButton.UseVisualStyleBackColor = true;
+            this.buscarButton.Click += new System.EventHandler(this.buscarButton_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.EliminarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(318, 417);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(101, 41);
+            this.EliminarButton.TabIndex = 13;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(45, 417);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(101, 41);
+            this.NuevoButton.TabIndex = 11;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(181, 417);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(101, 41);
+            this.GuardarButton.TabIndex = 12;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
             // EntradasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 489);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(462, 470);
+            this.Controls.Add(this.entradasPanel);
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.nombreClienteLabel);
             this.Controls.Add(this.entregaDateTimePicker);
             this.Controls.Add(this.buscarClienteButton);
             this.Controls.Add(this.clienteIdTextBox);
             this.Controls.Add(this.clienteIdLabel);
-            this.Controls.Add(this.botonInsertar);
-            this.Controls.Add(this.problemaTextBox);
-            this.Controls.Add(this.articulosDataGridView);
-            this.Controls.Add(this.articulosComboBox);
             this.Controls.Add(this.notasTextBox);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.entradaDateTimePicker);
             this.Controls.Add(this.fechaLabel);
             this.Controls.Add(this.idLabel);
-            this.Controls.Add(this.articuloLabel);
             this.Controls.Add(this.notasLabel);
-            this.Controls.Add(this.problemaLabel);
             this.Controls.Add(this.fechaEntregaLabel);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
@@ -357,6 +369,8 @@
             this.Text = "Registro De Entradas";
             this.Load += new System.EventHandler(this.EntradasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articulosDataGridView)).EndInit();
+            this.entradasPanel.ResumeLayout(false);
+            this.entradasPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +403,6 @@
         private System.Windows.Forms.DateTimePicker entregaDateTimePicker;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.Label nombreClienteLabel;
+        private System.Windows.Forms.Panel entradasPanel;
     }
 }

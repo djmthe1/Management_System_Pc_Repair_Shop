@@ -77,7 +77,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 {
                     portada.toolStripStatusLabel.Text = usuarioTextBox.Text;
                     portada.Show();
-                    Limpiar();
+                    this.Close();
                 }
                 else
                 {
@@ -89,7 +89,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void cancelarButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }
