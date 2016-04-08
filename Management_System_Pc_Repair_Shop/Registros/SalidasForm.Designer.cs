@@ -40,7 +40,7 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.botonBuscarCliente = new System.Windows.Forms.Button();
+            this.botonBuscarSalida = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // idLabel
@@ -67,11 +67,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 78);
+            this.label3.Location = new System.Drawing.Point(39, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "EntradaId:";
+            this.label3.Text = "Entrada:";
             // 
             // observacionLabel
             // 
@@ -106,7 +106,7 @@
             this.EntradaComboBox.FormattingEnabled = true;
             this.EntradaComboBox.Location = new System.Drawing.Point(96, 78);
             this.EntradaComboBox.Name = "EntradaComboBox";
-            this.EntradaComboBox.Size = new System.Drawing.Size(97, 21);
+            this.EntradaComboBox.Size = new System.Drawing.Size(246, 21);
             this.EntradaComboBox.TabIndex = 4;
             // 
             // observacionTextBox
@@ -167,17 +167,17 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // botonBuscarCliente
+            // botonBuscarSalida
             // 
-            this.botonBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarCliente.BackgroundImage")));
-            this.botonBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonBuscarCliente.Location = new System.Drawing.Point(162, 11);
-            this.botonBuscarCliente.Name = "botonBuscarCliente";
-            this.botonBuscarCliente.Size = new System.Drawing.Size(31, 29);
-            this.botonBuscarCliente.TabIndex = 2;
-            this.botonBuscarCliente.UseVisualStyleBackColor = true;
-            this.botonBuscarCliente.Click += new System.EventHandler(this.botonBuscarCliente_Click);
+            this.botonBuscarSalida.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarSalida.BackgroundImage")));
+            this.botonBuscarSalida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonBuscarSalida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonBuscarSalida.Location = new System.Drawing.Point(162, 11);
+            this.botonBuscarSalida.Name = "botonBuscarSalida";
+            this.botonBuscarSalida.Size = new System.Drawing.Size(31, 29);
+            this.botonBuscarSalida.TabIndex = 2;
+            this.botonBuscarSalida.UseVisualStyleBackColor = true;
+            this.botonBuscarSalida.Click += new System.EventHandler(this.botonBuscarSalida_Click);
             // 
             // SalidasForm
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
-            this.Controls.Add(this.botonBuscarCliente);
+            this.Controls.Add(this.botonBuscarSalida);
             this.Controls.Add(this.observacionTextBox);
             this.Controls.Add(this.EntradaComboBox);
             this.Controls.Add(this.idTextBox);
@@ -220,6 +220,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.Button botonBuscarCliente;
+        private System.Windows.Forms.Button botonBuscarSalida;
     }
 }

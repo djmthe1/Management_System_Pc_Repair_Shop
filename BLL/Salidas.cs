@@ -37,10 +37,10 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("INSERT INTO Salidas (Fecha, EntradaId, Observacion, RetiradoPor) VALUES('{0}',{1},'{2}','{3}','{4}')", this.Fecha, this.EntradaId, this.Observacion, this.RetiradoPor));
+                retorno = conexion.Ejecutar(String.Format("INSERT INTO Salidas (Fecha, EntradaId, Observacion, RetiradoPor) VALUES('{0}',{1},'{2}','{3}')", this.Fecha, this.EntradaId, this.Observacion, this.RetiradoPor));
                 if (retorno)
                 {
-                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Salio='True', WHERE EntradaId={0}", this.EntradaId));
+                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Salio='True' WHERE EntradaId={0}", this.EntradaId));
                 }
             }
             catch (Exception ex) { throw ex; }

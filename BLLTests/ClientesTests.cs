@@ -34,8 +34,7 @@ namespace BLL.Tests
         {
             Clientes clientes = new Clientes();
 
-            clientes.Nombre = "Jeff";
-            clientes.Apellido = "Rodriguez";
+            clientes.NombreCompleto = "Jeff Rodriguez";
             clientes.Direccion = "Duarte";
             Assert.IsTrue(clientes.Insertar());
         }
@@ -46,8 +45,7 @@ namespace BLL.Tests
             Clientes clientes = new Clientes();
 
             clientes.ClienteId = 1;
-            clientes.Nombre = "Jeff";
-            clientes.Apellido = "Rodriguez";
+            clientes.NombreCompleto = "Jeff Rodriguez";
             clientes.Direccion = "Duarte";
             Assert.IsTrue(clientes.Editar());
         }

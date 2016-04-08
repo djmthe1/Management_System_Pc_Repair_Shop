@@ -59,7 +59,7 @@ namespace BLL
                 this.FacturaId = retorno;
                 if (retorno > 0)
                 {
-                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Entregado='True', WHERE EntradaId={0}", this.EntradaId));
+                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Entregado='True' WHERE EntradaId={0}", this.EntradaId));
                     foreach (ArticulosVendidos descripcion in this.articulos)
                     {
                         conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", descripcion.FacturaId, descripcion.Pieza, descripcion.Marca, descripcion.Precio));

@@ -19,6 +19,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Entradas entrada = new Entradas();
+        Piezas pieza = new Piezas();
         Portada portada = new Portada();
         Clientes cliente = new Clientes();
         Validaciones validar = new Validaciones();
@@ -26,6 +27,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EntradasForm_Load(object sender, EventArgs e)
         {
             this.entradaDateTimePicker.Enabled = false;
+            LlenarComboBox();
+            Limpiar();
         }
         
         private void MensajeOk(string mensaje)
@@ -63,11 +66,29 @@ namespace Management_System_Pc_Repair_Shop.Registros
             validar.LetrasNumeros_KeyPress(e);
         }
 
+        private void LlenarComboBox()
+        {
+            DataTable dtclientes = new DataTable();
+            dtclientes = cliente.Listado("*", "1=1", "");
+
+            clienteComboBox.DataSource = dtclientes;
+            clienteComboBox.ValueMember = "ClienteId";
+            clienteComboBox.DisplayMember = "NombreCompleto";
+
+            DataTable dtpiezas = new DataTable();
+            dtpiezas = pieza.Listado("*", "1=1", "");
+            
+            articulosComboBox.DataSource = dtpiezas;
+            articulosComboBox.ValueMember = "PiezaId";
+            articulosComboBox.DisplayMember = "Descripcion";
+
+        }
+
         private void Limpiar()
         {
             idTextBox.Clear();
             entregaDateTimePicker.ResetText();
-            clienteIdTextBox.Clear();
+            clienteComboBox.SelectedIndex = -1;
             notasTextBox.Clear();
             articulosComboBox.SelectedIndex = -1;
             problemaTextBox.Clear();
@@ -81,9 +102,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             entrada.EntradaId = id;
             entrada.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
             entrada.FechaEntrega = entregaDateTimePicker.Text;
-            int clienteid = 0;
-            int.TryParse(clienteIdTextBox.Text, out clienteid);
-            entrada.ClienteId = clienteid;
+            entrada.ClienteId = (int)clienteComboBox.SelectedValue;
             entrada.Notas = notasTextBox.Text;
             entrada.RecibidoPor = portada.toolStripStatusLabel.Text;
             entrada.LimpiarArticulo();
@@ -98,7 +117,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             idTextBox.Text = entrada.EntradaId.ToString();
             entradaDateTimePicker.Text = entrada.Fecha;
             entregaDateTimePicker.Text = entrada.FechaEntrega;
-            clienteIdTextBox.Text = entrada.ClienteId.ToString();
+            clienteComboBox.Text = entrada.ClienteId.ToString();
             notasTextBox.Text = entrada.Notas.ToString();
             foreach (var articulo in entrada.articulos)
             {
@@ -119,27 +138,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 if (entrada.Buscar(entrada.EntradaId))
                 {
                     DevolverValores();
-                }
-                else
-                {
-                    MensajeAdvertencia("Id no encontrado");
-                    Limpiar();
-                }
-            }
-        }
-
-        private void buscarClienteButton_Click(object sender, EventArgs e)
-        {
-            ObtenerValores();
-            if (clienteIdTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                if (cliente.Buscar(entrada.ClienteId))
-                {
-                    nombreTextBox.Text = cliente.Nombre.ToString();
                 }
                 else
                 {
@@ -177,7 +175,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (clienteIdTextBox.Text != "" && notasTextBox.Text != "")
+                if (clienteComboBox.Text != "" && notasTextBox.Text != "")
                 {
                     if (entrada.Insertar())
                     {
@@ -196,7 +194,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (clienteIdTextBox.Text != "" && notasTextBox.Text != "")
+                if (clienteComboBox.Text != "" && notasTextBox.Text != "")
                 {
                     if (entrada.Editar())
                     {
@@ -218,7 +216,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
-            if (clienteIdTextBox.Text.Length == 0)
+            if (idTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

@@ -43,18 +43,15 @@
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.problemaTextBox = new System.Windows.Forms.TextBox();
-            this.clienteIdTextBox = new System.Windows.Forms.TextBox();
-            this.clienteIdLabel = new System.Windows.Forms.Label();
             this.entregaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.nombreClienteLabel = new System.Windows.Forms.Label();
             this.entradasPanel = new System.Windows.Forms.Panel();
             this.botonInsertar = new System.Windows.Forms.Button();
-            this.buscarClienteButton = new System.Windows.Forms.Button();
             this.buscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.clienteComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.articulosDataGridView)).BeginInit();
             this.entradasPanel.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +60,7 @@
             // 
             this.fechaEntregaLabel.AutoSize = true;
             this.fechaEntregaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaEntregaLabel.Location = new System.Drawing.Point(202, 63);
+            this.fechaEntregaLabel.Location = new System.Drawing.Point(12, 127);
             this.fechaEntregaLabel.Name = "fechaEntregaLabel";
             this.fechaEntregaLabel.Size = new System.Drawing.Size(112, 13);
             this.fechaEntregaLabel.TabIndex = 60;
@@ -83,7 +80,7 @@
             // 
             this.notasLabel.AutoSize = true;
             this.notasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasLabel.Location = new System.Drawing.Point(202, 96);
+            this.notasLabel.Location = new System.Drawing.Point(238, 26);
             this.notasLabel.Name = "notasLabel";
             this.notasLabel.Size = new System.Drawing.Size(44, 13);
             this.notasLabel.TabIndex = 62;
@@ -101,7 +98,7 @@
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(84, 27);
+            this.idTextBox.Location = new System.Drawing.Point(130, 20);
             this.idTextBox.MaxLength = 6;
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(78, 20);
@@ -112,16 +109,16 @@
             // 
             this.entradaDateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.entradaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.entradaDateTimePicker.Location = new System.Drawing.Point(320, 27);
+            this.entradaDateTimePicker.Location = new System.Drawing.Point(130, 91);
             this.entradaDateTimePicker.Name = "entradaDateTimePicker";
-            this.entradaDateTimePicker.Size = new System.Drawing.Size(112, 20);
+            this.entradaDateTimePicker.Size = new System.Drawing.Size(142, 20);
             this.entradaDateTimePicker.TabIndex = 3;
             // 
             // fechaLabel
             // 
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(268, 30);
+            this.fechaLabel.Location = new System.Drawing.Point(78, 94);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(46, 13);
             this.fechaLabel.TabIndex = 65;
@@ -131,7 +128,7 @@
             // 
             this.idLabel.AutoSize = true;
             this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(56, 30);
+            this.idLabel.Location = new System.Drawing.Point(102, 23);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(22, 13);
             this.idLabel.TabIndex = 64;
@@ -139,11 +136,11 @@
             // 
             // notasTextBox
             // 
-            this.notasTextBox.Location = new System.Drawing.Point(253, 93);
+            this.notasTextBox.Location = new System.Drawing.Point(282, 26);
             this.notasTextBox.MaxLength = 100;
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
-            this.notasTextBox.Size = new System.Drawing.Size(180, 89);
+            this.notasTextBox.Size = new System.Drawing.Size(151, 122);
             this.notasTextBox.TabIndex = 7;
             this.notasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.notasTextBox_KeyPress);
             // 
@@ -151,8 +148,6 @@
             // 
             this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.articulosComboBox.FormattingEnabled = true;
-            this.articulosComboBox.Items.AddRange(new object[] {
-            "Procesador"});
             this.articulosComboBox.Location = new System.Drawing.Point(66, 9);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
@@ -182,6 +177,7 @@
             this.Problema.HeaderText = "Problema";
             this.Problema.Name = "Problema";
             this.Problema.ReadOnly = true;
+            this.Problema.Width = 200;
             // 
             // problemaTextBox
             // 
@@ -192,42 +188,14 @@
             this.problemaTextBox.TabIndex = 9;
             this.problemaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.problemaTextBox_KeyPress);
             // 
-            // clienteIdTextBox
-            // 
-            this.clienteIdTextBox.Location = new System.Drawing.Point(84, 61);
-            this.clienteIdTextBox.MaxLength = 5;
-            this.clienteIdTextBox.Name = "clienteIdTextBox";
-            this.clienteIdTextBox.Size = new System.Drawing.Size(81, 20);
-            this.clienteIdTextBox.TabIndex = 5;
-            this.clienteIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clienteIdTextBox_KeyPress);
-            // 
-            // clienteIdLabel
-            // 
-            this.clienteIdLabel.AutoSize = true;
-            this.clienteIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteIdLabel.Location = new System.Drawing.Point(17, 63);
-            this.clienteIdLabel.Name = "clienteIdLabel";
-            this.clienteIdLabel.Size = new System.Drawing.Size(61, 13);
-            this.clienteIdLabel.TabIndex = 76;
-            this.clienteIdLabel.Text = "ClienteId:";
-            // 
             // entregaDateTimePicker
             // 
             this.entregaDateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.entregaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.entregaDateTimePicker.Location = new System.Drawing.Point(320, 61);
+            this.entregaDateTimePicker.Location = new System.Drawing.Point(130, 125);
             this.entregaDateTimePicker.Name = "entregaDateTimePicker";
-            this.entregaDateTimePicker.Size = new System.Drawing.Size(112, 20);
+            this.entregaDateTimePicker.Size = new System.Drawing.Size(142, 20);
             this.entregaDateTimePicker.TabIndex = 4;
-            // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.Location = new System.Drawing.Point(84, 96);
-            this.nombreTextBox.MaxLength = 40;
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.ReadOnly = true;
-            this.nombreTextBox.Size = new System.Drawing.Size(112, 20);
-            this.nombreTextBox.TabIndex = 77;
             // 
             // nombreClienteLabel
             // 
@@ -235,11 +203,11 @@
             this.nombreClienteLabel.BackColor = System.Drawing.Color.Transparent;
             this.nombreClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreClienteLabel.ForeColor = System.Drawing.Color.Black;
-            this.nombreClienteLabel.Location = new System.Drawing.Point(24, 96);
+            this.nombreClienteLabel.Location = new System.Drawing.Point(70, 57);
             this.nombreClienteLabel.Name = "nombreClienteLabel";
-            this.nombreClienteLabel.Size = new System.Drawing.Size(54, 13);
+            this.nombreClienteLabel.Size = new System.Drawing.Size(50, 13);
             this.nombreClienteLabel.TabIndex = 78;
-            this.nombreClienteLabel.Text = "Nombre:";
+            this.nombreClienteLabel.Text = "Cliente:";
             // 
             // entradasPanel
             // 
@@ -250,7 +218,7 @@
             this.entradasPanel.Controls.Add(this.articulosDataGridView);
             this.entradasPanel.Controls.Add(this.problemaTextBox);
             this.entradasPanel.Controls.Add(this.botonInsertar);
-            this.entradasPanel.Location = new System.Drawing.Point(33, 199);
+            this.entradasPanel.Location = new System.Drawing.Point(33, 163);
             this.entradasPanel.Name = "entradasPanel";
             this.entradasPanel.Size = new System.Drawing.Size(400, 203);
             this.entradasPanel.TabIndex = 79;
@@ -266,24 +234,12 @@
             this.botonInsertar.UseVisualStyleBackColor = true;
             this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
             // 
-            // buscarClienteButton
-            // 
-            this.buscarClienteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarClienteButton.BackgroundImage")));
-            this.buscarClienteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarClienteButton.Location = new System.Drawing.Point(171, 61);
-            this.buscarClienteButton.Name = "buscarClienteButton";
-            this.buscarClienteButton.Size = new System.Drawing.Size(25, 24);
-            this.buscarClienteButton.TabIndex = 6;
-            this.buscarClienteButton.UseVisualStyleBackColor = true;
-            this.buscarClienteButton.Click += new System.EventHandler(this.buscarClienteButton_Click);
-            // 
             // buscarButton
             // 
             this.buscarButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarButton.BackgroundImage")));
             this.buscarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarButton.Location = new System.Drawing.Point(171, 27);
+            this.buscarButton.Location = new System.Drawing.Point(212, 20);
             this.buscarButton.Name = "buscarButton";
             this.buscarButton.Size = new System.Drawing.Size(25, 22);
             this.buscarButton.TabIndex = 2;
@@ -297,7 +253,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(318, 417);
+            this.EliminarButton.Location = new System.Drawing.Point(318, 387);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(101, 41);
             this.EliminarButton.TabIndex = 13;
@@ -313,7 +269,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(45, 417);
+            this.NuevoButton.Location = new System.Drawing.Point(45, 387);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(101, 41);
             this.NuevoButton.TabIndex = 11;
@@ -329,7 +285,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(181, 417);
+            this.GuardarButton.Location = new System.Drawing.Point(181, 387);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(101, 41);
             this.GuardarButton.TabIndex = 12;
@@ -338,19 +294,25 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
+            // clienteComboBox
+            // 
+            this.clienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clienteComboBox.FormattingEnabled = true;
+            this.clienteComboBox.Location = new System.Drawing.Point(130, 57);
+            this.clienteComboBox.Name = "clienteComboBox";
+            this.clienteComboBox.Size = new System.Drawing.Size(142, 21);
+            this.clienteComboBox.TabIndex = 80;
+            // 
             // EntradasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(462, 470);
+            this.ClientSize = new System.Drawing.Size(462, 440);
+            this.Controls.Add(this.clienteComboBox);
             this.Controls.Add(this.entradasPanel);
-            this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.nombreClienteLabel);
             this.Controls.Add(this.entregaDateTimePicker);
-            this.Controls.Add(this.buscarClienteButton);
-            this.Controls.Add(this.clienteIdTextBox);
-            this.Controls.Add(this.clienteIdLabel);
             this.Controls.Add(this.notasTextBox);
             this.Controls.Add(this.buscarButton);
             this.Controls.Add(this.idTextBox);
@@ -395,14 +357,11 @@
         private System.Windows.Forms.DataGridView articulosDataGridView;
         private System.Windows.Forms.TextBox problemaTextBox;
         private System.Windows.Forms.Button botonInsertar;
-        private System.Windows.Forms.TextBox clienteIdTextBox;
-        private System.Windows.Forms.Label clienteIdLabel;
-        private System.Windows.Forms.Button buscarClienteButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Problema;
         private System.Windows.Forms.DateTimePicker entregaDateTimePicker;
-        private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.Label nombreClienteLabel;
         private System.Windows.Forms.Panel entradasPanel;
+        private System.Windows.Forms.ComboBox clienteComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Problema;
     }
 }

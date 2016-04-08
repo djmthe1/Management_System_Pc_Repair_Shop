@@ -23,8 +23,7 @@ Go
 
 Create Table Clientes(
 	ClienteId int Identity(1,1) Primary Key,
-	Nombre varchar(40),
-	Apellido varchar(40),
+	NombreCompleto varchar(50),
 	Direccion varchar(30),
 )
 

@@ -39,9 +39,11 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.articulosVendidosPanel = new System.Windows.Forms.Panel();
+            this.articulosVendidosLabel = new System.Windows.Forms.Label();
             this.totalVentaTextBox = new System.Windows.Forms.TextBox();
             this.marcaComboBox = new System.Windows.Forms.ComboBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
+            this.botonInsertar = new System.Windows.Forms.Button();
             this.articulosVendidosDataGridView = new System.Windows.Forms.DataGridView();
             this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +58,11 @@
             this.totalFacturaTextBox = new System.Windows.Forms.TextBox();
             this.entradaComboBox = new System.Windows.Forms.ComboBox();
             this.articulosReparadosPanel = new System.Windows.Forms.Panel();
-            this.articulosReparadosDataGridView = new System.Windows.Forms.DataGridView();
             this.articulosReparadosLabel = new System.Windows.Forms.Label();
-            this.articulosVendidosLabel = new System.Windows.Forms.Label();
+            this.articulosReparadosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buscarSalidaButton = new System.Windows.Forms.Button();
-            this.botonInsertar = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
@@ -182,6 +181,16 @@
             this.articulosVendidosPanel.Size = new System.Drawing.Size(385, 186);
             this.articulosVendidosPanel.TabIndex = 61;
             // 
+            // articulosVendidosLabel
+            // 
+            this.articulosVendidosLabel.AutoSize = true;
+            this.articulosVendidosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.articulosVendidosLabel.Location = new System.Drawing.Point(3, 4);
+            this.articulosVendidosLabel.Name = "articulosVendidosLabel";
+            this.articulosVendidosLabel.Size = new System.Drawing.Size(142, 16);
+            this.articulosVendidosLabel.TabIndex = 81;
+            this.articulosVendidosLabel.Text = "Articulos Vendidos:";
+            // 
             // totalVentaTextBox
             // 
             this.totalVentaTextBox.Location = new System.Drawing.Point(315, 163);
@@ -209,6 +218,17 @@
             this.precioTextBox.Size = new System.Drawing.Size(69, 20);
             this.precioTextBox.TabIndex = 9;
             this.precioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioTextBox_KeyPress);
+            // 
+            // botonInsertar
+            // 
+            this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
+            this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonInsertar.Location = new System.Drawing.Point(335, 36);
+            this.botonInsertar.Name = "botonInsertar";
+            this.botonInsertar.Size = new System.Drawing.Size(32, 29);
+            this.botonInsertar.TabIndex = 81;
+            this.botonInsertar.UseVisualStyleBackColor = true;
+            this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
             // 
             // articulosVendidosDataGridView
             // 
@@ -336,6 +356,16 @@
             this.articulosReparadosPanel.Size = new System.Drawing.Size(385, 186);
             this.articulosReparadosPanel.TabIndex = 88;
             // 
+            // articulosReparadosLabel
+            // 
+            this.articulosReparadosLabel.AutoSize = true;
+            this.articulosReparadosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.articulosReparadosLabel.Location = new System.Drawing.Point(4, 4);
+            this.articulosReparadosLabel.Name = "articulosReparadosLabel";
+            this.articulosReparadosLabel.Size = new System.Drawing.Size(154, 16);
+            this.articulosReparadosLabel.TabIndex = 80;
+            this.articulosReparadosLabel.Text = "Articulos Reparados:";
+            // 
             // articulosReparadosDataGridView
             // 
             this.articulosReparadosDataGridView.AllowUserToAddRows = false;
@@ -348,26 +378,6 @@
             this.articulosReparadosDataGridView.Name = "articulosReparadosDataGridView";
             this.articulosReparadosDataGridView.Size = new System.Drawing.Size(353, 118);
             this.articulosReparadosDataGridView.TabIndex = 79;
-            // 
-            // articulosReparadosLabel
-            // 
-            this.articulosReparadosLabel.AutoSize = true;
-            this.articulosReparadosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.articulosReparadosLabel.Location = new System.Drawing.Point(4, 4);
-            this.articulosReparadosLabel.Name = "articulosReparadosLabel";
-            this.articulosReparadosLabel.Size = new System.Drawing.Size(154, 16);
-            this.articulosReparadosLabel.TabIndex = 80;
-            this.articulosReparadosLabel.Text = "Articulos Reparados:";
-            // 
-            // articulosVendidosLabel
-            // 
-            this.articulosVendidosLabel.AutoSize = true;
-            this.articulosVendidosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.articulosVendidosLabel.Location = new System.Drawing.Point(3, 4);
-            this.articulosVendidosLabel.Name = "articulosVendidosLabel";
-            this.articulosVendidosLabel.Size = new System.Drawing.Size(142, 16);
-            this.articulosVendidosLabel.TabIndex = 81;
-            this.articulosVendidosLabel.Text = "Articulos Vendidos:";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -383,29 +393,6 @@
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Cargo";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // buscarSalidaButton
-            // 
-            this.buscarSalidaButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscarSalidaButton.BackgroundImage")));
-            this.buscarSalidaButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buscarSalidaButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscarSalidaButton.Location = new System.Drawing.Point(366, 42);
-            this.buscarSalidaButton.Name = "buscarSalidaButton";
-            this.buscarSalidaButton.Size = new System.Drawing.Size(31, 29);
-            this.buscarSalidaButton.TabIndex = 4;
-            this.buscarSalidaButton.UseVisualStyleBackColor = true;
-            this.buscarSalidaButton.Click += new System.EventHandler(this.buscarSalidaButton_Click);
-            // 
-            // botonInsertar
-            // 
-            this.botonInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertar.BackgroundImage")));
-            this.botonInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertar.Location = new System.Drawing.Point(335, 36);
-            this.botonInsertar.Name = "botonInsertar";
-            this.botonInsertar.Size = new System.Drawing.Size(32, 29);
-            this.botonInsertar.TabIndex = 81;
-            this.botonInsertar.UseVisualStyleBackColor = true;
-            this.botonInsertar.Click += new System.EventHandler(this.botonInsertar_Click);
             // 
             // EliminarButton
             // 
@@ -479,7 +466,6 @@
             this.Controls.Add(this.montoAPagarTextBox);
             this.Controls.Add(this.facturaDateTimePicker);
             this.Controls.Add(this.fechaLabel);
-            this.Controls.Add(this.buscarSalidaButton);
             this.Controls.Add(this.articulosVendidosPanel);
             this.Controls.Add(this.facturaLabel);
             this.Controls.Add(this.EliminarButton);
@@ -530,7 +516,6 @@
         private System.Windows.Forms.Label marcaLabel;
         private System.Windows.Forms.ComboBox marcaComboBox;
         private System.Windows.Forms.TextBox precioTextBox;
-        private System.Windows.Forms.Button buscarSalidaButton;
         private System.Windows.Forms.DateTimePicker facturaDateTimePicker;
         private System.Windows.Forms.Label fechaLabel;
         private System.Windows.Forms.TextBox totalVentaTextBox;

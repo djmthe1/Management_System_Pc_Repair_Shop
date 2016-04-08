@@ -19,13 +19,15 @@ namespace Management_System_Pc_Repair_Shop.Registros
         }
 
         Facturas factura = new Facturas();
-        Salidas salida = new Salidas();
+        Entradas entrada = new Entradas();
         Portada portada = new Portada();
         Validaciones validar = new Validaciones();
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
             this.facturaDateTimePicker.Enabled = false;
+            LlenarComboBox();
+            Limpiar();
         }
 
         private void MensajeOk(string mensaje)
@@ -61,6 +63,17 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void montoAPagarTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.Numeros_KeyPress(e);
+        }
+
+        private void LlenarComboBox()
+        {
+            DataTable dtentradas = new DataTable();
+
+            dtentradas = entrada.Listado("*", "1=1", ""); //verificar
+
+            entradaComboBox.DataSource = dtentradas;
+            entradaComboBox.ValueMember = "EntradaId";
+            entradaComboBox.DisplayMember = "Notas";
         }
 
         private void Limpiar()
@@ -151,7 +164,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
         }
 
-        private void buscarSalidaButton_Click(object sender, EventArgs e)
+        /*private void buscarSalidaButton_Click(object sender, EventArgs e)
         {
             ObtenerValores();
             if (entradaComboBox.Text.Length == 0)
@@ -160,7 +173,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (salida.Buscar(factura.EntradaId))
+                if (entrada.Buscar(factura.EntradaId))
                 {
                     DevolverValores();
                 }
@@ -170,7 +183,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                     entradaComboBox.SelectedIndex = -1;
                 }
             }
-        }
+        }*/
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {

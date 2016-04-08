@@ -26,6 +26,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void SalidasForm_Load(object sender, EventArgs e)
         {
             this.salidaDateTimePicker.Enabled = false;
+            LlenarComboBox();
         }
 
         private void MensajeOk(string mensaje)
@@ -53,11 +54,23 @@ namespace Management_System_Pc_Repair_Shop.Registros
             validar.LetrasNumeros_KeyPress(e);
         }
 
+        private void LlenarComboBox()
+        {
+            DataTable dtentradas = new DataTable();
+
+            dtentradas = entrada.Listado("*", "Salio=0", ""); // verificar
+
+            EntradaComboBox.DataSource = dtentradas;
+            EntradaComboBox.ValueMember = "EntradaId";
+            EntradaComboBox.DisplayMember = "Notas";
+        }
+
         private void Limpiar()
         {
             idTextBox.Clear();
             EntradaComboBox.SelectedIndex = -1;
             observacionTextBox.Clear();
+            LlenarComboBox();
         }
 
         private void ObtenerValores()
@@ -66,9 +79,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             int.TryParse(idTextBox.Text, out id);
             salida.SalidaId = id;
             salida.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
-            int salidaid = 0;
-            int.TryParse(idTextBox.Text, out salidaid);
-            salida.SalidaId = salidaid;
+            salida.EntradaId = (int)EntradaComboBox.SelectedValue;
             salida.Observacion = observacionTextBox.Text;
             salida.RetiradoPor = portada.toolStripStatusLabel.Text;
         }
@@ -81,7 +92,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             observacionTextBox.Text = salida.Observacion.ToString();
         }
 
-        private void botonBuscarCliente_Click(object sender, EventArgs e)
+        private void botonBuscarSalida_Click(object sender, EventArgs e)
         {
             ObtenerValores();
             if (idTextBox.Text.Length == 0)

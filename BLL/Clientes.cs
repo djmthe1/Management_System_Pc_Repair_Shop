@@ -11,18 +11,16 @@ namespace BLL
     public class Clientes : ClaseMaestra
     {
         public int ClienteId { set; get; }
-        public string Nombre { set; get; }
-        public string Apellido { set; get; }
+        public string NombreCompleto { set; get; }
         public string Direccion { set; get; }
         ClientesTelefonos Telefono = new ClientesTelefonos();
         public List<ClientesTelefonos> telefonos { get; set; }
         ConexionDb conexion = new ConexionDb();
 
-        public Clientes(int clienteId, string nombre, string apellido, string direccion)
+        public Clientes(int clienteId, string nombreCompleto, string apellido, string direccion)
         {
             this.ClienteId = clienteId;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
+            this.NombreCompleto = nombreCompleto;
             this.Direccion = direccion;
         }
 
@@ -43,7 +41,7 @@ namespace BLL
             try
             {
                 //obtengo el identity insertado en la tabla
-                identity = conexion.ObtenerValor(String.Format("INSERT INTO Clientes (Nombre, Apellido, Direccion) VALUES ('{0}','{1}','{2}') SELECT @@Identity", this.Nombre, this.Apellido, this.Direccion));
+                identity = conexion.ObtenerValor(String.Format("INSERT INTO Clientes (NombreCompleto, Direccion) VALUES ('{0}','{1}') SELECT @@Identity", this.NombreCompleto, this.Direccion));
 
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
@@ -69,7 +67,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("UPDATE Clientes SET Nombre='{0}', Apellido='{1}', Direccion='{2}' WHERE ClienteId={3}", this.Nombre, this.Apellido, this.Direccion, this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("UPDATE Clientes SET NombreCompleto='{0}', Direccion='{1}' WHERE ClienteId={2}", this.NombreCompleto, this.Direccion, this.ClienteId));
                 if (retorno)
                 {
                     conexion.Ejecutar(String.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
@@ -105,8 +103,7 @@ namespace BLL
             if (dt.Rows.Count > 0)
             {
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
-                this.Nombre = dt.Rows[0]["Nombre"].ToString();
-                this.Apellido = dt.Rows[0]["Apellido"].ToString();
+                this.NombreCompleto = dt.Rows[0]["NombreCompleto"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
 
                 dtTelefonos = conexion.ObtenerDatos(String.Format("SELECT * FROM ClientesTelefonos WHERE ClienteId=" + IdBuscado));

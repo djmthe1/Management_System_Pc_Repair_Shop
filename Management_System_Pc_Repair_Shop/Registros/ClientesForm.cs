@@ -66,7 +66,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             clienteIdTextBox.Clear();
             nombreTextBox.Clear();
-            apellidoTextBox.Clear();
             direccionTextBox.Clear();
             telefonoMaskedTextBox.Clear();
             tipoTelefonoComboBox.SelectedIndex = -1;
@@ -77,8 +76,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             int.TryParse(clienteIdTextBox.Text, out id);
             clientes.ClienteId = id;
-            clientes.Nombre = nombreTextBox.Text;
-            clientes.Apellido = apellidoTextBox.Text;
+            clientes.NombreCompleto = nombreTextBox.Text;
             clientes.Direccion = direccionTextBox.Text;
             foreach (var numeros in clientes.telefonos)
             {
@@ -89,8 +87,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void DevolverValores()
         {
             clienteIdTextBox.Text = clientes.ClienteId.ToString();
-            nombreTextBox.Text = clientes.Nombre.ToString();
-            apellidoTextBox.Text = clientes.Apellido.ToString();
+            nombreTextBox.Text = clientes.NombreCompleto.ToString();
             direccionTextBox.Text = clientes.Direccion.ToString();
             foreach (var numeros in clientes.telefonos)
             {
@@ -148,7 +145,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (clienteIdTextBox.Text == "")
             {
-                if (nombreTextBox.Text != "" && apellidoTextBox.Text != "" && direccionTextBox.Text != "")
+                if (nombreTextBox.Text != "" && direccionTextBox.Text != "")
                 {
                     if (clientes.Insertar())
                     {
@@ -167,7 +164,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (nombreTextBox.Text != "" && apellidoTextBox.Text != "" && direccionTextBox.Text != "")
+                if (nombreTextBox.Text != "" && direccionTextBox.Text != "")
                 {
                     if (clientes.Editar())
                     {

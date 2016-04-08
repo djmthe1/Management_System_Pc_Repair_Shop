@@ -46,7 +46,7 @@
             this.passwordTextBox.MaxLength = 50;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             // 
@@ -56,7 +56,7 @@
             this.usuarioTextBox.MaxLength = 50;
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usuarioTextBox.TabIndex = 2;
+            this.usuarioTextBox.TabIndex = 1;
             this.usuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuarioTextBox_KeyPress);
             // 
             // passwordLabel

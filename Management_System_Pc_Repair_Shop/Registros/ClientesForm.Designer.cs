@@ -34,10 +34,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.nombreClienteLabel = new System.Windows.Forms.Label();
-            this.apellidoLabel = new System.Windows.Forms.Label();
             this.clienteIdLabel = new System.Windows.Forms.Label();
             this.clienteIdTextBox = new System.Windows.Forms.TextBox();
-            this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.botonBuscarCliente = new System.Windows.Forms.Button();
             this.direccionLabel = new System.Windows.Forms.Label();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
@@ -60,7 +58,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.nombreTextBox.Location = new System.Drawing.Point(98, 50);
             this.nombreTextBox.MaxLength = 40;
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(193, 20);
             this.nombreTextBox.TabIndex = 3;
             this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
@@ -75,18 +73,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.nombreClienteLabel.Size = new System.Drawing.Size(54, 15);
             this.nombreClienteLabel.TabIndex = 28;
             this.nombreClienteLabel.Text = "Nombre:";
-            // 
-            // apellidoLabel
-            // 
-            this.apellidoLabel.AutoSize = true;
-            this.apellidoLabel.BackColor = System.Drawing.Color.Transparent;
-            this.apellidoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoLabel.ForeColor = System.Drawing.Color.Black;
-            this.apellidoLabel.Location = new System.Drawing.Point(41, 81);
-            this.apellidoLabel.Name = "apellidoLabel";
-            this.apellidoLabel.Size = new System.Drawing.Size(54, 15);
-            this.apellidoLabel.TabIndex = 29;
-            this.apellidoLabel.Text = "Apellido:";
             // 
             // clienteIdLabel
             // 
@@ -109,15 +95,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.clienteIdTextBox.TabIndex = 1;
             this.clienteIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clienteIdTextBox_KeyPress);
             // 
-            // apellidoTextBox
-            // 
-            this.apellidoTextBox.Location = new System.Drawing.Point(98, 76);
-            this.apellidoTextBox.MaxLength = 40;
-            this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.apellidoTextBox.TabIndex = 4;
-            this.apellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellidoTextBox_KeyPress);
-            // 
             // botonBuscarCliente
             // 
             this.botonBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonBuscarCliente.BackgroundImage")));
@@ -136,7 +113,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.direccionLabel.BackColor = System.Drawing.Color.Transparent;
             this.direccionLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccionLabel.ForeColor = System.Drawing.Color.Black;
-            this.direccionLabel.Location = new System.Drawing.Point(34, 107);
+            this.direccionLabel.Location = new System.Drawing.Point(34, 81);
             this.direccionLabel.Name = "direccionLabel";
             this.direccionLabel.Size = new System.Drawing.Size(61, 15);
             this.direccionLabel.TabIndex = 35;
@@ -144,10 +121,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(98, 102);
+            this.direccionTextBox.Location = new System.Drawing.Point(98, 76);
             this.direccionTextBox.MaxLength = 30;
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(193, 20);
             this.direccionTextBox.TabIndex = 5;
             this.direccionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.direccionTextBox_KeyPress);
             // 
@@ -203,7 +180,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             this.botonInsertarTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonInsertarTelefono.BackgroundImage")));
             this.botonInsertarTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonInsertarTelefono.Location = new System.Drawing.Point(299, 120);
+            this.botonInsertarTelefono.Location = new System.Drawing.Point(299, 94);
             this.botonInsertarTelefono.Name = "botonInsertarTelefono";
             this.botonInsertarTelefono.Size = new System.Drawing.Size(30, 28);
             this.botonInsertarTelefono.TabIndex = 8;
@@ -216,7 +193,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.telefonoLabel.BackColor = System.Drawing.Color.Transparent;
             this.telefonoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefonoLabel.ForeColor = System.Drawing.Color.Black;
-            this.telefonoLabel.Location = new System.Drawing.Point(38, 133);
+            this.telefonoLabel.Location = new System.Drawing.Point(38, 107);
             this.telefonoLabel.Name = "telefonoLabel";
             this.telefonoLabel.Size = new System.Drawing.Size(57, 15);
             this.telefonoLabel.TabIndex = 54;
@@ -229,7 +206,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.telefonosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Telefono,
             this.Tipo});
-            this.telefonosDataGridView.Location = new System.Drawing.Point(42, 151);
+            this.telefonosDataGridView.Location = new System.Drawing.Point(42, 125);
             this.telefonosDataGridView.MultiSelect = false;
             this.telefonosDataGridView.Name = "telefonosDataGridView";
             this.telefonosDataGridView.ReadOnly = true;
@@ -259,7 +236,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             "Trabajo",
             "Fax",
             "Otro"});
-            this.tipoTelefonoComboBox.Location = new System.Drawing.Point(214, 127);
+            this.tipoTelefonoComboBox.Location = new System.Drawing.Point(214, 101);
             this.tipoTelefonoComboBox.Name = "tipoTelefonoComboBox";
             this.tipoTelefonoComboBox.Size = new System.Drawing.Size(79, 21);
             this.tipoTelefonoComboBox.TabIndex = 7;
@@ -268,7 +245,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             this.tipoTelefonoLabel.AutoSize = true;
             this.tipoTelefonoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoTelefonoLabel.Location = new System.Drawing.Point(179, 134);
+            this.tipoTelefonoLabel.Location = new System.Drawing.Point(179, 108);
             this.tipoTelefonoLabel.Name = "tipoTelefonoLabel";
             this.tipoTelefonoLabel.Size = new System.Drawing.Size(33, 13);
             this.tipoTelefonoLabel.TabIndex = 61;
@@ -276,7 +253,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             // 
             // telefonoMaskedTextBox
             // 
-            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(98, 128);
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(98, 102);
             this.telefonoMaskedTextBox.Mask = "000-000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(79, 20);
@@ -301,10 +278,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.Controls.Add(this.direccionTextBox);
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.nombreClienteLabel);
-            this.Controls.Add(this.apellidoLabel);
             this.Controls.Add(this.clienteIdLabel);
             this.Controls.Add(this.clienteIdTextBox);
-            this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(this.botonBuscarCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesForm";
@@ -321,10 +296,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.Label nombreClienteLabel;
-        private System.Windows.Forms.Label apellidoLabel;
         private System.Windows.Forms.Label clienteIdLabel;
         private System.Windows.Forms.TextBox clienteIdTextBox;
-        private System.Windows.Forms.TextBox apellidoTextBox;
         private System.Windows.Forms.Button botonBuscarCliente;
         private System.Windows.Forms.Label direccionLabel;
         private System.Windows.Forms.TextBox direccionTextBox;

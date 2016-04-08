@@ -40,7 +40,7 @@ namespace Management_System_Pc_Repair_Shop.Consultas
                 filtro = comboBoxCampos.Text + " like '%" + textBoxFiltro.Text + "%'";
             }
 
-            dataGridViewConsulta.DataSource = clientes.Listado("ClienteId, Nombre, Apellido, Direccion", filtro, "");
+            dataGridViewConsulta.DataSource = clientes.Listado("ClienteId, NombreCompleto, Direccion", filtro, "");
             textBoxConteo.Text = dataGridViewConsulta.RowCount.ToString();
         }
 

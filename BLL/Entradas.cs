@@ -62,7 +62,7 @@ namespace BLL
                 //intento convertirlo a entero
                 int.TryParse(identity.ToString(), out retorno);
 
-                this.ClienteId = retorno;
+                this.EntradaId = retorno;
                 if (retorno > 0)
                 {
                     foreach (EntradasArticulos descripcion in this.articulos)
@@ -123,8 +123,8 @@ namespace BLL
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
-                this.Salio = (bool)dt.Rows[0]["Salio"];
-                this.Entregado = (bool)dt.Rows[0]["Entregado"];
+                //this.Salio = (bool)dt.Rows[0]["Salio"];
+                //this.Entregado = (bool)dt.Rows[0]["Entregado"];
 
                 dtArticulos = conexion.ObtenerDatos(String.Format("SELECT * FROM EntradasArticulos WHERE EntradaId=" + IdBuscado));
 
