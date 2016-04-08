@@ -20,6 +20,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         Facturas factura = new Facturas();
         Entradas entrada = new Entradas();
+        Piezas pieza = new Piezas();
+        Marcas marca = new Marcas();
         Portada portada = new Portada();
         Validaciones validar = new Validaciones();
 
@@ -67,6 +69,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void LlenarComboBox()
         {
+            //----------------------------------------
             DataTable dtentradas = new DataTable();
 
             dtentradas = entrada.Listado("*", "1=1", ""); //verificar
@@ -74,6 +77,20 @@ namespace Management_System_Pc_Repair_Shop.Registros
             entradaComboBox.DataSource = dtentradas;
             entradaComboBox.ValueMember = "EntradaId";
             entradaComboBox.DisplayMember = "Notas";
+            //-----------------------------------------
+            DataTable dtmarcas = new DataTable();
+            dtmarcas = marca.Listado("*", "1=1", "");
+
+            marcaComboBox.DataSource = dtmarcas;
+            marcaComboBox.ValueMember = "MarcaId";
+            marcaComboBox.DisplayMember = "Descripcion";
+
+            DataTable dtpiezas = new DataTable();
+            dtpiezas = pieza.Listado("*", "1=1", "");
+
+            articulosComboBox.DataSource = dtpiezas;
+            articulosComboBox.ValueMember = "PiezaId";
+            articulosComboBox.DisplayMember = "Descripcion";
         }
 
         private void Limpiar()
@@ -162,6 +179,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
             {
                 MensajeError("Error al insertar");
             }
+        }
+        
+        private void entradaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         /*private void buscarSalidaButton_Click(object sender, EventArgs e)

@@ -101,14 +101,21 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (salida.Buscar(salida.EntradaId))
+                if (idTextBox.Text.Length == 0)
                 {
-                    DevolverValores();
+                    MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MensajeAdvertencia("Id no encontrado");
-                    Limpiar();
+                    if (salida.Buscar(salida.EntradaId))
+                    {
+                        DevolverValores();
+                    }
+                    else
+                    {
+                        MensajeAdvertencia("Id no encontrado");
+                        Limpiar();
+                    }
                 }
             }
         }

@@ -43,7 +43,7 @@ namespace BLL.Tests
             salida.EntradaId = 1;
             salida.Observacion = "nada";
             salida.RetiradoPor = "Jeff";
-            Assert.IsTrue(salida.Insertar());
+            Assert.IsTrue(salida.Editar());
         }
 
         [TestMethod()]
@@ -66,7 +66,7 @@ namespace BLL.Tests
         public void ListadoTest()
         {
             Salidas salida = new Salidas();
-            Assert.IsTrue(salida.Listado(" * ", " 1=1 ", "").Rows.Count > 0);
+            Assert.IsTrue(salida.Listado("*", " 1=1 ", "").Rows.Count > 0);
         }
 
         [TestMethod()]

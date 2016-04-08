@@ -208,7 +208,7 @@
             this.marcaComboBox.Location = new System.Drawing.Point(165, 43);
             this.marcaComboBox.Name = "marcaComboBox";
             this.marcaComboBox.Size = new System.Drawing.Size(89, 21);
-            this.marcaComboBox.TabIndex = 8;
+            this.marcaComboBox.TabIndex = 4;
             // 
             // precioTextBox
             // 
@@ -216,7 +216,7 @@
             this.precioTextBox.MaxLength = 5;
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(69, 20);
-            this.precioTextBox.TabIndex = 9;
+            this.precioTextBox.TabIndex = 5;
             this.precioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioTextBox_KeyPress);
             // 
             // botonInsertar
@@ -267,7 +267,7 @@
             this.articulosComboBox.Location = new System.Drawing.Point(55, 43);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
-            this.articulosComboBox.TabIndex = 7;
+            this.articulosComboBox.TabIndex = 3;
             // 
             // articuloLabel
             // 
@@ -324,7 +324,7 @@
             this.montoAPagarTextBox.MaxLength = 6;
             this.montoAPagarTextBox.Name = "montoAPagarTextBox";
             this.montoAPagarTextBox.Size = new System.Drawing.Size(67, 20);
-            this.montoAPagarTextBox.TabIndex = 10;
+            this.montoAPagarTextBox.TabIndex = 6;
             this.montoAPagarTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.montoAPagarTextBox_KeyPress);
             // 
             // totalFacturaTextBox
@@ -343,6 +343,7 @@
             this.entradaComboBox.Name = "entradaComboBox";
             this.entradaComboBox.Size = new System.Drawing.Size(98, 21);
             this.entradaComboBox.TabIndex = 3;
+            this.entradaComboBox.SelectedIndexChanged += new System.EventHandler(this.entradaComboBox_SelectedIndexChanged);
             // 
             // articulosReparadosPanel
             // 
@@ -404,7 +405,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(478, 316);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
-            this.EliminarButton.TabIndex = 13;
+            this.EliminarButton.TabIndex = 9;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -420,7 +421,7 @@
             this.NuevoButton.Location = new System.Drawing.Point(236, 316);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
-            this.NuevoButton.TabIndex = 11;
+            this.NuevoButton.TabIndex = 7;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -436,7 +437,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(357, 316);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
-            this.GuardarButton.TabIndex = 12;
+            this.GuardarButton.TabIndex = 8;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
