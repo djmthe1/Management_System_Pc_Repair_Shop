@@ -27,6 +27,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             this.salidaDateTimePicker.Enabled = false;
             LlenarComboBox();
+            Limpiar();
         }
 
         private void MensajeOk(string mensaje)
@@ -58,7 +59,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             DataTable dtentradas = new DataTable();
 
-            dtentradas = entrada.Listado("*", "Salio=0", ""); // verificar
+            dtentradas = entrada.Listado("*", "Salio is null", "");
 
             EntradaComboBox.DataSource = dtentradas;
             EntradaComboBox.ValueMember = "EntradaId";
@@ -130,7 +131,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (EntradaComboBox.Text != "" && observacionTextBox.Text != "")
+                if (EntradaComboBox.SelectedIndex > 0 && observacionTextBox.Text != "")
                 {
                     if (salida.Insertar())
                     {
@@ -149,7 +150,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (EntradaComboBox.Text != "" && observacionTextBox.Text != "")
+                if (EntradaComboBox.SelectedIndex > 0 && observacionTextBox.Text != "")
                 {
                     if (salida.Editar())
                     {

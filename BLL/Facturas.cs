@@ -18,8 +18,10 @@ namespace BLL
         public float Total { set; get; }
         public float MontoAPagar { set; get; }
         public string DespachadoPor { set; get; }
-        ArticulosVendidos Articulo = new ArticulosVendidos();
-        public List<ArticulosVendidos> articulos { get; set; }
+        ArticulosVendidos ArticuloVendido = new ArticulosVendidos();
+        public List<ArticulosVendidos> articulosVendidos { get; set; }
+        ArticulosEntregados ArticuloEntregado = new ArticulosEntregados();
+        public List<ArticulosEntregados> articulosEntregados { get; set; }
         ConexionDb conexion = new ConexionDb();
 
         public Facturas(int facturaId, string fecha, int entradaId, int clienteId, float cargoReparacion, float total, float montoAPagar, string despachadoPor)
@@ -36,12 +38,18 @@ namespace BLL
 
         public Facturas()
         {
-            articulos = new List<ArticulosVendidos>();
+            articulosVendidos = new List<ArticulosVendidos>();
+            articulosEntregados = new List<ArticulosEntregados>();
         }
 
-        public void InsertarArticulo(string Pieza, string Marca, float Precio)
+        public void InsertarArticuloVendido(string Pieza, string Marca, float Precio)
         {
-            this.articulos.Add(new ArticulosVendidos(Pieza, Marca, Precio));
+            this.articulosVendidos.Add(new ArticulosVendidos(Pieza, Marca, Precio));
+        }
+
+        public void InsertarArticuloEntregado(string Articulo, string Problema, float Cargo)
+        {
+            this.articulosEntregados.Add(new ArticulosEntregados(Articulo, Problema, Cargo));
         }
 
         public override bool Insertar()
@@ -60,9 +68,13 @@ namespace BLL
                 if (retorno > 0)
                 {
                     conexion.Ejecutar(String.Format("UPDATE Entradas SET Entregado='True' WHERE EntradaId={0}", this.EntradaId));
-                    foreach (ArticulosVendidos descripcion in this.articulos)
+                    foreach (ArticulosVendidos vendidos in this.articulosVendidos)
                     {
-                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", descripcion.FacturaId, descripcion.Pieza, descripcion.Marca, descripcion.Precio));
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", retorno, vendidos.Pieza, vendidos.Marca, vendidos.Precio));
+                    }
+                    foreach (ArticulosEntregados entregados in this.articulosEntregados)
+                    {
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosEntregados (FacturaId, Articulo, Problema, Cargo) VALUES ({0},'{1}','{2}',{3})", retorno, entregados.Articulo, entregados.Problema, entregados.Cargo));
                     }
                 }
             }
@@ -82,9 +94,13 @@ namespace BLL
                 if (retorno)
                 {
                     conexion.Ejecutar(String.Format("DELETE FROM ArticulosVendidos WHERE FacturaId= {0}", this.FacturaId));
-                    foreach (ArticulosVendidos datos in this.articulos)
+                    foreach (ArticulosVendidos vendidos in this.articulosVendidos)
                     {
-                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", datos.FacturaId, datos.Pieza, datos.Marca, datos.Precio));
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", this.FacturaId, vendidos.Pieza, vendidos.Marca, vendidos.Precio));
+                    }
+                    foreach (ArticulosEntregados entregados in this.articulosEntregados)
+                    {
+                        conexion.Ejecutar(String.Format("INSERT INTO ArticulosEntregados (FacturaId, Articulo, Problema, Cargo) VALUES ({0},'{1}','{2}',{3})", this.FacturaId, entregados.Articulo, entregados.Problema, entregados.Cargo));
                     }
                 }
             }
@@ -100,6 +116,7 @@ namespace BLL
                 retorno = conexion.Ejecutar(String.Format("DELETE FROM Facturas WHERE FacturaId={0}", this.FacturaId));
                 if (retorno)
                     conexion.Ejecutar(String.Format("DELETE FROM ArticulosVendidos WHERE FacturaId={0}", this.FacturaId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ArticulosEntregados WHERE FacturaId={0}", this.FacturaId));
             }
             catch (Exception ex) { throw ex; }
             return retorno;
@@ -108,7 +125,8 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
-            DataTable dtArticuloss = new DataTable();
+            DataTable dtArticulosVendidos = new DataTable();
+            DataTable dtArticulosEntregados = new DataTable();
 
             dt = conexion.ObtenerDatos("SELECT * FROM Facturas WHERE FacturaId=" + IdBuscado);
             if (dt.Rows.Count > 0)
@@ -122,11 +140,18 @@ namespace BLL
                 this.MontoAPagar = (float)Convert.ToDecimal(dt.Rows[0]["MontoAPagar"]);
                 this.DespachadoPor = dt.Rows[0]["DespachadoPor"].ToString();
 
-                dtArticuloss = conexion.ObtenerDatos(String.Format("SELECT * FROM ArticulosVendidos WHERE FacturaId =" + IdBuscado));
+                dtArticulosVendidos = conexion.ObtenerDatos(String.Format("SELECT * FROM ArticulosVendidos WHERE FacturaId =" + IdBuscado));
 
-                foreach (DataRow row in dtArticuloss.Rows)
+                foreach (DataRow row in dtArticulosVendidos.Rows)
                 {
-                    InsertarArticulo(row["Pieza"].ToString(), row["Marca"].ToString(), (float)Convert.ToDecimal(dt.Rows[0]["Precio"]));
+                    InsertarArticuloVendido(row["Pieza"].ToString(), row["Marca"].ToString(), (float)Convert.ToDecimal(dt.Rows[0]["Precio"]));
+                }
+
+                dtArticulosEntregados = conexion.ObtenerDatos(String.Format("SELECT * FROM ArticulosEntregados WHERE FacturaId =" + IdBuscado));
+
+                foreach (DataRow row in dtArticulosEntregados.Rows)
+                {
+                    InsertarArticuloEntregado(row["Articulo"].ToString(), row["Problema"].ToString(), (float)Convert.ToDecimal(dt.Rows[0]["Cargo"]));
                 }
             }
             return dt.Rows.Count > 0;

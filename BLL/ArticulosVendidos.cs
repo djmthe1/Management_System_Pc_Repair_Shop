@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace BLL
 {
@@ -13,6 +14,7 @@ namespace BLL
         public string Pieza { set; get; }
         public string Marca { set; get; }
         public float Precio { set; get; }
+        ConexionDb conexion = new ConexionDb();
 
         public ArticulosVendidos(int id, int facturaId, string Pieza, string Marca, float precio)
         {

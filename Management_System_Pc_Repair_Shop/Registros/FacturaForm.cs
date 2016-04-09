@@ -69,15 +69,14 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void LlenarComboBox()
         {
-            //----------------------------------------
             DataTable dtentradas = new DataTable();
 
-            dtentradas = entrada.Listado("*", "1=1", ""); //verificar
+            dtentradas = entrada.Listado("*", "Entregado is null", "");
 
             entradaComboBox.DataSource = dtentradas;
             entradaComboBox.ValueMember = "EntradaId";
             entradaComboBox.DisplayMember = "Notas";
-            //-----------------------------------------
+            
             DataTable dtmarcas = new DataTable();
             dtmarcas = marca.Listado("*", "1=1", "");
 
@@ -119,7 +118,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             float.TryParse(montoAPagarTextBox.Text, out montoapagar);
             factura.MontoAPagar = montoapagar;
             factura.DespachadoPor = portada.toolStripStatusLabel.Text;
-            foreach (var articulo in factura.articulos)
+            foreach (var articulo in factura.articulosVendidos)
             {
                 articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
             }
@@ -133,7 +132,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             totalReparacionTextBox.Text = factura.CargoReparacion.ToString();
             totalFacturaTextBox.Text = factura.Total.ToString();
             montoAPagarTextBox.Text = factura.MontoAPagar.ToString();
-            foreach (var articulo in factura.articulos)
+            foreach (var articulo in factura.articulosVendidos)
             {
                 articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
             }
@@ -169,7 +168,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 if (!articulosComboBox.Text.Equals("") && !marcaComboBox.Text.Equals("") && !precioTextBox.Text.Equals(""))
                 {
                     articulosVendidosDataGridView.Rows.Add(articulosComboBox.Text, marcaComboBox.Text, precioTextBox.Text);
-                    factura.InsertarArticulo( articulosComboBox.Text, marcaComboBox.Text, precio);
+                    factura.InsertarArticuloVendido( articulosComboBox.Text, marcaComboBox.Text, precio);
                     articulosComboBox.SelectedIndex = -1;
                     marcaComboBox.SelectedIndex = -1;
                     precioTextBox.Clear();
@@ -183,12 +182,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
         
         private void entradaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        /*private void buscarSalidaButton_Click(object sender, EventArgs e)
-        {
-            ObtenerValores();
+            /*ObtenerValores();
             if (entradaComboBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -204,8 +198,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
                     MensajeAdvertencia("Id no encontrado");
                     entradaComboBox.SelectedIndex = -1;
                 }
-            }
-        }*/
+            }*/
+        }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
@@ -218,7 +212,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (entradaComboBox.Text != "" && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.SelectedIndex > 0 && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Insertar())
                     {
@@ -237,7 +231,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (entradaComboBox.Text != "" && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.SelectedIndex > 0 && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Editar())
                     {

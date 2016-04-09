@@ -89,7 +89,7 @@ namespace BLL
                     conexion.Ejecutar(String.Format("Delete FROM EntradasArticulos WHERE EntradaId= {0}", this.EntradaId));
                     foreach (EntradasArticulos descripcion in this.articulos)
                     {
-                        conexion.Ejecutar(String.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", descripcion.EntradaId, descripcion.Articulo, descripcion.Problema));
+                        conexion.Ejecutar(String.Format("Insert Into EntradasArticulos (EntradaId, Articulo, Problema) Values ({0},'{1}','{2}')", this.EntradaId, descripcion.Articulo, descripcion.Problema));
                     }
                 }
             }

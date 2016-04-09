@@ -73,7 +73,7 @@ namespace BLL
                     conexion.Ejecutar(String.Format("DELETE FROM ClientesTelefonos WHERE ClienteId={0}", this.ClienteId));
                     foreach (ClientesTelefonos numeros in this.telefonos)
                     {
-                        conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", numeros.ClienteId, numeros.Tipo, numeros.Telefono));
+                        conexion.Ejecutar(string.Format("INSERT INTO ClientesTelefonos (ClienteId, Tipo, Telefono) VALUES ({0},'{1}','{2}')", this.ClienteId, numeros.Tipo, numeros.Telefono));
                     }
                 }
             }

@@ -175,7 +175,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (clienteComboBox.Text != "" && notasTextBox.Text != "")
+                if (clienteComboBox.SelectedIndex > 0 && notasTextBox.Text != "")
                 {
                     if (entrada.Insertar())
                     {
@@ -194,7 +194,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (clienteComboBox.Text != "" && notasTextBox.Text != "")
+                if (clienteComboBox.SelectedIndex > 0 && notasTextBox.Text != "")
                 {
                     if (entrada.Editar())
                     {
