@@ -147,6 +147,7 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.textBoxFiltro);
             this.Controls.Add(this.comboBoxCampos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaEntradasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -92,8 +92,7 @@
             this.comboBoxCampos.FormattingEnabled = true;
             this.comboBoxCampos.Items.AddRange(new object[] {
             "ClienteId",
-            "Nombre",
-            "Apellido",
+            "NombreCompleto",
             "Direccion"});
             this.comboBoxCampos.Location = new System.Drawing.Point(84, 10);
             this.comboBoxCampos.Name = "comboBoxCampos";
@@ -143,6 +142,7 @@
             this.Controls.Add(this.labelBuscar);
             this.Controls.Add(this.textBoxFiltro);
             this.Controls.Add(this.comboBoxCampos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

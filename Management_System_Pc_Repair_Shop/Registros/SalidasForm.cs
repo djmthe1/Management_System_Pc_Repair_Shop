@@ -72,6 +72,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             EntradaComboBox.SelectedIndex = -1;
             observacionTextBox.Clear();
             LlenarComboBox();
+            EliminarButton.Enabled = false;
         }
 
         private void ObtenerValores()
@@ -95,7 +96,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void botonBuscarSalida_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            salida.SalidaId = int.Parse(idTextBox.Text);
             if (idTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -108,9 +109,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 }
                 else
                 {
-                    if (salida.Buscar(salida.EntradaId))
+                    if (salida.Buscar(salida.SalidaId))
                     {
                         DevolverValores();
+                        EliminarButton.Enabled = true;
                     }
                     else
                     {
@@ -128,11 +130,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (EntradaComboBox.SelectedIndex > 0 && observacionTextBox.Text != "")
+                if (!EntradaComboBox.Text.Equals("") && observacionTextBox.Text != "")
                 {
+                    ObtenerValores();
                     if (salida.Insertar())
                     {
                         Limpiar();
@@ -150,8 +152,9 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (EntradaComboBox.SelectedIndex > 0 && observacionTextBox.Text != "")
+                if (!EntradaComboBox.Text.Equals("") && observacionTextBox.Text != "")
                 {
+                    ObtenerValores();
                     if (salida.Editar())
                     {
                         Limpiar();
@@ -171,14 +174,14 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
+            salida.SalidaId = int.Parse(idTextBox.Text);
             if (idTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (salida.Buscar(salida.EntradaId))
+                if (salida.Buscar(salida.SalidaId))
                 {
                     if (salida.Eliminar())
                     {

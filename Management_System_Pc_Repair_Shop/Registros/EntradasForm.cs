@@ -76,11 +76,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
             clienteComboBox.DisplayMember = "NombreCompleto";
 
             DataTable dtpiezas = new DataTable();
-            dtpiezas = pieza.Listado("*", "1=1", "");
-            
-            articulosComboBox.DataSource = dtpiezas;
-            articulosComboBox.ValueMember = "PiezaId";
-            articulosComboBox.DisplayMember = "Descripcion";
+            dtpiezas = pieza.Listado("*", "0=0", "ORDER BY Descripcion");
+
+            for (int i = 0; i <= dtpiezas.Rows.Count - 1; i++)
+                articulosComboBox.Items.Add(pieza.Listado("*", "0=0", "ORDER BY Descripcion").Rows[i]["Descripcion"]);
 
         }
 
@@ -105,7 +104,6 @@ namespace Management_System_Pc_Repair_Shop.Registros
             entrada.ClienteId = (int)clienteComboBox.SelectedValue;
             entrada.Notas = notasTextBox.Text;
             entrada.RecibidoPor = portada.toolStripStatusLabel.Text;
-            entrada.LimpiarArticulo();
             foreach (var articulo in entrada.articulos)
             {
                 articulosDataGridView.Rows.Add(articulo.Articulo, articulo.Problema);
@@ -128,13 +126,14 @@ namespace Management_System_Pc_Repair_Shop.Registros
         private void buscarButton_Click(object sender, EventArgs e)
         {
             articulosDataGridView.Rows.Clear();
-            ObtenerValores();
+            
             if (idTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                entrada.EntradaId = int.Parse(idTextBox.Text);
                 if (entrada.Buscar(entrada.EntradaId))
                 {
                     DevolverValores();
@@ -172,11 +171,11 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (clienteComboBox.SelectedIndex > 0 && notasTextBox.Text != "")
+                if (!clienteComboBox.Text.Equals("")  && notasTextBox.Text != "")
                 {
+                    ObtenerValores();
                     if (entrada.Insertar())
                     {
                         Limpiar();
@@ -194,8 +193,9 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (clienteComboBox.SelectedIndex > 0 && notasTextBox.Text != "")
+                if (!clienteComboBox.Text.Equals("") && notasTextBox.Text != "")
                 {
+                    ObtenerValores();
                     if (entrada.Editar())
                     {
                         Limpiar();
@@ -215,13 +215,13 @@ namespace Management_System_Pc_Repair_Shop.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            ObtenerValores();
             if (idTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Debe insertar un Id", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                entrada.EntradaId = int.Parse(idTextBox.Text);
                 if (entrada.Buscar(entrada.EntradaId))
                 {
                     if (entrada.Eliminar())

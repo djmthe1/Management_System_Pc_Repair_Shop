@@ -91,6 +91,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aceerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.portadaStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.PortadaToolStrip = new System.Windows.Forms.ToolStrip();
             this.entradasToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -101,7 +102,6 @@
             this.piezasToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.marcasToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.portadaMenuStrip.SuspendLayout();
             this.portadaStatusStrip.SuspendLayout();
             this.PortadaToolStrip.SuspendLayout();
@@ -541,6 +541,11 @@
             this.portadaStatusStrip.Size = new System.Drawing.Size(803, 22);
             this.portadaStatusStrip.TabIndex = 1;
             // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // PortadaToolStrip
             // 
             this.PortadaToolStrip.AutoSize = false;
@@ -635,11 +640,6 @@
             this.marcasToolStripButton.Size = new System.Drawing.Size(23, 40);
             this.marcasToolStripButton.ToolTipText = "Marcas";
             this.marcasToolStripButton.Click += new System.EventHandler(this.marcasToolStripButton_Click);
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // Portada
             // 

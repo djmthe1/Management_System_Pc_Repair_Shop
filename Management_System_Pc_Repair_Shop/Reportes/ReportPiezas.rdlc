@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.71906cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -46,7 +46,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.71906cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -101,7 +101,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>5.50333cm</Size>
+                <Size>2.80458cm</Size>
                 <CellContents>
                   <Textbox Name="PiezaId">
                     <CanGrow>true</CanGrow>
@@ -137,7 +137,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>5.50333cm</Size>
+                <Size>2.80458cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox5">
                     <CanGrow>true</CanGrow>
@@ -171,15 +171,52 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ManagementDb</DataSetName>
-        <Height>1.2cm</Height>
-        <Width>11.00666cm</Width>
+        <DataSetName>ManagementDbDataSet</DataSetName>
+        <Top>2.30188cm</Top>
+        <Left>4.49792cm</Left>
+        <Height>1.43812cm</Height>
+        <Width>8.30791cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REPORTE DE PIEZAS</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.73766cm</Top>
+        <Left>4.49792cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.70912cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
@@ -206,7 +243,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ManagementDb">
+    <DataSet Name="ManagementDbDataSet">
       <Query>
         <DataSourceName>ManagementDbDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

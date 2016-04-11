@@ -64,8 +64,11 @@ namespace BLL
             bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("DELETE FROM Salidas WHERE SalidaId={0}", this.SalidaId));
-                retorno = true;
+                 retorno = conexion.Ejecutar(String.Format("DELETE FROM Salidas WHERE SalidaId={0}", this.SalidaId));
+                if (retorno)
+                {
+                    conexion.Ejecutar(String.Format("UPDATE Entradas SET Salio='null' WHERE EntradaId={0}", this.EntradaId));
+                }
             }
             catch (Exception ex) { throw ex; }
             return retorno;

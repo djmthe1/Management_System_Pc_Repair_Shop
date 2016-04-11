@@ -110,7 +110,7 @@ namespace BLL
                 
                 foreach (DataRow row in dtTelefonos.Rows)
                 {
-                    this.InsertarTelefono((int)dtTelefonos.Rows[0]["ClienteId"], row["Telefono"].ToString(), row["Tipo"].ToString());
+                    this.InsertarTelefono((int)dtTelefonos.Rows[0]["ClienteId"], row["Tipo"].ToString(), row["Telefono"].ToString());
                 }
             }
             return dt.Rows.Count > 0;

@@ -94,6 +94,7 @@ namespace BLL
                 if (retorno)
                 {
                     conexion.Ejecutar(String.Format("DELETE FROM ArticulosVendidos WHERE FacturaId= {0}", this.FacturaId));
+                    conexion.Ejecutar(String.Format("DELETE FROM ArticulosEntregados WHERE FacturaId= {0}", this.FacturaId));
                     foreach (ArticulosVendidos vendidos in this.articulosVendidos)
                     {
                         conexion.Ejecutar(String.Format("INSERT INTO ArticulosVendidos (FacturaId, Pieza, Marca, Precio) VALUES ({0},'{1}','{2}',{3})", this.FacturaId, vendidos.Pieza, vendidos.Marca, vendidos.Precio));

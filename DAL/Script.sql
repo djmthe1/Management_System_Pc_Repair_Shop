@@ -92,3 +92,13 @@ create table ArticulosVendidos(
 )
 
 Go
+
+create table ArticulosEntregados(
+	Id int identity primary key,
+	FacturaId int References Facturas (FacturaId),
+	Articulo varchar,
+	Problema varchar,
+	Cargo float
+)
+
+Go

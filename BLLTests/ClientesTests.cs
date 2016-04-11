@@ -64,7 +64,7 @@ namespace BLL.Tests
         {
             Clientes clientes = new Clientes();
 
-            Assert.IsTrue(clientes.Buscar(0));
+            Assert.IsTrue(clientes.Buscar(1));
         }
 
         [TestMethod()]

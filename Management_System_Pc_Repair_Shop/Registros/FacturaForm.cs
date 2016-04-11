@@ -24,6 +24,8 @@ namespace Management_System_Pc_Repair_Shop.Registros
         Marcas marca = new Marcas();
         Portada portada = new Portada();
         Validaciones validar = new Validaciones();
+        float TotalPiezas = 0;
+        float TotalReparacion = 0;
 
         private void FacturaForm_Load(object sender, EventArgs e)
         {
@@ -71,25 +73,23 @@ namespace Management_System_Pc_Repair_Shop.Registros
         {
             DataTable dtentradas = new DataTable();
 
-            dtentradas = entrada.Listado("*", "Entregado is null", "");
+            dtentradas = entrada.Listado("*", "Salio=1 AND Entregado is null", "");
 
             entradaComboBox.DataSource = dtentradas;
             entradaComboBox.ValueMember = "EntradaId";
             entradaComboBox.DisplayMember = "Notas";
             
-            DataTable dtmarcas = new DataTable();
-            dtmarcas = marca.Listado("*", "1=1", "");
+            DataTable dtmarcas = new DataTable();;
+            dtmarcas = marca.Listado("*", "0=0", "ORDER BY Descripcion");
 
-            marcaComboBox.DataSource = dtmarcas;
-            marcaComboBox.ValueMember = "MarcaId";
-            marcaComboBox.DisplayMember = "Descripcion";
+            for (int i = 0; i <= dtmarcas.Rows.Count - 1; i++)
+                marcaComboBox.Items.Add(marca.Listado("*", "0=0", "ORDER BY Descripcion").Rows[i]["Descripcion"]);
 
             DataTable dtpiezas = new DataTable();
-            dtpiezas = pieza.Listado("*", "1=1", "");
+            dtpiezas = pieza.Listado("*", "0=0", "ORDER BY Descripcion");
 
-            articulosComboBox.DataSource = dtpiezas;
-            articulosComboBox.ValueMember = "PiezaId";
-            articulosComboBox.DisplayMember = "Descripcion";
+            for (int i = 0; i <= dtpiezas.Rows.Count - 1; i++)
+                articulosComboBox.Items.Add(pieza.Listado("*", "0=0", "ORDER BY Descripcion").Rows[i]["Descripcion"]);
         }
 
         private void Limpiar()
@@ -103,6 +103,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             precioTextBox.Clear();
             articulosVendidosDataGridView.Rows.Clear();
             montoAPagarTextBox.Clear();
+            EliminarButton.Enabled = false;
         }
 
         private void ObtenerValores()
@@ -118,9 +119,13 @@ namespace Management_System_Pc_Repair_Shop.Registros
             float.TryParse(montoAPagarTextBox.Text, out montoapagar);
             factura.MontoAPagar = montoapagar;
             factura.DespachadoPor = portada.toolStripStatusLabel.Text;
-            foreach (var articulo in factura.articulosVendidos)
+            foreach (var articuloVendido in factura.articulosVendidos)
             {
-                articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
+                articulosVendidosDataGridView.Rows.Add(articuloVendido.Pieza, articuloVendido.Marca, articuloVendido.Precio);
+            }
+            foreach (var articuloEntregado in factura.articulosEntregados)
+            {
+                articulosReparadosDataGridView.Rows.Add(articuloEntregado.Articulo, articuloEntregado.Problema, articuloEntregado.Cargo);
             }
         }
 
@@ -132,9 +137,13 @@ namespace Management_System_Pc_Repair_Shop.Registros
             totalReparacionTextBox.Text = factura.CargoReparacion.ToString();
             totalFacturaTextBox.Text = factura.Total.ToString();
             montoAPagarTextBox.Text = factura.MontoAPagar.ToString();
-            foreach (var articulo in factura.articulosVendidos)
+            foreach (var articuloVendido in factura.articulosVendidos)
             {
-                articulosVendidosDataGridView.Rows.Add(articulo.Pieza, articulo.Marca, articulo.Precio);
+                articulosVendidosDataGridView.Rows.Add(articuloVendido.Pieza, articuloVendido.Marca, articuloVendido.Precio);
+            }
+            foreach (var articuloEntregado in factura.articulosEntregados)
+            {
+                articulosReparadosDataGridView.Rows.Add(articuloEntregado.Articulo, articuloEntregado.Problema, articuloEntregado.Cargo);
             }
         }
 
@@ -150,6 +159,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 if (factura.Buscar(factura.FacturaId))
                 {
                     DevolverValores();
+                    EliminarButton.Enabled = true;
                 }
                 else
                 {
@@ -169,6 +179,10 @@ namespace Management_System_Pc_Repair_Shop.Registros
                 {
                     articulosVendidosDataGridView.Rows.Add(articulosComboBox.Text, marcaComboBox.Text, precioTextBox.Text);
                     factura.InsertarArticuloVendido( articulosComboBox.Text, marcaComboBox.Text, precio);
+                    foreach (DataGridViewRow artic in articulosVendidosDataGridView.Rows)
+                    {
+                        TotalPiezas += (float)Convert.ToDecimal(artic.Cells["Precio"].Value);
+                    }
                     articulosComboBox.SelectedIndex = -1;
                     marcaComboBox.SelectedIndex = -1;
                     precioTextBox.Clear();
@@ -182,23 +196,17 @@ namespace Management_System_Pc_Repair_Shop.Registros
         
         private void entradaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*ObtenerValores();
-            if (entradaComboBox.Text.Length == 0)
-            {
-                MessageBox.Show("Debe insertar un Id", "Error al Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                if (entrada.Buscar(factura.EntradaId))
+            entrada.EntradaId = (int)entradaComboBox.SelectedValue;
+            articulosReparadosDataGridView.Rows.Clear();
+                if (entrada.Buscar(entrada.EntradaId))
                 {
                     DevolverValores();
                 }
                 else
                 {
                     MensajeAdvertencia("Id no encontrado");
-                    entradaComboBox.SelectedIndex = -1;
+                    Limpiar();
                 }
-            }*/
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -212,7 +220,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             ObtenerValores();
             if (idTextBox.Text == "")
             {
-                if (entradaComboBox.SelectedIndex > 0 && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text.Equals("") && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Insertar())
                     {
@@ -231,7 +239,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             }
             else
             {
-                if (entradaComboBox.SelectedIndex > 0 && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
+                if (entradaComboBox.Text.Equals("") && totalReparacionTextBox.Text != "" && totalFacturaTextBox.Text != "" && montoAPagarTextBox.Text != "")
                 {
                     if (factura.Editar())
                     {

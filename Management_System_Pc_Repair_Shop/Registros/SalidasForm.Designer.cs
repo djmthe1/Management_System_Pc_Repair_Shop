@@ -197,6 +197,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.fechaLabel);
             this.Controls.Add(this.idLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalidasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

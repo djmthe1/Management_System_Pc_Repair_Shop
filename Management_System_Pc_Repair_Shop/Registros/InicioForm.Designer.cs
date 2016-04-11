@@ -105,6 +105,7 @@
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.salirButton);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InicioForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

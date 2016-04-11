@@ -45,11 +45,6 @@ namespace BLL
             this.articulos.Add(new EntradasArticulos(EntradaId, Articulo, Problema));
         }
 
-        public void LimpiarArticulo()
-        {
-            this.articulos.Clear();
-        }
-
         public override bool Insertar()
         {
             int retorno = 0;
@@ -123,8 +118,6 @@ namespace BLL
                 this.ClienteId = (int)dt.Rows[0]["ClienteId"];
                 this.Notas = dt.Rows[0]["Notas"].ToString();
                 this.RecibidoPor = dt.Rows[0]["RecibidoPor"].ToString();
-                //this.Salio = (bool)dt.Rows[0]["Salio"];
-                //this.Entregado = (bool)dt.Rows[0]["Entregado"];
 
                 dtArticulos = conexion.ObtenerDatos(String.Format("SELECT * FROM EntradasArticulos WHERE EntradaId=" + IdBuscado));
 

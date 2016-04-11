@@ -45,9 +45,9 @@
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.botonInsertar = new System.Windows.Forms.Button();
             this.articulosVendidosDataGridView = new System.Windows.Forms.DataGridView();
-            this.Articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.articulosComboBox = new System.Windows.Forms.ComboBox();
             this.articuloLabel = new System.Windows.Forms.Label();
             this.marcaLabel = new System.Windows.Forms.Label();
@@ -60,9 +60,9 @@
             this.articulosReparadosPanel = new System.Windows.Forms.Panel();
             this.articulosReparadosLabel = new System.Windows.Forms.Label();
             this.articulosReparadosDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaArticulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaProblema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
@@ -107,7 +107,7 @@
             // 
             this.totalFacturaLabel.AutoSize = true;
             this.totalFacturaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFacturaLabel.Location = new System.Drawing.Point(513, 283);
+            this.totalFacturaLabel.Location = new System.Drawing.Point(499, 283);
             this.totalFacturaLabel.Name = "totalFacturaLabel";
             this.totalFacturaLabel.Size = new System.Drawing.Size(40, 13);
             this.totalFacturaLabel.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             this.montoAPagarLabel.AutoSize = true;
             this.montoAPagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.montoAPagarLabel.Location = new System.Drawing.Point(628, 283);
+            this.montoAPagarLabel.Location = new System.Drawing.Point(616, 283);
             this.montoAPagarLabel.Name = "montoAPagarLabel";
             this.montoAPagarLabel.Size = new System.Drawing.Size(94, 13);
             this.montoAPagarLabel.TabIndex = 4;
@@ -137,7 +137,7 @@
             // 
             this.totalReparaciónLabel.AutoSize = true;
             this.totalReparaciónLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalReparaciónLabel.Location = new System.Drawing.Point(173, 167);
+            this.totalReparaciónLabel.Location = new System.Drawing.Point(202, 166);
             this.totalReparaciónLabel.Name = "totalReparaciónLabel";
             this.totalReparaciónLabel.Size = new System.Drawing.Size(109, 13);
             this.totalReparaciónLabel.TabIndex = 6;
@@ -176,7 +176,7 @@
             this.articulosVendidosPanel.Controls.Add(this.marcaLabel);
             this.articulosVendidosPanel.Controls.Add(this.precioLabel);
             this.articulosVendidosPanel.Controls.Add(this.totalVentaLabel);
-            this.articulosVendidosPanel.Location = new System.Drawing.Point(409, 79);
+            this.articulosVendidosPanel.Location = new System.Drawing.Point(394, 79);
             this.articulosVendidosPanel.Name = "articulosVendidosPanel";
             this.articulosVendidosPanel.Size = new System.Drawing.Size(385, 186);
             this.articulosVendidosPanel.TabIndex = 61;
@@ -203,8 +203,6 @@
             // 
             this.marcaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.marcaComboBox.FormattingEnabled = true;
-            this.marcaComboBox.Items.AddRange(new object[] {
-            "Dell"});
             this.marcaComboBox.Location = new System.Drawing.Point(165, 43);
             this.marcaComboBox.Name = "marcaComboBox";
             this.marcaComboBox.Size = new System.Drawing.Size(89, 21);
@@ -235,35 +233,33 @@
             this.articulosVendidosDataGridView.AllowUserToAddRows = false;
             this.articulosVendidosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articulosVendidosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Articulo,
-            this.Marca,
-            this.Precio});
+            this.CArticulo,
+            this.CMarca,
+            this.CPrecio});
             this.articulosVendidosDataGridView.Location = new System.Drawing.Point(14, 70);
             this.articulosVendidosDataGridView.Name = "articulosVendidosDataGridView";
             this.articulosVendidosDataGridView.Size = new System.Drawing.Size(353, 76);
             this.articulosVendidosDataGridView.TabIndex = 79;
             // 
-            // Articulo
+            // CArticulo
             // 
-            this.Articulo.HeaderText = "Articulo";
-            this.Articulo.Name = "Articulo";
+            this.CArticulo.HeaderText = "Articulo";
+            this.CArticulo.Name = "CArticulo";
             // 
-            // Marca
+            // CMarca
             // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
+            this.CMarca.HeaderText = "Marca";
+            this.CMarca.Name = "CMarca";
             // 
-            // Precio
+            // CPrecio
             // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
+            this.CPrecio.HeaderText = "Precio";
+            this.CPrecio.Name = "CPrecio";
             // 
             // articulosComboBox
             // 
             this.articulosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.articulosComboBox.FormattingEnabled = true;
-            this.articulosComboBox.Items.AddRange(new object[] {
-            "Motherboard"});
             this.articulosComboBox.Location = new System.Drawing.Point(55, 43);
             this.articulosComboBox.Name = "articulosComboBox";
             this.articulosComboBox.Size = new System.Drawing.Size(104, 21);
@@ -310,17 +306,17 @@
             // 
             // totalReparacionTextBox
             // 
-            this.totalReparacionTextBox.Location = new System.Drawing.Point(284, 163);
+            this.totalReparacionTextBox.Location = new System.Drawing.Point(315, 163);
             this.totalReparacionTextBox.MaxLength = 6;
             this.totalReparacionTextBox.Name = "totalReparacionTextBox";
             this.totalReparacionTextBox.ReadOnly = true;
-            this.totalReparacionTextBox.Size = new System.Drawing.Size(98, 20);
+            this.totalReparacionTextBox.Size = new System.Drawing.Size(67, 20);
             this.totalReparacionTextBox.TabIndex = 6;
             this.totalReparacionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cargoDeReparacionTextBox_KeyPress);
             // 
             // montoAPagarTextBox
             // 
-            this.montoAPagarTextBox.Location = new System.Drawing.Point(724, 280);
+            this.montoAPagarTextBox.Location = new System.Drawing.Point(712, 280);
             this.montoAPagarTextBox.MaxLength = 6;
             this.montoAPagarTextBox.Name = "montoAPagarTextBox";
             this.montoAPagarTextBox.Size = new System.Drawing.Size(67, 20);
@@ -329,7 +325,7 @@
             // 
             // totalFacturaTextBox
             // 
-            this.totalFacturaTextBox.Location = new System.Drawing.Point(555, 280);
+            this.totalFacturaTextBox.Location = new System.Drawing.Point(543, 280);
             this.totalFacturaTextBox.Name = "totalFacturaTextBox";
             this.totalFacturaTextBox.ReadOnly = true;
             this.totalFacturaTextBox.Size = new System.Drawing.Size(67, 20);
@@ -352,7 +348,7 @@
             this.articulosReparadosPanel.Controls.Add(this.articulosReparadosDataGridView);
             this.articulosReparadosPanel.Controls.Add(this.totalReparacionTextBox);
             this.articulosReparadosPanel.Controls.Add(this.totalReparaciónLabel);
-            this.articulosReparadosPanel.Location = new System.Drawing.Point(9, 79);
+            this.articulosReparadosPanel.Location = new System.Drawing.Point(3, 79);
             this.articulosReparadosPanel.Name = "articulosReparadosPanel";
             this.articulosReparadosPanel.Size = new System.Drawing.Size(385, 186);
             this.articulosReparadosPanel.TabIndex = 88;
@@ -372,28 +368,28 @@
             this.articulosReparadosDataGridView.AllowUserToAddRows = false;
             this.articulosReparadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articulosReparadosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.ColumnaArticulos,
+            this.ColumnaProblema,
+            this.ColumnaCargo});
             this.articulosReparadosDataGridView.Location = new System.Drawing.Point(16, 29);
             this.articulosReparadosDataGridView.Name = "articulosReparadosDataGridView";
             this.articulosReparadosDataGridView.Size = new System.Drawing.Size(353, 118);
             this.articulosReparadosDataGridView.TabIndex = 79;
             // 
-            // dataGridViewTextBoxColumn1
+            // ColumnaArticulos
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Articulo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.ColumnaArticulos.HeaderText = "Articulo";
+            this.ColumnaArticulos.Name = "ColumnaArticulos";
             // 
-            // dataGridViewTextBoxColumn2
+            // ColumnaProblema
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Problema";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.ColumnaProblema.HeaderText = "Problema";
+            this.ColumnaProblema.Name = "ColumnaProblema";
             // 
-            // dataGridViewTextBoxColumn3
+            // ColumnaCargo
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Cargo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.ColumnaCargo.HeaderText = "Cargo";
+            this.ColumnaCargo.Name = "ColumnaCargo";
             // 
             // EliminarButton
             // 
@@ -402,7 +398,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(478, 316);
+            this.EliminarButton.Location = new System.Drawing.Point(468, 316);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(87, 41);
             this.EliminarButton.TabIndex = 9;
@@ -418,7 +414,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(236, 316);
+            this.NuevoButton.Location = new System.Drawing.Point(226, 316);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(88, 41);
             this.NuevoButton.TabIndex = 7;
@@ -434,7 +430,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(357, 316);
+            this.GuardarButton.Location = new System.Drawing.Point(347, 316);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(88, 41);
             this.GuardarButton.TabIndex = 8;
@@ -460,7 +456,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(802, 369);
+            this.ClientSize = new System.Drawing.Size(782, 369);
             this.Controls.Add(this.articulosReparadosPanel);
             this.Controls.Add(this.entradaComboBox);
             this.Controls.Add(this.totalFacturaTextBox);
@@ -478,6 +474,7 @@
             this.Controls.Add(this.montoAPagarLabel);
             this.Controls.Add(this.totalFacturaLabel);
             this.Controls.Add(this.entradaIdLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FacturaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -523,16 +520,16 @@
         private System.Windows.Forms.TextBox totalReparacionTextBox;
         private System.Windows.Forms.TextBox montoAPagarTextBox;
         private System.Windows.Forms.TextBox totalFacturaTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Articulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.ComboBox entradaComboBox;
         private System.Windows.Forms.Panel articulosReparadosPanel;
         private System.Windows.Forms.DataGridView articulosReparadosDataGridView;
         private System.Windows.Forms.Label articulosVendidosLabel;
         private System.Windows.Forms.Label articulosReparadosLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaArticulos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProblema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCargo;
     }
 }

@@ -156,6 +156,7 @@
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(this.idTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MarcasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

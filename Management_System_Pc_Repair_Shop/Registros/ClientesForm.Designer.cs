@@ -281,6 +281,7 @@ namespace Management_System_Pc_Repair_Shop.Registros
             this.Controls.Add(this.clienteIdLabel);
             this.Controls.Add(this.clienteIdTextBox);
             this.Controls.Add(this.botonBuscarCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -88,7 +88,7 @@
             this.loginPanel.Controls.Add(this.passwordLabel);
             this.loginPanel.Controls.Add(this.passwordTextBox);
             this.loginPanel.Controls.Add(this.usuarioTextBox);
-            this.loginPanel.Location = new System.Drawing.Point(206, 102);
+            this.loginPanel.Location = new System.Drawing.Point(96, 23);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(256, 121);
             this.loginPanel.TabIndex = 15;
@@ -112,7 +112,7 @@
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.Image = ((System.Drawing.Image)(resources.GetObject("loginButton.Image")));
             this.loginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginButton.Location = new System.Drawing.Point(12, 290);
+            this.loginButton.Location = new System.Drawing.Point(12, 174);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(97, 49);
             this.loginButton.TabIndex = 4;
@@ -128,7 +128,7 @@
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
             this.cancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelarButton.Location = new System.Drawing.Point(556, 290);
+            this.cancelarButton.Location = new System.Drawing.Point(323, 174);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(97, 49);
             this.cancelarButton.TabIndex = 5;
@@ -143,10 +143,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(665, 351);
+            this.ClientSize = new System.Drawing.Size(432, 235);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.loginPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LoginForm";
